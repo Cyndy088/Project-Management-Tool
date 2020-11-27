@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-    <title>Skt Group 2</title>
+    <title>log in </title>
 </head>
-
 <body>
     <div class="main">
         <form class="form-signin">
             <img class="mb-4" src="images/logo-300x67.png" alt="">
-            <label for="inputEmail" class="sr-only" > Email address</label>
+            <label for="inputEmail" class="sr-only">Email address</label>
             <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
             <label for="inputPassword" class="sr-only">Password</label>
             <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
@@ -23,12 +20,16 @@
                 <input type="checkbox" value="remember-me"> Remember me
               </label>
             </div>
-            <button class="btn btn-lg btn-success btn-block" type="submit"> <a href="maindashboard.html"> Sign in</a> </button>
+            <button style="background-color:#A4AA4D;" class="btn btn-lg  btn-block" type="submit"> <a href="maindashboard.html">Sign in</a> </button>
+            <p class="mt-5 mb-5 text-muted">&copy; 2020-{{ site.time | date: "%Y" }}</p>
           </form>
+          
     </div>
-<script src="js/bootstrap.min.js"></script>
-<script src="jquery.js"></script>
-<script src="popper.js"></script>
-</body>
 
+
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/query.js"></script>
+    <script src="js/popper.js"></script>
+</body>
 </html>
