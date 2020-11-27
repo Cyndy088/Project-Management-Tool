@@ -1,0 +1,15 @@
+.stats-value{
+    font-size: 40px;
+}
+
+.stats-container{
+    color: #5f5f5f;
+    padding-top: 10px;
+    width: 80%;
+    border-radius: 20px;
+}
+
+.stats-icon{
+    color: #5f5f5f;
+    font-size: 50px;
+}
