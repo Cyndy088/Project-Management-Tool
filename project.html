@@ -1,214 +1,603 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Projects- SB Admin</title>
-        <link href="css/styles.css" rel="stylesheet" />
-        <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
-    </head>
-    <body class="sb-nav-fixed">
-        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html"> <img src="./images/logo-300x67.png" alt="" srcset="" height="50" width="200"> </a>
-            <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
-            <!-- Navbar Search-->
-            <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-                <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Projects- SB Admin</title>
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+    <script defer src="fontawesome-free-5.15.1-web/js/all.js"></script>
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html"> <img src="./images/logo-300x67.png" alt="" srcset="" height="50"
+                width="200"> </a>
+        <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i
+                class="fas fa-bars"></i></button>
+        <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search"
+                    aria-describedby="basic-addon2" />
+                <div class="input-group-append">
+                    <button class="btn " style="background-color: #72736E;" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </form>
+        <ul class="navbar-nav ml-auto ml-md-0">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                    <a class="dropdown-item" href="#">Settings</a>
+                    <a class="dropdown-item" href="#">Activity Log</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="login.html">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <!-- <a class="nav-link" href="operation.html">
+                            <div class="sb-nav-link-icon font-weight-bold"><i class="fas fa-tachometer-alt"></i></div>
+                            Dashboard
+                        </a>
+                        <a class="nav-link" href="clients.html">
+                            <div class="sb-nav-link-icon font-weight-bold"><i class="fas fa-user-friends"></i></div>
+                            Clients
+                        </a>
+                        <a class="nav-link" href="project.html">
+                            <div class="sb-nav-link-icon font-weight-bold"><i class="fas fa-project-diagram"></i></div>
+                            Projects
+                        </a> -->
+                        <a class="nav-link" href="maindashboard.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                            Team Dashboard
+                        </a>
+                        <a class="nav-link" href="dashboardprojectlead.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                            Project Lead
+                        </a>
+                        <a class="nav-link" href="operation.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                            Operational Director
+                        </a>
+                        <a class="nav-link" href="marketing.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                            Marketing Team
+                        </a>
+                        <a class="nav-link" href="clients.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-user-friends"></i></div>
+                            Clients
+                        </a>
+                        <a class="nav-link" href="project.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-project-diagram"></i></div>
+                            Projects
+                        </a>
+                        <a class="nav-link" href="projectview.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-project-diagram"></i></div>
+                            Project Overview
+                        </a>
+                        <a class="nav-link" href="tasks.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-project-diagram"></i></div>
+                            Creat Task
+                        </a>
                     </div>
                 </div>
-            </form>
-            <!-- Navbar-->
-            <ul class="navbar-nav ml-auto ml-md-0">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="#">Settings</a>
-                        <a class="dropdown-item" href="#">Activity Log</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="login.html">Logout</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-        <div id="layoutSidenav" >
-            <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                    <div class="sb-sidenav-menu" >
-                        <div class="nav">
-                                <div class="sb-sidenav-menu-heading"></div>
-                                <a class="nav-link" href="index.html">
-                                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                    Dashboard
-                                </a>
-                                <a class="nav-link" href="clients.html">
-                                    <div class="sb-nav-link-icon"><i class="fas fa-user-friends"></i></div>
-                                    Clients
-                                </a>
-                                <a class="nav-link" href="project.html">
-                                    <div class="sb-nav-link-icon"><i class="fas fa-project-diagram"></i></div>
-                                    Projects
-                                </a>
-                        </div>
-                    </div>
-                    <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        Start Bootstrap
-                    </div>
-                </nav>
-            </div>
-            <div id="layoutSidenav_content">
-                <main>
-                    <div class="container-fluid" style="margin-top: 50px;">
-                        <h1 class="mt-4">Projects</h1>
-                            <div class="card-body">
-                                <div class="table-responsive" style="width: 1500px; background-color: #ffff;">
-                                    <table class="table" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th>Projects</th>
-                                                <th>Budget</th>
-                                                <th>Spent</th>
-                                                <th>Remaining</th>
-                                                <th>Due date</th>
-                                                <th>Risk Indicator</th>
-                                                <th>Status</th>
-
-                                            </tr>
-                                        </thead>
-                                        
-                                        <tbody>
-                                            <tr>
-                                                <td> <img src="./images/Vodafone_Ghana-Logo.wine.png" alt="" width="70" height="70"> Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td> <a href="javascript:;" class="btn btn-danger btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;">High</a> </td>
-                                                <td> <a href="javascript:;" class="btn btn-success btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;"><i class="fas fa-check"></i></a> </td>
-                                            </tr>
-                                            
-                                            <tr>
-                                                <td> <img src="./images/download.jpg" alt="" width="70" height="70"> Serge Baldwin</td>
-                                                <td>Data Coordinator</td>
-                                                <td>Singapore</td>
-                                                <td>64</td>
-                                                <td>2012/04/09</td>
-                                                <td> <a href="javascript:;" class="btn btn-danger btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;">High</a> </td>
-                                                <td> <a href="javascript:;" class="btn btn-success btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;"><i class="fas fa-check"></i></a> </td>
-                                            </tr>
-                                            <tr>
-                                                <td> <img src="./images/download.jpg" alt="" width="70" height="70"> Serge Baldwin</td>
-                                                <td>Software Engineer</td>
-                                                <td>New York</td>
-                                                <td>63</td>
-                                                <td>2010/01/04</td>
-                                                <td> <a href="javascript:;" class="btn btn-danger btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;">High</a> </td>
-                                                <td> <a href="javascript:;" class="btn btn-success btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;"><i class="fas fa-check"></i></a> </td>
-                                            </tr>
-                                            <tr>
-                                                <td> <img src="./images/download.jpg" alt="" width="70" height="70"> Serge Baldwin</td>
-                                                <td>Software Engineer</td>
-                                                <td>San Francisco</td>
-                                                <td>56</td>
-                                                <td>2012/06/01</td>
-                                                <td> <a href="javascript:;" class="btn btn-danger btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;">High</a> </td>
-                                                <td> <a href="javascript:;" class="btn btn-success btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;"><i class="fas fa-check"></i></a> </td>
-                                            </tr>
-                                            <tr>
-                                                <td> <img src="./images/Vodafone_Ghana-Logo.wine.png" alt="" width="70" height="70"> Serge Baldwin</td>
-                                                <td>Junior Javascript Developer</td>
-                                                <td>Edinburgh</td>
-                                                <td>43</td>
-                                                <td>2013/02/01</td>
-                                                <td> <a href="javascript:;" class="btn btn-danger btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;">High</a> </td>
-                                                <td> <a href="javascript:;" class="btn btn-success btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;"><i class="fas fa-check"></i></a> </td>
-                                            </tr>
-                                            <tr>
-                                                <td> <img src="./images/download (3).png" alt="" width="70" height="70"> Serge Baldwin</td>
-                                                <td>Sales Assistant</td>
-                                                <td>New York</td>
-                                                <td>46</td>
-                                                <td>2011/12/06</td>
-                                                <td> <a href="javascript:;" class="btn btn-info btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;">low</a> </td>
-                                                <td> <a href="javascript:;" class="btn btn-danger btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;"><i class="fas fa-stop"></i></a> </td>
-                                            </tr>
-                                            <tr>
-                                                <td> <img src="./images/download (3).jpg" alt="" width="70" height="70"> Serge Baldwin</td>
-                                                <td>Regional Director</td>
-                                                <td>London</td>
-                                                <td>47</td>
-                                                <td>2011/03/21</td>
-                                                <td> <a href="javascript:;" class="btn btn-danger btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;">High</a> </td>
-                                                <td> <a href="javascript:;" class="btn btn-success btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;"><i class="fas fa-check"></i></a> </td>
-                                            </tr>
-                                            <tr>
-                                                <td> <img src="./images/download (2).png" alt="" width="50" height="50"> Serge Baldwin</td>
-                                                <td>Systems Administrator</td>
-                                                <td>London</td>
-                                                <td>21</td>
-                                                <td>2009/02/27</td>
-                                                <td> <a href="javascript:;" class="btn btn-danger btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;">High</a> </td>
-                                                <td> <a href="javascript:;" class="btn btn-success btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;"><i class="fas fa-check"></i></a> </td>
-                                            </tr>
-                                            <tr>
-                                                <td> <img src="./images/download (1).png" alt="" width="70" height="70"> Serge Baldwin</td>
-                                                <td>Developer</td>
-                                                <td>San Francisco</td>
-                                                <td>30</td>
-                                                <td>2010/07/14</td>
-                                                <td> <a href="javascript:;" class="btn btn-info btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;">low</a> </td>
-                                                <td> <a href="javascript:;" class="btn btn-danger btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;"><i class="fas fa-stop"></i></a> </td>
-                                            </tr>
-                                            <tr>
-                                                <td> <img src="./images/download (1).jpg" alt="" width="100" height="70"> Serge Baldwin</td>
-                                                <td>Regional Director</td>
-                                                <td>Edinburgh</td>
-                                                <td>51</td>
-                                                <td>2008/11/13</td>
-                                                <td> <a href="javascript:;" class="btn btn-info btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;">low</a> </td>
-                                                <td> <a href="javascript:;" class="btn btn-danger btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;"><i class="fas fa-stop"></i></a> </td>
-                                            </tr>
-                                            <tr>
-                                                <td> <img src="./images/agra.jpg" alt="" width="70" height="70"> Serge Baldwin</td>
-                                                <td>Javascript Developer</td>
-                                                <td>Singapore</td>
-                                                <td>29</td>
-                                                <td>2011/06/27</td>
-                                                <td> <a href="javascript:;" class="btn btn-warning btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;">Medium</a> </td>
-                                                <td> <a href="javascript:;" class="btn btn-secondary btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;"><i class="fas fa-check"></i></a> </td>
-                                            </tr>
-                                            <tr>
-                                                <td> <img src="./images/download.png" alt="" width="70" height="70"> Serge Baldwin</td>
-                                                <td>Customer Support</td>
-                                                <td>New York</td>
-                                                <td>27</td>
-                                                <td>2011/01/25</td>
-                                                <td> <a href="javascript:;" class="btn btn-danger btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;">High</a> </td>
-                                                <td> <a href="javascript:;" class="btn btn-success btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;"><i class="fas fa-check"></i></a> </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </main>
-                
-            </div>
+                <div class="sb-sidenav-footer">
+                    <div class="small">Logged in as:</div>
+                    Start Bootstrap
+                </div>
+            </nav>
         </div>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
-        <script src="assets/demo/datatables-demo.js"></script> -->
-    </body>   
+        <div id="layoutSidenav_content">
+
+            <main>
+                <div class="container-fluid" style="margin-top: 50px;">
+                    <a href="#" class="  d-sm-inline-block text-center py-2 px-2 mt-3 rounded text-white add-projects"
+                        data-toggle="modal" data-target="#addprojects" style="float: right;background-color: #72736E;">
+                        <i class="fas fa-plus-circle align-middle text-white"></i> <span>Add Projects</span>
+                    </a>
+
+                </div>
+                <div class="modal fade" id="addprojects">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header" style="background-color: #72736E;">
+                                <h5 class="modal-title">
+                                    <i class="fas fa-plus-circle"></i> Add Projects
+                                </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+
+                            <form class="add-projects">
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="Project-name" class="col-form-label"> Add Project name</label>
+                                        <input type="text" class="form-control" id="project-name">
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="task-name" class="col-form-label">Add team members</label>
+                                        <br>
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                                width: 30px;
+                                                height: 30px;
+                                                border-radius: 50%;">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                                width: 30px;
+                                                height: 30px;
+                                                border-radius: 50%;">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                                width: 30px;
+                                                height: 30px;
+                                                border-radius: 50%;">
+                                        <i class="fas fa-plus-circle"></i>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="project-name" class="col-form-label">Add due dates</label>
+                                        <input type="date" class="form-control" id="project-name">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="project-checklist" class="col-form-label">Add checklist</label>
+                                        <input type="file" class="form-control" id="project-checklist">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="project-budget" class="col-form-label">Add Budget</label>
+                                        <input type="number" class="form-control" id="project-budget">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="project-attachment" class="col-form-label">Add documentation</label>
+                                        <input type="file" class="form-control" id="project-attachment">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="project-description" class="col-form-label">Description</label>
+                                        <textarea class="form-control" rows="5" id="project-description"></textarea>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn font-weight-bold send-email" style="background-color: #72736E;">Save</button>
+                                </div>
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+                <h1 class="mt-4">Projects</h1>
+                <div class="card-body">
+                    <div class="table-responsive" style="width: 98%; background-color: #ffff;">
+                        <table class="table" id="dataTable" width="100%" cellspacing="0">
+                            <thead style="background-color: #72736E;">
+                                <tr>
+                                    <th>Projects</th>
+                                    <th>Assignee</th>
+                                    <th>Due Date</th>
+                                    <th>Checklist</th>
+                                    <th>Due date</th>
+                                    <th>Description</th>
+                                    <th>Risk Indicator</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td><a href="projectview.html">Solar panel inspection</a></td>
+                                    <td><div class="form-group">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <i class="fas fa-plus-circle"></i>
+                                    </div></td>
+                                    <td>13/05/2021</td>
+                                    <td><i class="fas fa-paperclip"></i></td>
+                                    <td>&#8373;5,000</td>
+                                    <td>Adom estates drone covarage</td>
+                                    <td>
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
+                                                checked>
+                                            <label class="custom-control-label" for="customSwitch1"></label>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td><a href="projectview.html">Drone Maintenance</a></td>
+                                    <td><div class="form-group">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <i class="fas fa-plus-circle"></i>
+                                    </div></td>
+                                    <td>13/05/2021</td>
+                                    <td><i class="fas fa-paperclip"></i></td>
+                                    <td>&#8373;5,000</td>
+                                    <td>Adom estates drone covarage</td>
+                                    <td>
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
+                                                checked>
+                                            <label class="custom-control-label" for="customSwitch1"></label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="projectview.html">Solar panel inspection</a></td>
+                                    <td><div class="form-group">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <i class="fas fa-plus-circle"></i>
+                                    </div></td>
+                                    <td>13/05/2021</td>
+                                    <td><i class="fas fa-paperclip"></i></td>
+                                    <td>&#8373;5,000</td>
+                                    <td>Adom estates drone covarage</td>
+                                    <td>
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
+                                                checked>
+                                            <label class="custom-control-label" for="customSwitch1"></label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="projectview.html">Supply for drones to Zipline</a></td>
+                                    <td><div class="form-group">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <i class="fas fa-plus-circle"></i>
+                                    </div></td>
+                                    <td>13/05/2021</td>
+                                    <td><i class="fas fa-paperclip"></i></td>
+                                    <td>&#8373;5,000</td>
+                                    <td>Adom estates drone covarage</td>
+                                    <td>
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
+                                                checked>
+                                            <label class="custom-control-label" for="customSwitch1"></label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="projectview.html">Crop monitoring at Ho Farms</a></td>
+                                    <td><div class="form-group">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <i class="fas fa-plus-circle"></i>
+                                    </div></td>
+                                    <td>13/05/2021</td>
+                                    <td><i class="fas fa-paperclip"></i></td>
+                                    <td>&#8373;5,000</td>
+                                    <td>Adom estates drone covarage</td>
+                                    <td>
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
+                                              checked>
+                                            <label class="custom-control-label" for="customSwitch1"></label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="projectview.html">Mining survey at Obuasi</a></td>
+                                    <td><div class="form-group">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <i class="fas fa-plus-circle"></i>
+                                    </div></td>
+                                    <td>13/05/2021</td>
+                                    <td><i class="fas fa-paperclip"></i></td>
+                                    <td>&#8373;5,000</td>
+                                    <td>Adom estates drone covarage</td>
+                                    <td>
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
+                                                checked>
+                                            <label class="custom-control-label" for="customSwitch1"></label>
+                                        </div>
+                                    </td>
+                                </tr>
+                               
+                                <tr>
+                                    <td> <a href="projectview.html">Crop Spraying</a> </td>
+                                    <td><div class="form-group">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <i class="fas fa-plus-circle"></i>
+                                    </div></td>
+                                    <td>13/05/2021</td>
+                                    <td><i class="fas fa-paperclip"></i></td>
+                                    <td>&#8373;5,000</td>
+                                    <td>Adom estates drone covarage</td>
+                                    <td>
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
+                                                checked>
+                                            <label class="custom-control-label" for="customSwitch1"></label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="projectview.html">Crop monitoring at Ho Farms</a></td>
+                                    <td><div class="form-group">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <i class="fas fa-plus-circle"></i>
+                                    </div></td>
+                                    <td>13/05/2021</td>
+                                    <td><i class="fas fa-paperclip"></i></td>
+                                    <td>&#8373;5,000</td>
+                                    <td>Adom estates drone covarage</td>
+                                    <td>
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
+                                              checked>
+                                            <label class="custom-control-label" for="customSwitch1"></label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="projectview.html">Crop monitoring at Ho Farms</a></td>
+                                    <td><div class="form-group">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <i class="fas fa-plus-circle"></i>
+                                    </div></td>
+                                    <td>13/05/2021</td>
+                                    <td><i class="fas fa-paperclip"></i></td>
+                                    <td>&#8373;5,000</td>
+                                    <td>Adom estates drone covarage</td>
+                                    <td>
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
+                                              checked>
+                                            <label class="custom-control-label" for="customSwitch1"></label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="projectview.html">Solar panel inspection</a></td>
+                                    <td><div class="form-group">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <i class="fas fa-plus-circle"></i>
+                                    </div></td>
+                                    <td>13/05/2021</td>
+                                    <td><i class="fas fa-paperclip"></i></td>
+                                    <td>&#8373;5,000</td>
+                                    <td>Adom estates drone covarage</td>
+                                    <td>
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
+                                                checked>
+                                            <label class="custom-control-label" for="customSwitch1"></label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="projectview.html">Crop monitoring at Ho Farms</a></td>
+                                    <td><div class="form-group">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <i class="fas fa-plus-circle"></i>
+                                    </div></td>
+                                    <td>13/05/2021</td>
+                                    <td><i class="fas fa-paperclip"></i></td>
+                                    <td>&#8373;5,000</td>
+                                    <td>Adom estates drone covarage</td>
+                                    <td>
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
+                                              checked>
+                                            <label class="custom-control-label" for="customSwitch1"></label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="projectview.html">Solar panel inspection</a></td>
+                                    <td><div class="form-group">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <i class="fas fa-plus-circle"></i>
+                                    </div></td>
+                                    <td>13/05/2021</td>
+                                    <td><i class="fas fa-paperclip"></i></td>
+                                    <td>&#8373;5,000</td>
+                                    <td>Adom estates drone covarage</td>
+                                    <td>
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
+                                                checked>
+                                            <label class="custom-control-label" for="customSwitch1"></label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="projectview.html">Harbour inspection</a></td>
+                                    <td><div class="form-group">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <i class="fas fa-plus-circle"></i>
+                                    </div></td>
+                                    <td>13/05/2021</td>
+                                    <td><i class="fas fa-paperclip"></i></td>
+                                    <td>&#8373;5,000</td>
+                                    <td>Adom estates drone covarage</td>
+                                    <td>
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
+                                                checked>
+                                            <label class="custom-control-label" for="customSwitch1"></label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="projectview.html">Crop monitoring at Ho Farms</a></td>
+                                    <td><div class="form-group">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                        <i class="fas fa-plus-circle"></i>
+                                    </div></td>
+                                    <td>13/05/2021</td>
+                                    <td><i class="fas fa-paperclip"></i></td>
+                                    <td>&#8373;5,000</td>
+                                    <td>Adom estates drone covarage</td>
+                                    <td>
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
+                                              checked>
+                                            <label class="custom-control-label" for="customSwitch1"></label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        </div>
+    </div>
+    </main>
+
+    </div>
+    </div>
+    <script src="js/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/datatables-demo.js"></script> -->
+</body>
+
 </html>

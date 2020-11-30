@@ -6,21 +6,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Clients- SB Admin</title>
+        <title>Maindashboard- SB Admin</title>
         <link href="css/styles.css" rel="stylesheet" />
-        <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+        <link href="css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+        <script defer src="fontawesome-free-5.15.1-web/js/all.js"></script>
     </head>
     <body class="sb-nav-fixed" >
-        <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color: #74756E;">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color:#343A40">
             <a class="navbar-brand" href="index.html"> <img src="./images/logo-300x67.png" alt="" srcset="" height="50" width="200"> </a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
                 <div class="input-group">
                     <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
                     <div class="input-group-append">
-                        <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                        <button class="btn" style="background-color: #72736E;" type="button"><i class="fas fa-search"></i></button>
                     </div>
                 </div>
             </form>
@@ -39,20 +38,46 @@
         <div id="layoutSidenav" > 
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                    <div class="sb-sidenav-menu" style="background-color: #808266;">
-                        <div class="nav">
-                            <div class="sb-sidenav-menu-heading"></div>
-                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Dashboard
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.html">Static Navigation</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
-                                </nav>
-                              </div>
+                    <div class="sb-sidenav-menu">
+                        <div class="sb-sidenav-menu">
+                            <div class="nav">
+                                <!-- <a class="nav-link" href="maindashboard.html">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                    Dashboard
+                                </a> -->
+                                <a class="nav-link" href="maindashboard.html">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                                    Team Dashboard
+                                </a>
+                                <a class="nav-link" href="dashboardprojectlead.html">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                                    Project Lead
+                                </a>
+                                <a class="nav-link" href="operation.html">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                                    Operational Director
+                                </a>
+                                <a class="nav-link" href="marketing.html">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                                    Marketing Team
+                                </a>
+                                <a class="nav-link" href="clients.html">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-user-friends"></i></div>
+                                    Clients
+                                </a>
+                                <a class="nav-link" href="project.html">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-project-diagram"></i></div>
+                                    Projects
+                                </a>
+                                <a class="nav-link" href="projectview.html">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-project-diagram"></i></div>
+                                    Project Overview
+                                </a>
+                                <a class="nav-link" href="tasks.html">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-project-diagram"></i></div>
+                                    Creat Task
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
@@ -62,11 +87,11 @@
                 </nav>
             </div>
             <div id="layoutSidenav_content">
-                <main>
+               
                     <div class="container-fluid">
                         <div style="float: right" class="btn-toolbar mb-2 mb-md-0">
-                            <button style="margin-right:5px " type="button"  class=" btn btn-sm btn-outline-secondary ">
-                                All
+                            <button  style="margin-right:5px " type="button"  class=" btn btn-sm btn-outline-secondary ">
+                               <a href="project.html">All</a> 
                               </button>
                               <button style="margin-right:5px " type="button" class="btn btn-sm btn-outline-secondary ">
                                 Ongoing 
@@ -81,93 +106,218 @@
                               <div class="container-fluid">
                                   
                                   <ol class="breadcrumb mb-4">
-                                      <li class="breadcrumb-item active">Dashboard</li>
+                                      <li class="breadcrumb-item active">You are welcome</li>
                                   </ol>
-                                  <div class="row" >
-                                      <div class="col-xl-8">
-                                          <div class="row">
-                                              <div class="col-xl-5 col-md-6">
-                                                  <div class="card mb-4 stats-container">
-                                                      
-                                                      <div>
-                                                        <p class="text-center stats-value"><img src="images/precision-farming-1-1024x576.jpeg" alt="" style="width: 400px;height: 200px;"></p>
-                                                      </div>
-                                                      <div>
-                                                          <p class="text-center"><a href="clients.html">Clients</a> </p>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                              <div class="col-xl-5 col-md-6">
-                                                <div class="card mb-4 stats-container">
+                                  <div class="row">
+                                      <div class="col">
+                                        <div class="card" style="width: 29rem; height: 20rem;">
+                                            <img src="./images/precision-farming-1-1024x576.jpeg" class="card-img-top" alt="..." style="width:29rem ; height: 15rem;">
+                                            <div class="card-body">
+                                              <h5 class="text-center"> <a href="project.html">CROP MONITORING</a> </h5>
+                                            </div>
+                                          </div>
+
+                                      </div>
+                                      <div class="col">
+                                        <div class="card" style="width: 29rem; height: 20rem;">
+                                            <img src="./images/topo-survey-1024x523.jpg" class="card-img-top"  alt="..." style="width:29rem ; height: 15rem;">
+                                            <div class="card-body">
+                                              <h5 class="text-center">MAPPING & SURVEYING </h5>
+                                            </div>
+                                          </div>
+                                      </div>
+                                      <div class="col">
+                                        <div class="card" style="width: 29rem; height: 20rem;">
+                                            <img src="./images/commnunity-dev-projects.jpg" class="card-img-top" alt="..." style="width:29rem ; height: 15rem;">
+                                            <div class="card-body">
+                                              <h5 class="text-center">3D MODELING</h5>
+                                            </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="row" style="margin-top: 50px;">
+                                    <div class="col">
+                                      <div class="card" style="width: 29rem; height: 20rem;">
+                                          <img src="./images/IMG_1363-1024x683.jpg" class="card-img-top" alt="..." style="width:29rem ; height: 15rem;">
+                                          <div class="card-body">
+                                            <h5 class="text-center">CROP SPRAYING <h5>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                      <div class="card" style="width: 29rem; height: 20rem;">
+                                          <img src="./images/power.jpg" class="card-img-top"  alt="..." style="width:29rem ; height: 15rem;">
+                                          <div class="card-body">
+                                            <h5 class="text-center">ASSET INSPECTION </h5>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                      <div class="card" style="width: 29rem; height: 20rem;">
+                                          <img src="./images/atmos-drone-768x432.png" class="card-img-top" alt="..." style="width:29rem ; height: 15rem;">
+                                          <div class="card-body">
+                                            <h5 class="text-center">DRONE MAINTENANCE</h5>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+        </div>
+       
+    
+                    </div>
+                    <div class="row" style="margin-top: 50px;">
+                        <div class="col">
+                            <div class="card shadow mb-4">
+                                <div class="card-body">
+                                    <div class="container">
+                                        <div class="row" >
+                                            <div class="col">
+                                                <h6>Paperwork</h6>
+                                                <small><span class="text-muted">Group </span><b>Support</b></small>
+                                            </div>
+                                            <div class="col">
+                                                <a href="">
+                                                    <p class="text-right">View details</p>
                                                     
-                                                    <div>
-                                                      <p class="text-center stats-value"><img src="images/topo-survey-1024x523.jpg" alt="" style="width: 400px;height: 200px;"></p>
-                                                    </div>
-                                                    <div>
-                                                        <p class="text-center"><a href="clients.html">Clients</a> </p>
-                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="row"  style="border-bottom: 1px solid #cccccc; margin-top: 10px;">
+                                            <div class="col-md-11">
+                                                <div class="form-check form-check-inline">
+                                                    <label class="form-check-label" for="inlineCheckbox1">
+                                                        <p class="text-left">Darko farms spraying projects</p>
+                                                    </label>
                                                 </div>
                                             </div>
-                                            <div class="col-xl-5 col-md-6">
-                                              <div class="card mb-4 stats-container">
-                                    
-                                                  <div>
-                                                    <p class="text-center stats-value"><img src="images/IMG_1363-1024x683.jpg" alt="" style="width: 400px;height: 200px;"></p>
-                                                  </div>
-                                                  <div>
-                                                      <p class="text-center"><a href="clients.html">Clients</a> </p>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                              <div class="col-xl-5 col-md-6">
-                                                  <div class="card mb-4 stats-container">
-                                                      <div class="text-center">
-                                                          
-                                                      </div>
-                                                      <div>
-                                                         
-                                                         
-                                                        <p class="text-center stats-value"><img src="images/commnunity-dev-projects.jpg" alt="" style="width: 400px;height: 200px;"></p>
-                                                      </div>
-                                                      <div>
-                                                          <p class="text-center">Completed Tasks</p>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                              <div class="col-xl-5 col-md-6">
-                                                  <div class="card mb-4 stats-container">
-                                                      <div class="text-center">
-                                                         
-                                                      </div>
-                                                      <div>
-                                                        <p class="text-center stats-value"><img src="images/power.jpg" alt="" style="width: 400px;height: 200px;"></p>
-                                                      </div>
-                                                      <div>
-                                                          <p class="text-center">Notification</p>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                              <div class="col-xl-5 col-md-6">
-                                                  <div class="card mb-4 stats-container">
-                                                      <div class="text-center">
-                                                     
-                                                      </div>
-                                                      <div>
-                                                          <p class="text-center stats-value"><img src="images/atmos-drone-768x432.png" alt="" style="width: 400px;height: 200px;"></p>
-                                                      </div>
-                                                      <div>
-                                                          <p class="text-center">Reports</p>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                         
-                                      </div>
-                              
+                                            <div class="col-md-1">
+                                                <i class="fas fa-file-pdf"></i>
+                                            </div>
+                                        </div>
+                                        <div class="row"  style="border-bottom: 1px solid #cccccc;  margin-top: 10px;">
+                                            <div class="col-md-11">
+                                                <div class="form-check form-check-inline">
+                                                    <label class="form-check-label" for="inlineCheckbox1">
+                                                        <p class="text-left">3D Modelling</p>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <i class="fas fa-file-pdf"></i>
+                                            </div>
+                                        </div>
+                                        <div class="row"  style="border-bottom: 1px solid #cccccc;  margin-top:10px;">
+                                            <div class="col-md-11">
+                                                <div class="form-check form-check-inline">
+                                                    <label class="form-check-label" for="inlineCheckbox1">
+                                                        <p class="text-left">spraying insecticides</p>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1" >
+                                                <i class="fas fa-file-pdf"></i>
+                                            </div>
+                                        </div>
+                                        <div class="row"  style="border-bottom: 1px solid #cccccc;  margin-top:10px;">
+                                            <div class="col-md-11">
+                                                <div class="form-check form-check-inline">
+                                                    <label class="form-check-label" for="inlineCheckbox1">
+                                                        <p class="text-left">Land Surveying</p>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <i class="fas fa-file-pdf"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col">
+                            <div class="card shadow mb-4">
+                                <div class="card-body">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h6> Pending Submission</h6>
+                                                <small class="font-weight-light">Today</small>
+                                                <p>
+                                                    <small class="font-weight-light">
+                                                        Employee
+                                                    </small>
+                                                </p>
+                                            </div>
+                                            <div class="col">
+                                                <a href="">
+                                                    <p class="text-right">View details</p>
+                                                    <p class="text-right" ><i class="fas fa-plus-circle"></i></p>
+                                                </a>
+                                        </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row" style="border-bottom: 1px solid #cccccc; margin-top: 10px;">
+                                <div class="col-md-11">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label" for="inlineCheckbox1">
+                                            <p>
+                                                <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                                width: 30px;
+                                                height: 30px;
+                                                border-radius: 50%;"> Alex Osei
+                                            </p>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-1" >
+                                    <i class="fas fa-check-circle"></i> 
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-11" style="border-bottom: 1px solid #cccccc; margin-top: 10px;">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label" for="inlineCheckbox1">
+                                            <p>
+                                                <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                                width: 30px;
+                                                height: 30px;
+                                                border-radius: 50%;"> Alex Osei
+                                            </p>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                    <i class="fas fa-pause"></i>
+                                </div>
+                            </div>
+                            <div class="row" style="border-bottom: 1px solid #cccccc; margin-top: 10px;">
+                                <div class="col-md-11">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label" for="inlineCheckbox1">
+                                            <p>
+                                                <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                                width: 30px;
+                                                height: 30px;
+                                                border-radius: 50%;"> Alex Osei
+                                            </p>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            </div>
+           
             
-       
-        </div>
         
         
         

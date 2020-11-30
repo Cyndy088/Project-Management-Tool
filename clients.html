@@ -10,11 +10,9 @@
     <title>Clients- SB Admin</title>
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/custom-styles.css" rel="stylesheet" />
-    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"
-        crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"
-        crossorigin="anonymous"></script>
+    <link href="css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <script defer src="fontawesome-free-5.15.1-web/js/all.js"></script>
+    
 </head>
 
 <body class="sb-nav-fixed">
@@ -28,7 +26,7 @@
                 <input class="form-control" type="text" placeholder="Search for..." aria-label="Search"
                     aria-describedby="basic-addon2" />
                 <div class="input-group-append">
-                    <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                    <button class="btn" style="background-color:   #72736E;" type="button"><i  class="fas fa-search"></i></button>
                 </div>
             </div>
         </form>
@@ -51,9 +49,33 @@
                 <div class="sb-sidenav-menu" >
                     <div class="nav">
                             <div class="sb-sidenav-menu-heading"></div>
-                            <a class="nav-link" href="index.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <!-- <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon font-weight-bold"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
+                            </a>
+                            <a class="nav-link" href="clients.html">
+                                <div class="sb-nav-link-icon font-weight-bold"><i class="fas fa-user-friends"></i></div>
+                                Clients
+                            </a>
+                            <a class="nav-link" href="project.html">
+                                <div class="sb-nav-link-icon font-weight-bold"><i class="fas fa-project-diagram"></i></div>
+                                Projects
+                            </a> -->
+                            <a class="nav-link" href="maindashboard.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                                Team Dashboard
+                            </a>
+                            <a class="nav-link" href="dashboardprojectlead.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                                Project Lead
+                            </a>
+                            <a class="nav-link" href="operation.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                                Operational Director
+                            </a>
+                            <a class="nav-link" href="marketing.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                                Marketing Team
                             </a>
                             <a class="nav-link" href="clients.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-user-friends"></i></div>
@@ -62,6 +84,14 @@
                             <a class="nav-link" href="project.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-project-diagram"></i></div>
                                 Projects
+                            </a>
+                            <a class="nav-link" href="projectview.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-project-diagram"></i></div>
+                                Project Overview
+                            </a>
+                            <a class="nav-link" href="tasks.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-project-diagram"></i></div>
+                                Creat Task
                             </a>
                     </div>
                 </div>
@@ -78,14 +108,67 @@
                     <div class="card-header">
                         <i class="fas fa-user-friends mr-1"></i>
                        All Clients
+                       <a href="#" class="  d-sm-inline-block text-center py-2 px-2 mt-3 rounded text-white add-clients" data-toggle="modal" data-target="#addclients" style="float: right;background-color: #72736E;">
+                        <i class="fas fa-plus-circle align-middle text-white"></i> <span>Add Clients</span>
+                    </a>
+                       
                     </div>
-                    <div >
-                        <a href="javascript:;" style="float: right; margin: 10px ; border-radius: 20px;" class="btn btn-primary btn-sm m-l-5">Add New Client <i class="fas fa-plus mr-1"></i> </a>
+                    <div class="modal fade" id="addclients">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header" style="background-color: #72736E;">
+                                    <h5 class="modal-title">
+                                        <i class="fas fa-plus-circle"></i> Add Clients
+                                    </h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <i class="fas fa-times-circle"></i>
+                                    </button>
+                                </div>
+    
+                                <form class="add-clients">
+                                    <div class="modal-body">  
+                                        <div class="form-group">
+                                            <label for="client-name" class="col-form-label">Name</label>
+                                            <input type="text" class="form-control" id="client-name" >
+                                        </div>
+
+                                        
+                                        <div class="form-group">
+                                            <label for="client-email" class="col-form-label">Add email</label>
+                                            <input type="text" class="form-control" id="client-email" >
+                                            
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="client-request" class="col-form-label">Add request</label>
+                                            <textarea class="form-control" rows="2" id="client-request"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="client-invoice" class="col-form-label">Add Invoice</label>
+                                            <input type="file" class="form-control" id="client-invoice" >
+                                            
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="client-date" class="col-form-label">Add date</label>
+                                            <input type="date" class="form-control" id="client-date" >
+                                            
+                                        </div>
+                                        
+                                        
+                                    </div>                                         
+                                    <div class="modal-footer">                                                 
+                                        <button type="submit" class="btn font-weight-bold send-email" style="background-color: #72736E;">  Save</button>
+                                    </div>
+                                </form>
+    
+    
+                            </div>
+                        </div>
                     </div>
+    
                     <div class="card-body">
                         <div class="table-responsive" style=" text-align: center; background-color: #fff;">
                             <table class="table" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
+                                <thead style="background-color: #72736E;"> 
                                     <tr>
                                         <th style="width: 280px;">Client</th>
                                         <th>Email address</th>
@@ -98,99 +181,87 @@
                                 
                                 <tbody>
                                     <tr>
-                                        <td> <img src="./images/Vodafone_Ghana-Logo.wine.png" alt="" width="70" height="70"> Tiger Nixon</td>
-                                        <td>Vodafone Ghana</td>
-                                        <td>events@vodaone.com</td>
-                                        
+                                        <td> <img src="./images/Vodafone_Ghana-Logo.wine.png" alt="" width="70" height="70"> Vodafone Ghana</td>
+                                        <td>something@vodafone.com</td>
+                                        <td>Asset Inspection <i class="fas fa-paperclip"></i></td>
                                         <td>2011/04/25</td>
-                                        <td> <a href="javascript:;" class="btn btn-primary btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;">Send email</a> </td>
+                                        <td> 
+                                        <button type="submit" class="btn btn-primary send-email" style="border-radius: 20px;">send email</button>
+                                        </td>
                                     </tr>
                                     
                                     <tr>
-                                        <td> <img src="./images/download.jpg" alt="" width="70" height="70"> Serge Baldwin</td>
-                                        <td>Mtn Ghana</td>
-                                        <td>events@mtngh.com</td>
-                                       
+                                        <td> <img src="./images/download (1).png" alt="" width="50" height="70">MTN Ghana</td>
+                                        <td>something@mtngh.com</td>
+                                        <td>Maintenance of drones <i class="fas fa-paperclip"></i></td>
                                         <td>2012/04/09</td>
-                                        <td> <a href="javascript:;" class="btn btn-primary btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;">Send email</a> </td>
+                                        <td> 
+                                            <button type="submit" class="btn btn-primary send-email" style="border-radius: 20px;">send email</button>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td> <img src="./images/download.jpg" alt="" width="70" height="70"> Serge Baldwin</td>
-                                        <td>Zipline Ghana</td>
-                                        <td>info@zipline.com</td>
-                                
+                                        <td> <img src="./images/download.png" alt="" width="100" height="70"> Zipline</td>
+                                        <td>something@zipline.com</td>
+                                        <td>Purchase of zones <i class="fas fa-paperclip"></i></td>
                                         <td>2010/01/04</td>
-                                        <td> <a href="javascript:;" class="btn btn-primary btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;">Send email</a> </td>
+                                        <td> 
+                                            <button type="submit" class="btn btn-primary send-email" style="border-radius: 20px;">send email</button>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td> <img src="./images/download.jpg" alt="" width="70" height="70"> Serge Baldwin</td>
-                                        <td>Newmount Ghana</td>
-                                        <td>events@newmount.com</td>
-                                        
+                                        <td> <img src="./images/Screen20Shot202016-04-2120at208.16.4720AM.png" alt="" width="70" height="70">Newmount Ghana</td>
+                                        <td>something@newmountgh.com</td>
+                                        <td>Surveying <i class="fas fa-paperclip"></i></td>
                                         <td>2012/06/01</td>
-                                        <td> <a href="javascript:;" class="btn btn-primary btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;">Send email</a> </td>
+                                        <td> 
+                                            <button type="submit" class="btn btn-primary send-email" style="border-radius: 20px;">send email</button>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td> <img src="./images/Vodafone_Ghana-Logo.wine.png" alt="" width="70" height="70"> Serge Baldwin</td>
-                                        <td>Vodafone Ghana</td>
-                                        <td>events@vodaone.com</td>
+                                        <td> <img src="./images/download (3).png" alt="" width="70" height="70">Appollonia Ghana</td>
+                                        <td>something@appolloniagh.com</td>
+                                        <td>3D Modeling <i class="fas fa-paperclip"></i></td>
                                         <td>2013/02/01</td>
-                                        <td> <a href="javascript:;" class="btn btn-primary btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;">Send email</a> </td>
+                                        <td> 
+                                            <button type="submit" class="btn btn-primary send-email" style="border-radius: 20px;">send email</button>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td> <img src="./images/download (3).png" alt="" width="70" height="70">Vodafone Ghana </td>
-                                        <td>events@vodaone.com</td>
-                                        <td>3D modeling</td>
-                                        
+                                        <td> <img src="./images/download (2).png" alt="" width="100" height="50">Mantrac Ghana Ltd</td>
+                                        <td>somenthing@montrac.com</td>
+                                        <td>Surveying <i class="fas fa-paperclip"></i></td>
                                         <td>2011/12/06</td>
-                                        <td> <a href="javascript:;" class="btn btn-primary btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;">Send email</a> </td>
+                                        <td> 
+                                            <button type="submit" class="btn btn-primary send-email" style="border-radius: 20px;">send email</button>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td> <img src="./images/download (3).jpg" alt="" width="70" height="70"> Serge Baldwin</td>
-                                        <td>Vodafone Ghana</td>
-                                        <td>events@vodaone.com</td>
-                                       
-                                        <td>2011/03/21</td>
-                                        <td> <a href="javascript:;" class="btn btn-primary btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;">Send email</a> </td>
-                                    </tr>
-                                    <tr>
-                                        <td> <img src="./images/download (2).png" alt="" width="50" height="50"> Serge Baldwin</td>
-                                        <td>Vodafone Ghana</td>
-                                        <td>events@vodaone.com</td>
-                                        <td>2009/02/27</td>
-                                        <td> <a href="javascript:;" class="btn btn-primary btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;">Send email</a> </td>
-                                    </tr>
-                                    <tr>
-                                        <td> <img src="./images/download (1).png" alt="" width="70" height="70"> Serge Baldwin</td>
-                                        <td>Developer</td>
-                                        <td>San Francisco</td>
-                                       
-                                        <td>2010/07/14</td>
-                                        <td> <a href="javascript:;" class="btn btn-primary btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;">Send email</a> </td>
-                                    </tr>
-                                    <tr>
-                                        <td> <img src="./images/download (1).jpg" alt="" width="100" height="70"> Serge Baldwin</td>
-                                        <td>Regional Director</td>
-                                        <td>Edinburgh</td>
-                                       
+                                        <td> <img src="./images/download.jpg" alt="" width="100" height="70"> Thai Union</td>
+                                        <td>something@thaiunion.com</td>
+                                        <td>3D Modeling <i class="fas fa-paperclip"></i></td>
                                         <td>2008/11/13</td>
-                                        <td> <a href="javascript:;" class="btn btn-primary btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;">Send email</a> </td>
+                                        <td> 
+                                            <button type="submit" class="btn btn-primary send-email" style="border-radius: 20px;">send email</button>
+                                        </td>
                                     <tr>
-                                        <td> <img src="./images/agra.jpg" alt="" width="70" height="70"> Serge Baldwin</td>
-                                        <td>Javascript Developer</td>
-                                        <td>Singapore</td>
-                                       
+                                    <tr>
+                                        <td> <img src="./images/download (1).jpg" alt="" width="100" height="70"> RMG Ghana Limited</td>
+                                        <td>something@rmg.com</td>
+                                        <td>Crop Spraying <i class="fas fa-paperclip"></i></td>
+                                        <td>2008/11/13</td>
+                                        <td> 
+                                            <button type="submit" class="btn btn-primary send-email" style="border-radius: 20px;">send email</button>
+                                        </td>
+                                    <tr>
+                                        <td> <img src="./images/agra.jpg" alt="" width="70" height="70"> Alliance for a Green Revolution in Africa</td>
+                                        <td>something@agra.com</td>
+                                        <td>Crop Monitoring <i class="fas fa-paperclip"></i></td>
                                         <td>2011/06/27</td>
-                                        <td> <a href="javascript:;" class="btn btn-primary btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;">Send email</a> </td>
+                                        <td> 
+                                            <button type="submit" class="btn btn-primary send-email" style="border-radius: 20px;">send email</button>
+                                        </td>
                                     </tr>
-                                    <tr>
-                                        <td> <img src="./images/download.png" alt="" width="70" height="70"> Serge Baldwin</td>
-                                        <td>Customer Support</td>
-                                        <td>New York</td>
-                                       
-                                        <td>2011/01/25</td>
-                                        <td> <a href="javascript:;" class="btn btn-primary btn-sm m-l-5" style="border-radius: 20px; margin-top: 0px;">Send email</a> </td>
-                                    </tr>
+                                    
                                 </tbody>
                             </table>
                         </div>
@@ -204,9 +275,9 @@
 
 
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-            crossorigin="anonymous"></script>
+        
+        <script src="js/jquery-3.5.1.slim.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/scripts.js"></script>
 
 
