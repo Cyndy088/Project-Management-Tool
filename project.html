@@ -24,7 +24,8 @@
                 <input class="form-control" type="text" placeholder="Search for..." aria-label="Search"
                     aria-describedby="basic-addon2" />
                 <div class="input-group-append">
-                    <button class="btn " style="background-color: #72736E;" type="button"><i class="fas fa-search"></i></button>
+                    <button class="btn " style="background-color: #72736E;" type="button"><i
+                            class="fas fa-search"></i></button>
                 </div>
             </div>
         </form>
@@ -120,11 +121,11 @@
                                 </button>
                             </div>
 
-                            <form class="add-projects">
+                            <form class="add-projects" onsubmit="addProject(event)">
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="Project-name" class="col-form-label"> Add Project name</label>
-                                        <input type="text" class="form-control" id="project-name">
+                                        <input type="text" class="form-control" id="project-name" name="projectName">
                                     </div>
 
 
@@ -148,31 +149,36 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="project-name" class="col-form-label">Add due dates</label>
-                                        <input type="date" class="form-control" id="project-name">
+                                        <input type="date" class="form-control" id="project-name" name="projectDate">
 
                                     </div>
                                     <div class="form-group">
                                         <label for="project-checklist" class="col-form-label">Add checklist</label>
-                                        <input type="file" class="form-control" id="project-checklist">
+                                        <input type="file" class="form-control" id="project-checklist"
+                                            name="projectChecklist">
 
                                     </div>
                                     <div class="form-group">
                                         <label for="project-budget" class="col-form-label">Add Budget</label>
-                                        <input type="number" class="form-control" id="project-budget">
+                                        <input type="number" class="form-control" id="project-budget"
+                                            name="projectBudget">
                                     </div>
                                     <div class="form-group">
                                         <label for="project-attachment" class="col-form-label">Add documentation</label>
-                                        <input type="file" class="form-control" id="project-attachment">
+                                        <input type="file" class="form-control" id="project-attachment"
+                                            name="projectAttachment">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="project-description" class="col-form-label">Description</label>
-                                        <textarea class="form-control" rows="5" id="project-description"></textarea>
+                                        <textarea class="form-control" rows="5" id="project-description"
+                                            name="projectDescription"></textarea>
                                     </div>
 
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="submit" class="btn font-weight-bold send-email" style="background-color: #72736E;">Save</button>
+                                    <button type="submit" class="btn font-weight-bold send-email"
+                                        style="background-color: #72736E;">Save</button>
                                 </div>
                             </form>
 
@@ -196,391 +202,9 @@
                                 </tr>
                             </thead>
 
-                            <tbody>
-                                <tr>
-                                    <td><a href="projectview.html">Solar panel inspection</a></td>
-                                    <td><div class="form-group">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <i class="fas fa-plus-circle"></i>
-                                    </div></td>
-                                    <td>13/05/2021</td>
-                                    <td><i class="fas fa-paperclip"></i></td>
-                                    <td>&#8373;5,000</td>
-                                    <td>Adom estates drone covarage</td>
-                                    <td>
-                                        <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
-                                                checked>
-                                            <label class="custom-control-label" for="customSwitch1"></label>
-                                        </div>
-                                    </td>
-                                </tr>
+                            <tbody id="allprojects">
+                                
 
-                                <tr>
-                                    <td><a href="projectview.html">Drone Maintenance</a></td>
-                                    <td><div class="form-group">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <i class="fas fa-plus-circle"></i>
-                                    </div></td>
-                                    <td>13/05/2021</td>
-                                    <td><i class="fas fa-paperclip"></i></td>
-                                    <td>&#8373;5,000</td>
-                                    <td>Adom estates drone covarage</td>
-                                    <td>
-                                        <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
-                                                checked>
-                                            <label class="custom-control-label" for="customSwitch1"></label>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="projectview.html">Solar panel inspection</a></td>
-                                    <td><div class="form-group">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <i class="fas fa-plus-circle"></i>
-                                    </div></td>
-                                    <td>13/05/2021</td>
-                                    <td><i class="fas fa-paperclip"></i></td>
-                                    <td>&#8373;5,000</td>
-                                    <td>Adom estates drone covarage</td>
-                                    <td>
-                                        <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
-                                                checked>
-                                            <label class="custom-control-label" for="customSwitch1"></label>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="projectview.html">Supply for drones to Zipline</a></td>
-                                    <td><div class="form-group">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <i class="fas fa-plus-circle"></i>
-                                    </div></td>
-                                    <td>13/05/2021</td>
-                                    <td><i class="fas fa-paperclip"></i></td>
-                                    <td>&#8373;5,000</td>
-                                    <td>Adom estates drone covarage</td>
-                                    <td>
-                                        <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
-                                                checked>
-                                            <label class="custom-control-label" for="customSwitch1"></label>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="projectview.html">Crop monitoring at Ho Farms</a></td>
-                                    <td><div class="form-group">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <i class="fas fa-plus-circle"></i>
-                                    </div></td>
-                                    <td>13/05/2021</td>
-                                    <td><i class="fas fa-paperclip"></i></td>
-                                    <td>&#8373;5,000</td>
-                                    <td>Adom estates drone covarage</td>
-                                    <td>
-                                        <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
-                                              checked>
-                                            <label class="custom-control-label" for="customSwitch1"></label>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="projectview.html">Mining survey at Obuasi</a></td>
-                                    <td><div class="form-group">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <i class="fas fa-plus-circle"></i>
-                                    </div></td>
-                                    <td>13/05/2021</td>
-                                    <td><i class="fas fa-paperclip"></i></td>
-                                    <td>&#8373;5,000</td>
-                                    <td>Adom estates drone covarage</td>
-                                    <td>
-                                        <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
-                                                checked>
-                                            <label class="custom-control-label" for="customSwitch1"></label>
-                                        </div>
-                                    </td>
-                                </tr>
-                               
-                                <tr>
-                                    <td> <a href="projectview.html">Crop Spraying</a> </td>
-                                    <td><div class="form-group">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <i class="fas fa-plus-circle"></i>
-                                    </div></td>
-                                    <td>13/05/2021</td>
-                                    <td><i class="fas fa-paperclip"></i></td>
-                                    <td>&#8373;5,000</td>
-                                    <td>Adom estates drone covarage</td>
-                                    <td>
-                                        <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
-                                                checked>
-                                            <label class="custom-control-label" for="customSwitch1"></label>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="projectview.html">Crop monitoring at Ho Farms</a></td>
-                                    <td><div class="form-group">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <i class="fas fa-plus-circle"></i>
-                                    </div></td>
-                                    <td>13/05/2021</td>
-                                    <td><i class="fas fa-paperclip"></i></td>
-                                    <td>&#8373;5,000</td>
-                                    <td>Adom estates drone covarage</td>
-                                    <td>
-                                        <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
-                                              checked>
-                                            <label class="custom-control-label" for="customSwitch1"></label>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="projectview.html">Crop monitoring at Ho Farms</a></td>
-                                    <td><div class="form-group">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <i class="fas fa-plus-circle"></i>
-                                    </div></td>
-                                    <td>13/05/2021</td>
-                                    <td><i class="fas fa-paperclip"></i></td>
-                                    <td>&#8373;5,000</td>
-                                    <td>Adom estates drone covarage</td>
-                                    <td>
-                                        <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
-                                              checked>
-                                            <label class="custom-control-label" for="customSwitch1"></label>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="projectview.html">Solar panel inspection</a></td>
-                                    <td><div class="form-group">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <i class="fas fa-plus-circle"></i>
-                                    </div></td>
-                                    <td>13/05/2021</td>
-                                    <td><i class="fas fa-paperclip"></i></td>
-                                    <td>&#8373;5,000</td>
-                                    <td>Adom estates drone covarage</td>
-                                    <td>
-                                        <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
-                                                checked>
-                                            <label class="custom-control-label" for="customSwitch1"></label>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="projectview.html">Crop monitoring at Ho Farms</a></td>
-                                    <td><div class="form-group">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <i class="fas fa-plus-circle"></i>
-                                    </div></td>
-                                    <td>13/05/2021</td>
-                                    <td><i class="fas fa-paperclip"></i></td>
-                                    <td>&#8373;5,000</td>
-                                    <td>Adom estates drone covarage</td>
-                                    <td>
-                                        <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
-                                              checked>
-                                            <label class="custom-control-label" for="customSwitch1"></label>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="projectview.html">Solar panel inspection</a></td>
-                                    <td><div class="form-group">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <i class="fas fa-plus-circle"></i>
-                                    </div></td>
-                                    <td>13/05/2021</td>
-                                    <td><i class="fas fa-paperclip"></i></td>
-                                    <td>&#8373;5,000</td>
-                                    <td>Adom estates drone covarage</td>
-                                    <td>
-                                        <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
-                                                checked>
-                                            <label class="custom-control-label" for="customSwitch1"></label>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="projectview.html">Harbour inspection</a></td>
-                                    <td><div class="form-group">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <i class="fas fa-plus-circle"></i>
-                                    </div></td>
-                                    <td>13/05/2021</td>
-                                    <td><i class="fas fa-paperclip"></i></td>
-                                    <td>&#8373;5,000</td>
-                                    <td>Adom estates drone covarage</td>
-                                    <td>
-                                        <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
-                                                checked>
-                                            <label class="custom-control-label" for="customSwitch1"></label>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="projectview.html">Crop monitoring at Ho Farms</a></td>
-                                    <td><div class="form-group">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                        <i class="fas fa-plus-circle"></i>
-                                    </div></td>
-                                    <td>13/05/2021</td>
-                                    <td><i class="fas fa-paperclip"></i></td>
-                                    <td>&#8373;5,000</td>
-                                    <td>Adom estates drone covarage</td>
-                                    <td>
-                                        <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
-                                              checked>
-                                            <label class="custom-control-label" for="customSwitch1"></label>
-                                        </div>
-                                    </td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -597,7 +221,98 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
-    <script src="assets/demo/datatables-demo.js"></script> -->
+    <script src="assets/demo/datatables-demo.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAiyqidqSCOQDE090C2ZraA-R5WI9DK5GA",
+            authDomain: "hacinta-94edb.firebaseapp.com",
+            databaseURL: "https://hacinta-94edb.firebaseio.com",
+            projectId: "hacinta-94edb",
+            storageBucket: "hacinta-94edb.appspot.com",
+            messagingSenderId: "58100753918",
+            appId: "1:58100753918:web:d8a99f59676d2306b90caf"
+        };   
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script>
+        var db = firebase.firestore();
+
+
+        function addProject(event) {
+            event.preventDefault();
+            db.collection('projects')
+                .add({
+                    projectName: event.target.projectName.value,
+                    projectDate: event.target.projectDate.value,
+                    projectChecklist: event.target.projectChecklist.value,
+                    projectBudget: event.target.projectBudget.value,
+                    projectAttachment: event.target.projectAttachment.value,
+                    projectDescription: event.target.projectDescription.value,
+
+                })
+                .then(function (docRef) {
+                    console.log('Document written with ID: ', docRef.id);
+                })
+                .catch(function (error) {
+                    console.error('Error adding document: ', error);
+                });
+        }
+
+        function getAllProjects() {
+            var projectsTable = document.getElementById('allprojects');
+            db.collection("projects").get().then((querySnapshot) => {
+                projectsTable.innerHTML = '';
+                querySnapshot.forEach((doc) => {
+                    // console.log(`${doc.id} => ${doc.data().projectName}`);
+                    let data = doc.data();
+                    console.log(data);
+                    let newRow = `
+                    <tr>
+                                    <td><a href="projectview.html">${data.projectName}</a></td>
+                                    <td>
+                                        <div class="form-group">
+                                            <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                            <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;">
+                                            <i class="fas fa-plus-circle"></i>
+                                        </div>
+                                    </td>
+                                    <td>${data.projectDate}</td>
+                                    <td><i class="fas fa-paperclip"></i></td>
+                                    <td>&#8373;${data.projectBudget}</td>
+                                    <td>${data.projectDescription}</td>
+                                    <td>
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
+                                                checked>
+                                            <label class="custom-control-label" for="customSwitch1"></label>
+                                        </div>
+                                    </td>
+                                </tr>
+                    `
+                    projectsTable.innerHTML = projectsTable.innerHTML + newRow
+                });
+            });
+        }
+
+        getAllProjects()
+
+    </script>
 </body>
 
 </html>
