@@ -1,48 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Project Overview- SB Admin</title>
-        <link href="css/styles.css" rel="stylesheet" />
-        <link href="css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <script defer src="fontawesome-free-5.15.1-web/js/all.js"></script>
-    </head>
-    <body class="sb-nav-fixed" >
-        <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color:#343A40">
-            <a class="navbar-brand" href="index.html"> <img src="./images/logo-300x67.png" alt="" srcset="" height="50" width="200"> </a>
-            <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
-            <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-                <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
-                    <div class="input-group-append">
-                        <button class="btn" style="background-color: #AFB653;" type="button"><i class="fas fa-search"></i></button>
-                    </div>
-                </div>
-            </form>
-            <ul class="navbar-nav ml-auto ml-md-0">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="#">Settings</a>
-                        <a class="dropdown-item" href="#">Activity Log</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="index.html">Logout</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-        <div id="layoutSidenav" > 
-            <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                    <div class="sb-sidenav-menu">
-                        <div class="sb-sidenav-menu">
-                            <div class="nav">
-                                <!-- <a class="nav-link" href="maindashboard.html">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Project Overview- SB Admin</title>
+  <link href="css/styles.css" rel="stylesheet" />
+  <link href="css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script defer src="fontawesome-free-5.15.1-web/js/all.js"></script>
+</head>
+
+<body class="sb-nav-fixed">
+  <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color:#343A40">
+    <a class="navbar-brand" href="index.html"> <img src="./images/logo-300x67.png" alt="" srcset="" height="50"
+        width="200"> </a>
+    <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i
+        class="fas fa-bars"></i></button>
+    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+      <div class="input-group">
+        <input class="form-control" type="text" placeholder="Search for..." aria-label="Search"
+          aria-describedby="basic-addon2" />
+        <div class="input-group-append">
+          <button class="btn" style="background-color: #AFB653;" type="button"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+    </form>
+    <ul class="navbar-nav ml-auto ml-md-0">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+          <a class="dropdown-item" href="#">Settings</a>
+          <a class="dropdown-item" href="#">Activity Log</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="index.html">Logout</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+      <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <div class="sb-sidenav-menu">
+          <div class="sb-sidenav-menu">
+            <div class="nav">
+              <!-- <a class="nav-link" href="maindashboard.html">
                                     <div class="sb-nav-link-icon font-weight-bold"><i class="fas fa-tachometer-alt"></i></div>
                                     Dashboard
                                 </a>
@@ -54,393 +60,559 @@
                                     <div class="sb-nav-link-icon font-weight-bold"><i class="fas fa-project-diagram"></i></div>
                                     Projects
                                 </a> -->
-                                <a class="nav-link" href="maindashboard.html">
-                                  <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
-                                  Team Dashboard
-                              </a>
-                              <a class="nav-link" href="dashboardprojectlead.html">
-                                  <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                                  Project Lead
-                              </a>
-                              <a class="nav-link" href="operation.html">
-                                  <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                                  Operational Director
-                              </a>
-                              <a class="nav-link" href="marketing.html">
-                                  <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
-                                  Marketing Team
-                              </a>
-                              <a class="nav-link" href="clients.html">
-                                  <div class="sb-nav-link-icon"><i class="fas fa-user-friends"></i></div>
-                                  Clients
-                              </a>
-                              <a class="nav-link" href="project.html">
-                                  <div class="sb-nav-link-icon"><i class="fas fa-project-diagram"></i></div>
-                                  Projects
-                              </a>
-                              <a class="nav-link" href="projectview.html">
-                                  <div class="sb-nav-link-icon"><i class="fas fa-project-diagram"></i></div>
-                                  Project Overview
-                              </a>
-                              <a class="nav-link" href="tasks.html">
-                                  <div class="sb-nav-link-icon"><i class="fas fa-tasks"></i></div>
-                                  Creat Task
-                              </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        Start Bootstrap
-                    </div>
-                </nav>
-            </div>
-            <div id="layoutSidenav_content">
+              <a class="nav-link" href="maindashboard.html">
+                <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                Team Dashboard
+              </a>
+              <a class="nav-link" href="dashboardprojectlead.html">
+                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                Project Lead
+              </a>
+              <a class="nav-link" href="operation.html">
+                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                Operational Director
+              </a>
+              <a class="nav-link" href="marketing.html">
+                <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                Marketing Team
+              </a>
+              <a class="nav-link" href="project.html">
+                <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                Projects
+              </a>
               
-                <main>
-                  
-                    <div class="container-fluid">
-                      
-                        <a href="#" style="float: right;background-color: #AFB653;" class="d-none d-sm-inline-block btn btn-sm  shadow-sm"><i
-                            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-                            <main>
-                              
-                                <div class="col" style="margin-top: 10px;margin-bottom: 50px;">
-                                    <h1 class="page-title">  Project Overview </h1>
-                                    <h2><img src="images/Vodafone_Ghana-Logo.wine.png" alt="" width="100px" height="50px">Vodafone Project </h2>
-                                    <ol class="breadcrumb mb-4">
-                                      <li class="breadcrumb-item active">Is a Responsive Admin Theme designed with focus on simplicity, user experience, interactions, and flows. It enables you to build rich and beautiful experiences for your project. <a href="#">Read more...</a></li>
-                                  </ol>
-                                  </div>
-                                  
-                              <div class="page-section">
-                                
-                                <div class="section-block">
-                                    </div>
-                                    
-                                    <div class="col">
-                                        <div class="row">
-                                            <div class="col-xl-8">
-                                                <div class="row">
-                                                    <div class="col-xl-3 col-md-6">
-                                                        <div class="card mb-4 stats-container">
-                                                            <div class="text-center">
-                                                                <i class="fas fa-hand-holding-usd stats-icon"></i>
-                                                            </div>
-                                                            <div>
-                                                                <p class="text-center stats-value">  <a class="text-success edit-task" href="#" data-toggle="modal" data-target="#editbudget"><i class="fas fa-pencil-alt"></i></a>&#8373;42,000</p>
-                                                            </div>
-                                                            <div>
-                                                                <p class="text-center">Budget</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-3 col-md-6">
-                                                        <div class="card mb-4 stats-container">
-                                                            <div class="text-center">
-                                                                <i class="fas fa-file-invoice-dollar stats-icon"></i>
-                                                            </div>
-                                                            <div>
-                                                                <p class="text-center stats-value"> <a class="text-success  edit-invoice" href="#" data-toggle="modal" data-target="#editinovice"><i class="fas fa-pencil-alt"></i></a>&#8373;5,000</p>
-                                                            </div>
-                                                            <div>
-                                                                <p class="text-center">Invoice</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-3 col-md-6">
-                                                        <div class="card mb-4 stats-container">
-                                                            <div class="text-center">
-                                                                <i class="fas fa-coins stats-icon"></i>
-                                                            </div>
-                                                            <div>
-                                                                <p class="text-center stats-value"> <a class="text-dark edit-expenses" href="#" data-toggle="modal" data-target="#edittask"><i class="fas fa-pencil-alt"></i></a>&#8373;500</p>
-                                                            </div>
-                                                            <div>
-                                                                <p class="text-center">Expenses</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-3 col-md-6">
-                                                        <div class="card mb-4 stats-container">
-                                                            <div class="text-center">
-                                                                <i class="fas fa-arrow-alt-circle-up stats-icon"></i>
-                                                            </div>
-                                                            <div>
-                                                                <p class="text-center stats-value"> <a class="text-dark edit-progress" href="#" data-toggle="modal" data-target="#editprogress"><i class="fas fa-pencil-alt"></i></a>63%</p>
-                                                            </div>
-                                                            <div>
-                                                                <p class="text-center">Progress</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div style="width: 95%;">
-                                                    
-                                                </div>
-                                            </div>
-                                      
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="card shadow mb-4">
-                                            <div class="card-body">
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <h6>Project Checklist and Documentation</h6>
-                                                            <small><span class="text-muted">Group </span><b>Support</b></small>
-                                                        </div>
-                                                        <div class="col">
-                                                            <a href="">
-                                                                <p class="text-right">View details</p>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <br>
-                                                    <form class="was-validated">
-                                                        <div class="custom-control custom-checkbox mb-3">
-                                                          <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
-                                                          <label class="custom-control-label" for="customControlValidation1">Risk Assessment</label>
-                                                          
-                                                        </div>
-                                                      
-                                                        <div class="custom-control custom-checkbox">
-                                                          <input type="checkbox" class="custom-control-input" id="customControlValidation2" name="radio-stacked" required>
-                                                          <label class="custom-control-label" for="customControlValidation2">Pre flight Checklist</label>
-                                                        </div>
-                                                       
-                                                        <div class="custom-control custom-checkbox mb-3">
-                                                          <input type="checkbox" class="custom-control-input" id="customControlValidation3" name="radio-stacked" required>
-                                                          <label class="custom-control-label" for="customControlValidation3">Post flight Checklist</label>
-                                                          
-                                                        </div>
-                                                        
-                                                      
-                                                        <div class="form-group">
-                                                          <select class="custom-select" required>
-                                                            <option value="">Open this select menu</option>
-                                                            <option value="1">Invoice</option>
-                                                            <option value="2">Contract</option>
-                                                            <option value="3">Risk Assessment</option>
-                                                            <option value="3">Pre flight Checklist</option>
-                                                            <option value="3">Post flight Checklist</option>
-                                                          </select>
-                                                          
-                                                        </div>
-                                                      
-                                                        <div class="custom-file">
-                                                          <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-                                                          <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-                                                          
-                                                        </div>
-                                                        <!-- <div>
+            </div>
+          </div>
+        </div>
+        <div class="sb-sidenav-footer">
+          <div class="small">Logged in as:</div>
+          Start Bootstrap
+        </div>
+      </nav>
+    </div>
+    <div id="layoutSidenav_content">
+
+      <main>
+
+        <div class="container-fluid">
+
+          <a href="projectview.html" style="float: right;background-color: #AFB653;" download="project.html" 
+            class="d-none d-sm-inline-block btn btn-sm  shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i>
+            Generate Report</a>
+          <main>
+
+            <div class="col" style="margin-top: 10px;margin-bottom: 50px;">
+              <h1 class="page-title"> Project Overview </h1>
+              <h2><img src="images/Vodafone_Ghana-Logo.wine.png" alt="" width="100px" height="50px">Vodafone Project
+              </h2>
+              <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item active">Is a Responsive Admin Theme designed with focus on simplicity, user
+                  experience, interactions, and flows. It enables you to build rich and beautiful experiences for your
+                  project. <a href="#">Read more...</a></li>
+              </ol>
+            </div>
+
+            <div class="page-section">
+
+              <div class="section-block">
+              </div>
+
+              <div class="col">
+                <div class="row">
+                  <div class="col-xl-8">
+                    <div class="row">
+                      <div class="col-xl-3 col-md-6">
+                        <div class="card mb-4 stats-container">
+                          <div class="text-center">
+                            <i class="fas fa-hand-holding-usd stats-icon"></i>
+                          </div>
+                          <div>
+                            <p class="text-center stats-value"> <a class="text-success edit-task" href="#"
+                                data-toggle="modal" data-target="#editbudget"><i
+                                  class="fas fa-pencil-alt"></i></a>&#8373;42,000</p>
+                          </div>
+                          <div>
+                            <p class="text-center">Budget</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-md-6">
+                        <div class="card mb-4 stats-container">
+                          <div class="text-center">
+                            <i class="fas fa-file-invoice-dollar stats-icon"></i>
+                          </div>
+                          <div>
+                            <p class="text-center stats-value"> <a class="text-success  edit-invoice" href="#"
+                                data-toggle="modal" data-target="#editinovice"><i
+                                  class="fas fa-pencil-alt"></i></a>&#8373;5,000</p>
+                          </div>
+                          <div>
+                            <p class="text-center">Invoice</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-md-6">
+                        <div class="card mb-4 stats-container">
+                          <div class="text-center">
+                            <i class="fas fa-coins stats-icon"></i>
+                          </div>
+                          <div>
+                            <p class="text-center stats-value"> <a class="text-dark edit-expenses" href="#"
+                                data-toggle="modal" data-target="#edittask"><i
+                                  class="fas fa-pencil-alt"></i></a>&#8373;500</p>
+                          </div>
+                          <div>
+                            <p class="text-center">Expenses</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-md-6">
+                        <div class="card mb-4 stats-container">
+                          <div class="text-center">
+                            <i class="fas fa-arrow-alt-circle-up stats-icon"></i>
+                          </div>
+                          <div>
+                            <p class="text-center stats-value"> <a class="text-dark edit-progress" href="#"
+                                data-toggle="modal" data-target="#editprogress"><i class="fas fa-pencil-alt"></i></a>63%
+                            </p>
+                          </div>
+                          <div>
+                            <p class="text-center">Progress</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div style="width: 95%;">
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="card shadow mb-4">
+                  <div class="card-body">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col">
+                          <h6>Project Checklist and Documentation</h6>
+                          <small><span class="text-muted">Group </span><b>Support</b></small>
+                        </div>
+                        <div class="col">
+                          <a href="">
+                            <p class="text-right">View details</p>
+                          </a>
+                        </div>
+                      </div>
+                      <br>
+                      <form class="was-validated">
+                        <div class="custom-control custom-checkbox mb-3">
+                          <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
+                          <label class="custom-control-label" for="customControlValidation1">Risk Assessment</label>
+
+                        </div>
+
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="customControlValidation2"
+                            name="radio-stacked" required>
+                          <label class="custom-control-label" for="customControlValidation2">Pre flight
+                            Checklist</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox mb-3">
+                          <input type="checkbox" class="custom-control-input" id="customControlValidation3"
+                            name="radio-stacked" required>
+                          <label class="custom-control-label" for="customControlValidation3">Post flight
+                            Checklist</label>
+
+                        </div>
+
+
+                        <div class="form-group">
+                          <select class="custom-select" required>
+                            <option value="">Open this select menu</option>
+                            <option value="1">Invoice</option>
+                            <option value="2">Contract</option>
+                            <option value="3">Risk Assessment</option>
+                            <option value="3">Pre flight Checklist</option>
+                            <option value="3">Post flight Checklist</option>
+                          </select>
+
+                        </div>
+
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+                          <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+
+                        </div>
+                        <!-- <div>
                                                           <i class="fas fa-paperclip"></i>
                                                           <i class="fas fa-file"></i>
                                                           <i class="fas fa-file-invoice"></i>
                                                           <i class="fas fa-file-contract"></i>
                                                           <i class="fas fa-tasks"></i>
                                                         </div> -->
-                                                      </form>
-                                                    
-                                                    
-                            
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                
-                                    <div class="col">
-                                        
-                                        <div class="card shadow mb-4">
-                                            <div class="card-body">
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            
-                                                            <h6>Activity</h6>
-                                                            <small>Today</small>
-                                                        </div>
-                                                        <div class="col">
-                                                            <a href="">
-                                                                <p class="text-right">View details</p>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <br>
-                                                <div class="panel panel-inverse" data-sortable-id="index-4" style="width: 100%; ">
-                                                    <div class="panel-toolbar">
-                                                        <div class="btn-group m-r-5">
-                                                            <a class="btn btn-white" href="javascript:;"><i class="fa fa-bold"></i></a>
-                                                            <a class="btn btn-white active" href="javascript:;"><i class="fa fa-italic"></i></a>
-                                                            <a class="btn btn-white" href="javascript:;"><i class="fa fa-underline"></i></a>
-                                                        </div>
-                                                        <div class="btn-group" style="width: 100px;">
-                                                            <a class="btn btn-white" href="javascript:;"><i class="fa fa-align-left"></i></a>
-                                                            <a class="btn btn-white active" href="javascript:;"><i
-                                                                    class="fa fa-align-center"></i></a>
-                                                            <a class="btn btn-white" href="javascript:;"><i class="fa fa-align-right"></i></a>
-                                                            <a class="btn btn-white" href="javascript:;"><i class="fa fa-align-justify"></i></a>
-                                                        </div>
-                                                    </div>
-                                                    <textarea class="form-control rounded-0 bg-light p-15" rows="5">Enter some comment.</textarea>
-                                                    <div class="panel-footer text-right">
-                                                        <a href="javascript:;" class="btn btn-white btn-sm">Cancel</a>
-                                                        <a href="javascript:;" class="btn btn-primary btn-sm m-l-5">Save</a>
-                                                    </div>
-                                                </div>
+                      </form>
 
-                                                
-                                            </div>
-                                            
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                                
-                                
-                              
-                                <div class="card">
-                                
-                                  <div class="card-header border-0"> Timeline Tracking </div>
-                                  
-                                  <div class="table-responsive">
-                                   
-                                    <table class="table">
-                                      
-                                      <thead>
-                                        <tr>
-                                          <th style="min-width:259px"> <i class="fas fa-tasks"></i> Task </th>
-                                          <th> Team </th>
-                                          <th> Date </th>
-                                          <th> Time </th>
-                                          <th style="min-width: 120px"> Hours spent </th>
-                                          <th style="width:60px"></th>
-                                        </tr>
-                                      </thead>
-                                     
-                                      <tbody>
-                                        
-                                        <tr>
-                                          <td class="align-middle text-truncate">
-                                            <a href="#tracking">Redesign website</a>
-                                          </td>
-                                          <td class="align-middle"> <i
-                                            class="fas fa-user-friends"></i> </td>
-                                          <td class="align-middle"> 09/25/2018 </td>
-                                          <td class="align-middle"> 12:20pm </td>
-                                          <td class="align-middle"> 15:20 </td>
-                                          <td class="align-middle text-right">
-                                            
-                                            <div class="dropdown">
-                                              <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
-                                              <div class="dropdown-menu dropdown-menu-right">
-                                                <div class="dropdown-arrow mr-n1"></div><a href="#" class="dropdown-item">Edit</a> <a href="#" class="dropdown-item">Delete</a>
-                                              </div>
-                                            </div>
-                                          </td>
-                                        </tr>
-                                        
-                                        <tr>
-                                          <td class="align-middle text-truncate">
-                                            <a href="#tracking">Write new content</a>
-                                          </td>
-                                          <td class="align-middle"><i
-                                            class="fas fa-user-friends"></i></td>
-                                          <td class="align-middle"> 10/07/2018 </td>
-                                          <td class="align-middle"> 8:13pm </td>
-                                          <td class="align-middle"> 12:40 </td>
-                                          <td class="align-middle text-right">
-                                            
-                                            <div class="dropdown">
-                                              <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
-                                              <div class="dropdown-menu dropdown-menu-right">
-                                                <div class="dropdown-arrow mr-n1"></div><a href="#" class="dropdown-item">Edit</a> <a href="#" class="dropdown-item">Delete</a>
-                                              </div>
-                                            </div>
-                                          </td>
-                                        </tr>
-                                        
-                                        <tr>
-                                          <td class="align-middle text-truncate">
-                                            <a href="#tracking">Redesign website</a>
-                                          </td>
-                                          <td class="align-middle"> <i
-                                            class="fas fa-user-friends"></i> </td>
-                                          <td class="align-middle"> 10/15/2018 </td>
-                                          <td class="align-middle"> 5:22pm </td>
-                                          <td class="align-middle"> 34:30 </td>
-                                          <td class="align-middle text-right">
-                                            
-                                            <div class="dropdown">
-                                              <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
-                                              <div class="dropdown-menu dropdown-menu-right">
-                                                <div class="dropdown-arrow mr-n1"></div><a href="#" class="dropdown-item">Edit</a> <a href="#" class="dropdown-item">Delete</a>
-                                              </div>
-                                            </div>
-                                          </td>
-                                        </tr>
-                                       
-                                        <tr>
-                                          <td class="align-middle text-truncate">
-                                            <a href="#tracking">Redesign website</a>
-                                          </td>
-                                          <td class="align-middle"> <i
-                                            class="fas fa-user-friends"></i></td>
-                                          <td class="align-middle"> 10/15/2018 </td>
-                                          <td class="align-middle"> 7:36am </td>
-                                          <td class="align-middle"> 23:41 </td>
-                                          <td class="align-middle text-right">
-                                            
-                                            <div class="dropdown">
-                                              <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
-                                              <div class="dropdown-menu dropdown-menu-right">
-                                                <div class="dropdown-arrow mr-n1"></div><a href="#" class="dropdown-item">Edit</a> <a href="#" class="dropdown-item">Delete</a>
-                                              </div>
-                                            </div>
-                                          </td>
-                                        </tr>
-                                        
-                                        <tr>
-                                          <td class="align-middle text-truncate">
-                                            <a href="#tracking">Apply new styles</a>
-                                          </td>
-                                          <td class="align-middle"> <i
-                                            class="fas fa-user-friends"></i> </td>
-                                          <td class="align-middle"> 10/19/2018 </td>
-                                          <td class="align-middle"> 9:32pm </td>
-                                          <td class="align-middle"> 11:12 </td>
-                                          <td class="align-middle text-right">
-        
-                                            <div class="dropdown">
-                                              <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
-                                              <div class="dropdown-menu dropdown-menu-right">
-                                                <div class="dropdown-arrow mr-n1"></div><a href="#" class="dropdown-item">Edit</a> <a href="#" class="dropdown-item">Delete</a>
-                                              </div>
-                                            </div>
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                  </div>
-                                         
-                              
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+
+                <div class="card shadow mb-4">
+                  <div class="card-body">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col">
+
+                          <h6>Activity</h6>
+                          <small>Today</small>
+                        </div>
+                        <div class="col">
+                          <a href="">
+                            <p class="text-right">View details</p>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="panel panel-inverse" data-sortable-id="index-4" style="width: 100%; ">
+                      <div class="panel-toolbar">
+                        <div class="btn-group m-r-5">
+                          <a class="btn btn-white" href="javascript:;"><i class="fa fa-bold"></i></a>
+                          <a class="btn btn-white active" href="javascript:;"><i class="fa fa-italic"></i></a>
+                          <a class="btn btn-white" href="javascript:;"><i class="fa fa-underline"></i></a>
+                        </div>
+                        <div class="btn-group" style="width: 100px;">
+                          <a class="btn btn-white" href="javascript:;"><i class="fa fa-align-left"></i></a>
+                          <a class="btn btn-white active" href="javascript:;"><i class="fa fa-align-center"></i></a>
+                          <a class="btn btn-white" href="javascript:;"><i class="fa fa-align-right"></i></a>
+                          <a class="btn btn-white" href="javascript:;"><i class="fa fa-align-justify"></i></a>
+                        </div>
+                      </div>
+                      <textarea class="form-control rounded-0 bg-light p-15" rows="5">Enter some comment.</textarea>
+                      <div class="panel-footer text-right">
+                        <a href="javascript:;" class="btn btn-white btn-sm">Cancel</a>
+                        <a href="javascript:;" class="btn btn-primary btn-sm m-l-5">Save</a>
+                      </div>
+                    </div>
+
+
+                  </div>
+
+                </div>
+
+              </div>
             </div>
-            
-        </main>
+
+
+
+            <div class="card">
+
+              <div class="card-header border-0"> 
+                <a class="text-left" href="tasks.html">
+                View Task Board</a> 
+                <a href="#" class="  d-sm-inline-block text-center py-2 px-2 mt-3 rounded text-white add-totasks"
+                    data-toggle="modal" data-target="#addtotask" style="float: right;background-color: #72736E;">
+                    <i class="fas fa-plus-circle align-middle text-white"></i> 
+                    <span>Add Task</span>
+                </a>
+          </div>
+              
+              <!-- <div class="container-fluid">
+                <a href="#" class="  d-sm-inline-block text-center py-2 px-2 mt-3 rounded text-white add-totasks"
+                    data-toggle="modal" data-target="#addtotask" style="float: right;background-color: #72736E;">
+                    <i class="fas fa-plus-circle align-middle text-white"></i> 
+                    <span>Add Task</span>
+                </a>
+               
+                
+            </div> -->
+            </div>
+            <div class="modal fade" id="addtotask">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color: #72736E;">
+                            <h5 class="modal-title">
+                                <i class="fas fa-plus-circle"></i> Add to Tasks
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <i class="fas fa-times"></i>
+                            </button>
+                            
+                        </div>
+                        <form class="add-totasks" onsubmit="addTotask(event)">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="task-name" class="col-form-label">Task</label>
+                                    <input type="text" class="form-control" id="task-name" name="taskName">
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="task-team" class="col-form-label">Team</label>
+                                    <select class="custom-select"  name="taskTeam"> 
+                                      <option>Eric Osei</option>
+                                      <option >Evenlyn Mensah</option>
+                                      <option >John frimpong</option>
+                                      <option >Happy Sefa</option>
+                                      <option >George Prepah</option>
+                                      <option >Henry Okoh</option>
+                                      <option >John frimpong</option>
+                                      <option >Happy Sefa</option>
+                                      <option >George Prepah</option>
+                                      <option >Henry Okoh</option>
+                                    </select>
+
+                                </div>
+                                <div class="form-group">
+                                  <label for="taskdate" class="col-form-label">Start Date</label>
+                                  <input type="date" class="form-control" id="taskdate" name="taskStart">
+                                </div>
+                                <div class="form-group">
+                                    <label for="tasktime" class="col-form-label">Due Date</label>
+                                    <input type="date" class="form-control" id="tasktime" name="taskDue">
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn font-weight-bold send-email"
+                                    style="background-color: #72736E;">Add</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+              <div class="table-responsive">
+
+                <table class="table">
+
+                  <thead>
+                    <tr>
+                      <th> <i class="fas fa-tasks"></i> Task </th>
+                      <th> Team </th>
+                      <th> Start Date </th>
+                      <th> Due Date </th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tbody id="allAddtotasks">
+
+                    </tbody>
+                    <!-- <tr>
+                      <td class="align-middle text-truncate">
+                        <a href="#tracking">Redesign website</a>
+                      </td>
+                      <td class="align-middle"> <i class="fas fa-user-friends"></i> </td>
+                      <td class="align-middle"> 09/25/2018 </td>
+                      <td class="align-middle"> 12:20pm </td>
+                      <td class="align-middle"> 15:20 </td>
+                      <td class="align-middle text-right">
+
+                        <div class="dropdown" onclick="addTask(event)" >
+                          <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
+                          <div class="dropdown-menu dropdown-menu-right">
+                            <div class="dropdown-arrow mr-n1"></div><a href="#" class="dropdown-item">Send for approval</a> -->
+                             <!-- <a href="#" class="dropdown-item">Delete</a> -->
+                          <!-- </div>
+                        </div>
+                      </td>
+                    </tr> -->
+
+                    <!-- <tr>
+                      <td class="align-middle text-truncate">
+                        <a href="#tracking">Write new content</a>
+                      </td>
+                      <td class="align-middle"><i class="fas fa-user-friends"></i></td>
+                      <td class="align-middle"> 10/07/2018 </td>
+                      <td class="align-middle"> 8:13pm </td>
+                      <td class="align-middle"> 12:40 </td>
+                      <td class="align-middle text-right">
+
+                        <div class="dropdown">
+                          <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
+                          <div class="dropdown-menu dropdown-menu-right">
+                            <div class="dropdown-arrow mr-n1"></div><a href="#" class="dropdown-item">Edit</a> <a
+                              href="#" class="dropdown-item">Delete</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="align-middle text-truncate">
+                        <a href="#tracking">Redesign website</a>
+                      </td>
+                      <td class="align-middle"> <i class="fas fa-user-friends"></i> </td>
+                      <td class="align-middle"> 10/15/2018 </td>
+                      <td class="align-middle"> 5:22pm </td>
+                      <td class="align-middle"> 34:30 </td>
+                      <td class="align-middle text-right">
+
+                        <div class="dropdown">
+                          <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
+                          <div class="dropdown-menu dropdown-menu-right">
+                            <div class="dropdown-arrow mr-n1"></div><a href="#" class="dropdown-item">Edit</a> <a
+                              href="#" class="dropdown-item">Delete</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="align-middle text-truncate">
+                        <a href="#tracking">Redesign website</a>
+                      </td>
+                      <td class="align-middle"> <i class="fas fa-user-friends"></i></td>
+                      <td class="align-middle"> 10/15/2018 </td>
+                      <td class="align-middle"> 7:36am </td>
+                      <td class="align-middle"> 23:41 </td>
+                      <td class="align-middle text-right">
+
+                        <div class="dropdown">
+                          <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
+                          <div class="dropdown-menu dropdown-menu-right">
+                            <div class="dropdown-arrow mr-n1"></div><a href="#" class="dropdown-item">Edit</a> <a
+                              href="#" class="dropdown-item">Delete</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="align-middle text-truncate">
+                        <a href="#tracking">Apply new styles</a>
+                      </td>
+                      <td class="align-middle"> <i class="fas fa-user-friends"></i> </td>
+                      <td class="align-middle"> 10/19/2018 </td>
+                      <td class="align-middle"> 9:32pm </td>
+                      <td class="align-middle"> 11:12 </td>
+                      <td class="align-middle text-right">
+
+                        <div class="dropdown">
+                          <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
+                          <div class="dropdown-menu dropdown-menu-right">
+                            <div class="dropdown-arrow mr-n1"></div><a href="#" class="dropdown-item">Edit</a> <a
+                              href="#" class="dropdown-item">Delete</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr> -->
+                  </tbody>
+                </table>
+              </div>
+
+
+            </div>
+
+          </main>
         </div>
-        
-        
-        
-       
-        
-        <script src="js/jquery-3.5.1.slim.min.js" ></script>
-        <script src="js/bootstrap.bundle.min.js" ></script>
+
+
+
+
+
+        <script src="js/jquery-3.5.1.slim.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/scripts.js"></script>
-       
-   
-    </body>   
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+   https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+
+  <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+          apiKey: "AIzaSyAiyqidqSCOQDE090C2ZraA-R5WI9DK5GA",
+          authDomain: "hacinta-94edb.firebaseapp.com",
+          databaseURL: "https://hacinta-94edb.firebaseio.com",
+          projectId: "hacinta-94edb",
+          storageBucket: "hacinta-94edb.appspot.com",
+          messagingSenderId: "58100753918",
+          appId: "1:58100753918:web:d8a99f59676d2306b90caf"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+  </script>
+  <script>
+      var db = firebase.firestore();
+
+
+      function addTotask(event) {
+          event.preventDefault();
+          db.collection('addtotasks')
+              .add({
+                  taskName: event.target.taskName.value,
+                  taskTeam: event.target.taskTeam.value,
+                  taskStart: event.target.taskStart.value,
+                  taskDue: event.target.taskDue.value,
+                 
+
+
+              })
+              .then(function (docRef) {
+                  console.log('Document written with ID: ', docRef.id);
+                  window.location.href = '/projectview.html'
+                 
+              })
+              .catch(function (error) {
+                  console.error('Error adding document: ', error);
+              });
+      }
+
+      function getAlladdtotasks() {
+          var addtotasksTable = document.getElementById('allAddtotasks');
+          db.collection("addtotasks").get().then((querySnapshot) => {
+              addtotasksTable.innerHTML = '';
+              querySnapshot.forEach((doc) => {
+                  // console.log(`${doc.id} => ${doc.data().projectName}`);
+                  let data = doc.data();
+                  console.log(data);
+                  let newRow = `
+                  <tr>
+
+                                <td class="align-middle text-truncate">
+                                    <a href="#tracking">${data.taskName}</a>
+                                  </td>
+                                  <td class="align-middle">${data.taskTeam}</td>
+                                  <td class="align-middle"> ${data.taskStart} </td>
+                                  <td class="align-middle"> ${data.taskDue}</td>
+                                  <td class="align-middle text-right">
+                                    <div class="dropdown" class="modal-footer" >
+                                      <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
+                                      <div class="dropdown-menu dropdown-menu-right">
+                                        <div class="dropdown-arrow mr-n1"></div><a href="#" class="dropdown-item">Send for approval</a>
+                                      </div>
+                                    </div>
+                                  </td>
+
+                                  
+                  `
+                  addtotasksTable.innerHTML = addtotasksTable.innerHTML + newRow
+              });
+          });
+      }
+
+      getAlladdtotasks()
+
+  </script>
+</body>
+
 </html>

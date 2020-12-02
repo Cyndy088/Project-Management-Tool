@@ -9,14 +9,12 @@
     <meta name="author" content="" />
     <title>Clients- SB Admin</title>
     <link href="css/styles.css" rel="stylesheet" />
-    <link href="css/custom-styles.css" rel="stylesheet" />
-    <link href="css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script defer src="fontawesome-free-5.15.1-web/js/all.js"></script>
-    
 </head>
 
 <body class="sb-nav-fixed">
-    <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color: #343A40">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <a class="navbar-brand" href="index.html"> <img src="./images/logo-300x67.png" alt="" srcset="" height="50"
                 width="200"> </a>
         <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i
@@ -26,7 +24,8 @@
                 <input class="form-control" type="text" placeholder="Search for..." aria-label="Search"
                     aria-describedby="basic-addon2" />
                 <div class="input-group-append">
-                    <button class="btn" style="background-color:   #72736E;" type="button"><i  class="fas fa-search"></i></button>
+                    <button class="btn " style="background-color: #72736E;" type="button"><i
+                            class="fas fa-search"></i></button>
                 </div>
             </div>
         </form>
@@ -38,61 +37,53 @@
                     <a class="dropdown-item" href="#">Settings</a>
                     <a class="dropdown-item" href="#">Activity Log</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="index.html">Logout</a>
+                    <a class="dropdown-item" href="login.html">Logout</a>
                 </div>
             </li>
         </ul>
     </nav>
-    <div id="layoutSidenav" >
+    <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                <div class="sb-sidenav-menu" >
+                <div class="sb-sidenav-menu">
                     <div class="nav">
-                            <div class="sb-sidenav-menu-heading"></div>
-                            <!-- <a class="nav-link" href="index.html">
-                                <div class="sb-nav-link-icon font-weight-bold"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
-                            </a>
-                            <a class="nav-link" href="clients.html">
-                                <div class="sb-nav-link-icon font-weight-bold"><i class="fas fa-user-friends"></i></div>
-                                Clients
-                            </a>
-                            <a class="nav-link" href="project.html">
-                                <div class="sb-nav-link-icon font-weight-bold"><i class="fas fa-project-diagram"></i></div>
-                                Projects
-                            </a> -->
-                            <a class="nav-link" href="maindashboard.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
-                                Team Dashboard
-                            </a>
-                            <a class="nav-link" href="dashboardprojectlead.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                                Project Lead
-                            </a>
-                            <a class="nav-link" href="operation.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                                Operational Director
-                            </a>
-                            <a class="nav-link" href="marketing.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
-                                Marketing Team
-                            </a>
-                            <a class="nav-link" href="clients.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-user-friends"></i></div>
-                                Clients
-                            </a>
-                            <a class="nav-link" href="project.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-project-diagram"></i></div>
-                                Projects
-                            </a>
-                            <a class="nav-link" href="projectview.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-project-diagram"></i></div>
-                                Project Overview
-                            </a>
-                            <a class="nav-link" href="tasks.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tasks"></i></div>
-                                Creat Task
-                            </a>
+                        <!-- <a class="nav-link" href="operation.html">
+                            <div class="sb-nav-link-icon font-weight-bold"><i class="fas fa-tachometer-alt"></i></div>
+                            Dashboard
+                        </a>
+                        <a class="nav-link" href="clients.html">
+                            <div class="sb-nav-link-icon font-weight-bold"><i class="fas fa-user-friends"></i></div>
+                            Clients
+                        </a>
+                        <a class="nav-link" href="project.html">
+                            <div class="sb-nav-link-icon font-weight-bold"><i class="fas fa-project-diagram"></i></div>
+                            Projects
+                        </a> -->
+                        <a class="nav-link" href="maindashboard.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                            Team Dashboard
+                        </a>
+                        <a class="nav-link" href="dashboardprojectlead.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                            Project Lead
+                        </a>
+                        <a class="nav-link" href="operation.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                            Operational Director
+                        </a>
+                        <a class="nav-link" href="marketing.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                            Marketing Team
+                        </a>
+                        <a class="nav-link" href="clients.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-user-friends"></i></div>
+                            Clients
+                        </a>
+                        <a class="nav-link" href="project.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-project-diagram"></i></div>
+                            Projects
+                        </a>
+                        
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
@@ -101,186 +92,183 @@
                 </div>
             </nav>
         </div>
-        <div id="layoutSidenav_content" >
+        <div id="layoutSidenav_content">
             <main>
-                
-                <div class="card mb-4" >
-                    <div class="card-header">
-                        <i class="fas fa-user-friends mr-1"></i>
-                       All Clients
-                       <a href="#" class="  d-sm-inline-block text-center py-2 px-2 mt-3 rounded text-white add-clients" data-toggle="modal" data-target="#addclients" style="float: right;background-color: #72736E;">
+                <div class="container-fluid">
+                    <a href="#" class="  d-sm-inline-block text-center py-2 px-2 mt-3 rounded text-white add-projects"
+                        data-toggle="modal" data-target="#addprojects" style="float: right;background-color: #72736E;">
                         <i class="fas fa-plus-circle align-middle text-white"></i> <span>Add Clients</span>
                     </a>
-                       
-                    </div>
-                    <div class="modal fade" id="addclients">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header" style="background-color: #72736E;">
-                                    <h5 class="modal-title">
-                                        <i class="fas fa-plus-circle"></i> Add Clients
-                                    </h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <i class="fas fa-times-circle"></i>
-                                    </button>
-                                </div>
-    
-                                <form class="add-clients">
-                                    <div class="modal-body">  
-                                        <div class="form-group">
-                                            <label for="client-name" class="col-form-label">Name</label>
-                                            <input type="text" class="form-control" id="client-name" >
-                                        </div>
-
-                                        
-                                        <div class="form-group">
-                                            <label for="client-email" class="col-form-label">Add email</label>
-                                            <input type="text" class="form-control" id="client-email" >
-                                            
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="client-request" class="col-form-label">Add request</label>
-                                            <textarea class="form-control" rows="2" id="client-request"></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="client-invoice" class="col-form-label">Add Invoice</label>
-                                            <input type="file" class="form-control" id="client-invoice" >
-                                            
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="client-date" class="col-form-label">Add date</label>
-                                            <input type="date" class="form-control" id="client-date" >
-                                            
-                                        </div>
-                                        
-                                        
-                                    </div>                                         
-                                    <div class="modal-footer">                                                 
-                                        <button type="submit" class="btn font-weight-bold send-email" style="background-color: #72736E;">  Save</button>
-                                    </div>
-                                </form>
-    
-    
+                </div>
+                <div class="modal fade" id="addprojects">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header" style="background-color: #72736E;">
+                                <h5 class="modal-title">
+                                    <i class="fas fa-plus-circle"></i> Add Clients
+                                </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <i class="fas fa-times"></i>
+                                </button>
                             </div>
-                        </div>
-                    </div>
-    
-                    <div class="card-body">
-                        <div class="table-responsive" style=" text-align: center; background-color: #fff;">
-                            <table class="table" id="dataTable" width="100%" cellspacing="0">
-                                <thead style="background-color: #72736E;"> 
-                                    <tr>
-                                        <th style="width: 280px;">Client</th>
-                                        <th>Email address</th>
-                                        <th>Request</th>
-                                        <th>Date</th>
-                            
-                                        <th>Contact</th>
-                                    </tr>
-                                </thead>
-                                
-                                <tbody>
-                                    <tr>
-                                        <td> <img src="./images/Vodafone_Ghana-Logo.wine.png" alt="" width="70" height="70"> Vodafone Ghana</td>
-                                        <td>something@vodafone.com</td>
-                                        <td>Asset Inspection <i class="fas fa-paperclip"></i></td>
-                                        <td>2011/04/25</td>
-                                        <td> 
-                                        <button type="submit" class="btn btn-primary send-email" style="border-radius: 20px;">send email</button>
-                                        </td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td> <img src="./images/download (1).png" alt="" width="50" height="70">MTN Ghana</td>
-                                        <td>something@mtngh.com</td>
-                                        <td>Maintenance of drones <i class="fas fa-paperclip"></i></td>
-                                        <td>2012/04/09</td>
-                                        <td> 
-                                            <button type="submit" class="btn btn-primary send-email" style="border-radius: 20px;">send email</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td> <img src="./images/download.png" alt="" width="100" height="70"> Zipline</td>
-                                        <td>something@zipline.com</td>
-                                        <td>Purchase of zones <i class="fas fa-paperclip"></i></td>
-                                        <td>2010/01/04</td>
-                                        <td> 
-                                            <button type="submit" class="btn btn-primary send-email" style="border-radius: 20px;">send email</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td> <img src="./images/Screen20Shot202016-04-2120at208.16.4720AM.png" alt="" width="70" height="70">Newmount Ghana</td>
-                                        <td>something@newmountgh.com</td>
-                                        <td>Surveying <i class="fas fa-paperclip"></i></td>
-                                        <td>2012/06/01</td>
-                                        <td> 
-                                            <button type="submit" class="btn btn-primary send-email" style="border-radius: 20px;">send email</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td> <img src="./images/download (3).png" alt="" width="70" height="70">Appollonia Ghana</td>
-                                        <td>something@appolloniagh.com</td>
-                                        <td>3D Modeling <i class="fas fa-paperclip"></i></td>
-                                        <td>2013/02/01</td>
-                                        <td> 
-                                            <button type="submit" class="btn btn-primary send-email" style="border-radius: 20px;">send email</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td> <img src="./images/download (2).png" alt="" width="100" height="50">Mantrac Ghana Ltd</td>
-                                        <td>somenthing@montrac.com</td>
-                                        <td>Surveying <i class="fas fa-paperclip"></i></td>
-                                        <td>2011/12/06</td>
-                                        <td> 
-                                            <button type="submit" class="btn btn-primary send-email" style="border-radius: 20px;">send email</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td> <img src="./images/download.jpg" alt="" width="100" height="70"> Thai Union</td>
-                                        <td>something@thaiunion.com</td>
-                                        <td>3D Modeling <i class="fas fa-paperclip"></i></td>
-                                        <td>2008/11/13</td>
-                                        <td> 
-                                            <button type="submit" class="btn btn-primary send-email" style="border-radius: 20px;">send email</button>
-                                        </td>
-                                    <tr>
-                                    <tr>
-                                        <td> <img src="./images/download (1).jpg" alt="" width="100" height="70"> RMG Ghana Limited</td>
-                                        <td>something@rmg.com</td>
-                                        <td>Crop Spraying <i class="fas fa-paperclip"></i></td>
-                                        <td>2008/11/13</td>
-                                        <td> 
-                                            <button type="submit" class="btn btn-primary send-email" style="border-radius: 20px;">send email</button>
-                                        </td>
-                                    <tr>
-                                        <td> <img src="./images/agra.jpg" alt="" width="70" height="70"> Alliance for a Green Revolution in Africa</td>
-                                        <td>something@agra.com</td>
-                                        <td>Crop Monitoring <i class="fas fa-paperclip"></i></td>
-                                        <td>2011/06/27</td>
-                                        <td> 
-                                            <button type="submit" class="btn btn-primary send-email" style="border-radius: 20px;">send email</button>
-                                        </td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
+                            <form class="add-clients" onsubmit="addClient(event)">
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="client-name" class="col-form-label">Name</label>
+                                        <input type="text" class="form-control" id="client-name" name="clientName">
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="client-email" class="col-form-label">Add email</label>
+                                        <input type="text" class="form-control" id="client-email" name="clientEmail">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="client-request" class="col-form-label">Add request</label>
+                                        <textarea class="form-control" rows="2" id="client-request"
+                                            name="clientRequest"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="client-invoice" class="col-form-label">Add Invoice</label>
+                                        <input type="file" class="form-control" id="client-invoice">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="client-date" class="col-form-label">Add date</label>
+                                        <input type="date" class="form-control" id="client-date" name="clientDate">
+
+                                    </div>
+
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn font-weight-bold send-email"
+                                        style="background-color: #72736E;"> Save</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-            </main>
+                <h1 class="mt-4">Clients</h1>
+                <div class="card-body">
+                    <div class="table-responsive" style="width: 98%; background-color: #ffff;">
+                        <table class="table" id="dataTable" width="100%" cellspacing="0">
+                            <thead style="background-color: #72736E;">
+                                <tr>
+                                    <th>Client Name </th>
+                                    <th>Email</th>
+                                    <th>Request</th>
+                                    <th>Invoice</th>
+                                    <th>Date</th>
+                                    <th>Contact</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="allclients">
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
 
         </div>
+    </div>
+    </main>
 
     </div>
+    </div>
+    <script src="js/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/datatables-demo.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAiyqidqSCOQDE090C2ZraA-R5WI9DK5GA",
+            authDomain: "hacinta-94edb.firebaseapp.com",
+            databaseURL: "https://hacinta-94edb.firebaseio.com",
+            projectId: "hacinta-94edb",
+            storageBucket: "hacinta-94edb.appspot.com",
+            messagingSenderId: "58100753918",
+            appId: "1:58100753918:web:d8a99f59676d2306b90caf"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script>
+        var db = firebase.firestore();
 
 
+        function addClient(event) {
+            event.preventDefault();
+            db.collection('clients')
+                .add({
+                    clientName: event.target.clientName.value,
+                    clientEmail: event.target.clientEmail.value,
+                    clientRequest: event.target.clientRequest.value,
+                    clientDate: event.target.clientDate.value,
 
-        
-        <script src="js/jquery-3.5.1.slim.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/scripts.js"></script>
 
+                })
+                .then(function (docRef) {
+                    console.log('Document written with ID: ', docRef.id);
+                    window.location.href = '/clients.html'
+                })
+                .catch(function (error) {
+                    console.error('Error adding document: ', error);
+                });
+        }
 
+        function getAllClients() {
+            var clientsTable = document.getElementById('allclients');
+            db.collection("clients").get().then((querySnapshot) => {
+                clientsTable.innerHTML = '';
+                querySnapshot.forEach((doc) => {
+                    // console.log(`${doc.id} => ${doc.data().projectName}`);
+                    let data = doc.data();
+                    console.log(data);
+                    let newRow = `
+                    <tr>
+                                    <td>${data.clientName}</td>
+                                    <td>${data.clientEmail}</td>
+                                    <td>${data.clientRequest}</td>
+                                    <td><i class="fas fa-paperclip"></i></td>
+                                     <td>${data.clientdate}</td>
+                                     <td><button type="submit" class="btn btn-primary send-email" style="border-radius: 20px;">send email</button></td>
+                                     <td class="align-middle text-right">
+                                        <div class="dropdown">
+                                        <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <div class="dropdown-arrow mr-n1"></div><a href="#" class="dropdown-item">Edit</a> <a
+                                            href="#" class="dropdown-item">Delete</a>
+                                        </div>
+                                        </div>
+                                        </td>
+                                     </tr>
+                    `
+                    clientsTable.innerHTML = clientsTable.innerHTML + newRow
+                });
+            });
+        }
+
+        getAllClients()
+
+    </script>
 </body>
 
 </html>

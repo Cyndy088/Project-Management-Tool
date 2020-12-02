@@ -83,14 +83,7 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-project-diagram"></i></div>
                             Projects
                         </a>
-                        <a class="nav-link" href="projectview.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-project-diagram"></i></div>
-                            Project Overview
-                        </a>
-                        <a class="nav-link" href="tasks.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tasks"></i></div>
-                            Creat Task
-                        </a>
+                       
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
@@ -102,7 +95,7 @@
         <div id="layoutSidenav_content">
 
             <main>
-                <div class="container-fluid" style="margin-top: 50px;">
+                <div class="container-fluid" >
                     <a href="#" class="  d-sm-inline-block text-center py-2 px-2 mt-3 rounded text-white add-projects"
                         data-toggle="modal" data-target="#addprojects" style="float: right;background-color: #72736E;">
                         <i class="fas fa-plus-circle align-middle text-white"></i> <span>Add Projects</span>
@@ -130,9 +123,16 @@
 
 
                                     <div class="form-group">
-                                        <label for="task-name" class="col-form-label">Add team members</label>
-                                        <br>
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                        <label for="task-name" class="col-form-label">Add team lead</label>
+                                        <select class="custom-select"  name="projectTeamlead"> 
+                                            <option>Eric Osei</option>
+                                            <option >Evenlyn Mensah</option>
+                                            <option >John frimpong</option>
+                                            <option >Happy Sefa</option>
+                                            <option >George Prepah</option>
+                                            <option >Henry Okoh</option>
+                                          </select>
+                                        <!-- <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
                                                 width: 30px;
                                                 height: 30px;
                                                 border-radius: 50%;">
@@ -144,35 +144,34 @@
                                                 width: 30px;
                                                 height: 30px;
                                                 border-radius: 50%;">
-                                        <i class="fas fa-plus-circle"></i>
+                                        <i class="fas fa-plus-circle"></i> -->
 
                                     </div>
                                     <div class="form-group">
-                                        <label for="project-name" class="col-form-label">Add due dates</label>
-                                        <input type="date" class="form-control" id="project-name" name="projectDate">
+                                        <select class="custom-select"  name="projectType"> 
+                                          <option>Crop Monitoring</option>
+                                          <option >Crop Spraying</option>
+                                          <option >Mapping and Surveying</option>
+                                          <option >3D Modeling</option>
+                                          <option >Asset Inspection</option>
+                                          <option >Drone Maintenance</option>
+                                        </select>
+                                        
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="project-name" class="col-form-label">Add Start date</label>
+                                        <input type="date" class="form-control" id="project-name" name="projectStartdate">
 
                                     </div>
                                     <div class="form-group">
-                                        <label for="project-checklist" class="col-form-label">Add checklist</label>
-                                        <input type="file" class="form-control" id="project-checklist"
-                                            name="projectChecklist">
+                                        <label for="project-name" class="col-form-label">Add due date</label>
+                                        <input type="date" class="form-control" id="project-name" name="projectDuedate">
 
                                     </div>
                                     <div class="form-group">
                                         <label for="project-budget" class="col-form-label">Add Budget</label>
                                         <input type="number" class="form-control" id="project-budget"
                                             name="projectBudget">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="project-attachment" class="col-form-label">Add documentation</label>
-                                        <input type="file" class="form-control" id="project-attachment"
-                                            name="projectAttachment">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="project-description" class="col-form-label">Description</label>
-                                        <textarea class="form-control" rows="5" id="project-description"
-                                            name="projectDescription"></textarea>
                                     </div>
 
                                 </div>
@@ -192,19 +191,20 @@
                         <table class="table" id="dataTable" width="100%" cellspacing="0">
                             <thead style="background-color: #72736E;">
                                 <tr>
-                                    <th>Projects</th>
-                                    <th>Assignee</th>
+                                    <th>Project Name </th>
+                                    <th>Team Lead</th>
+                                    <th>Project Type</th>
+                                    <th>Start Date</th>
                                     <th>Due Date</th>
-                                    <th>Checklist</th>
-                                    <th>Due date</th>
-                                    <th>Description</th>
-                                    <th>Risk Indicator</th>
+                                    <th>Budget</th>
+                                    <th></th>
+                                    <!-- <th>Risk Indicator</th> -->
                                 </tr>
                             </thead>
 
                             <tbody id="allprojects">
                                 
-
+                               
                             </tbody>
                         </table>
                     </div>
@@ -253,11 +253,11 @@
             db.collection('projects')
                 .add({
                     projectName: event.target.projectName.value,
-                    projectDate: event.target.projectDate.value,
-                    projectChecklist: event.target.projectChecklist.value,
+                    projectTeamlead: event.target.projectTeamlead.value,
+                    projectType: event.target.projectType.value,
+                    projectStartdate: event.target.projectStartdate.value,
+                    projectDuedate: event.target.projectDuedate.value,
                     projectBudget: event.target.projectBudget.value,
-                    projectAttachment: event.target.projectAttachment.value,
-                    projectDescription: event.target.projectDescription.value,
 
                 })
                 .then(function (docRef) {
@@ -280,29 +280,20 @@
                     let newRow = `
                     <tr>
                                     <td><a href="projectview.html">${data.projectName}</a></td>
-                                    <td>
-                                        <div class="form-group">
-                                            <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                            <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;">
-                                            <i class="fas fa-plus-circle"></i>
-                                        </div>
-                                    </td>
-                                    <td>${data.projectDate}</td>
-                                    <td><i class="fas fa-paperclip"></i></td>
+                                    <td><a href="projectview.html">${data.projectTeamlead}</a></td>
+                                    <td>${data.projectType}</td>
+                                     <td>${data.projectStartdate}</td>
+                                    <td>${data.projectDuedate}</td>
                                     <td>&#8373;${data.projectBudget}</td>
-                                    <td>${data.projectDescription}</td>
-                                    <td>
-                                        <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="customSwitch1"
-                                                checked>
-                                            <label class="custom-control-label" for="customSwitch1"></label>
-                                        </div>
+                                    <td class="align-middle text-right">
+                                    <div class="dropdown">
+                                    <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <div class="dropdown-arrow mr-n1"></div><a href="#" class="dropdown-item">Edit</a> <a
+                                        href="#" class="dropdown-item">Delete</a>
+                                    </div>
+                                    </div>
                                     </td>
                                 </tr>
                     `
