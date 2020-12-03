@@ -12,6 +12,14 @@
   <link href="css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <script defer src="fontawesome-free-5.15.1-web/js/all.js"></script>
+  <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const project = {
+            name: urlParams.get('name'),
+            id: urlParams.get('id')
+        }
+  </script>
 </head>
 
 <body class="sb-nav-fixed">
@@ -103,12 +111,15 @@
 
             <div class="col" style="margin-top: 10px;margin-bottom: 50px;">
               <h1 class="page-title"> Project Overview </h1>
-              <h2><img src="images/Vodafone_Ghana-Logo.wine.png" alt="" width="100px" height="50px">Vodafone Project
+              <h2><img src="images/Vodafone_Ghana-Logo.wine.png" alt="" width="100px" height="50px">
+                <script type="text/javascript">
+                  document.write(project.name)
+                </script>
               </h2>
               <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item active">Is a Responsive Admin Theme designed with focus on simplicity, user
                   experience, interactions, and flows. It enables you to build rich and beautiful experiences for your
-                  project. <a href="#">Read more...</a></li>
+                  project.</li>
               </ol>
             </div>
 
@@ -247,13 +258,6 @@
                           <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
 
                         </div>
-                        <!-- <div>
-                                                          <i class="fas fa-paperclip"></i>
-                                                          <i class="fas fa-file"></i>
-                                                          <i class="fas fa-file-invoice"></i>
-                                                          <i class="fas fa-file-contract"></i>
-                                                          <i class="fas fa-tasks"></i>
-                                                        </div> -->
                       </form>
 
 
@@ -266,42 +270,77 @@
               <div class="col">
 
                 <div class="card shadow mb-4">
-                  <div class="card-body">
-                    <div class="container">
-                      <div class="row">
-                        <div class="col">
+                    
+                      <div class="container">
+                        <div class="row">
+                          <div class="col">
 
-                          <h6>Activity</h6>
-                          <small>Today</small>
-                        </div>
-                        <div class="col">
-                          <a href="">
-                            <p class="text-right">View details</p>
-                          </a>
+                            <h6>Activity</h6>
+                            
+                          </div>
+                          <div class="col">
+                            <a href="">
+                              <p class="text-right">Add Team Members</p>
+                            </a>
+                          </div>
                         </div>
                       </div>
+                      
+                   
+                      <div class="card shadow mb-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">First</th>
+                                            <th scope="col">Last</th>
+                                            <th scope="col">title</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>data analyst</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>@fat</td>
+                                        </tr>
+                                       
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td>Larry</td>
+                                            <td>the Bird</td>
+                                            <td>@twitter</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td>Larry</td>
+                                            <td>the Bird</td>
+                                            <td>@twitter</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                       
+                        
+                    
                     </div>
-                    <br>
-                    <div class="panel panel-inverse" data-sortable-id="index-4" style="width: 100%; ">
-                      <div class="panel-toolbar">
-                        <div class="btn-group m-r-5">
-                          <a class="btn btn-white" href="javascript:;"><i class="fa fa-bold"></i></a>
-                          <a class="btn btn-white active" href="javascript:;"><i class="fa fa-italic"></i></a>
-                          <a class="btn btn-white" href="javascript:;"><i class="fa fa-underline"></i></a>
-                        </div>
-                        <div class="btn-group" style="width: 100px;">
-                          <a class="btn btn-white" href="javascript:;"><i class="fa fa-align-left"></i></a>
-                          <a class="btn btn-white active" href="javascript:;"><i class="fa fa-align-center"></i></a>
-                          <a class="btn btn-white" href="javascript:;"><i class="fa fa-align-right"></i></a>
-                          <a class="btn btn-white" href="javascript:;"><i class="fa fa-align-justify"></i></a>
-                        </div>
-                      </div>
-                      <textarea class="form-control rounded-0 bg-light p-15" rows="5">Enter some comment.</textarea>
-                      <div class="panel-footer text-right">
-                        <a href="javascript:;" class="btn btn-white btn-sm">Cancel</a>
-                        <a href="javascript:;" class="btn btn-primary btn-sm m-l-5">Save</a>
-                      </div>
-                    </div>
+                    
+
+
+
+
+
+
+
+
 
 
                   </div>
@@ -316,13 +355,13 @@
             <div class="card">
 
               <div class="card-header border-0"> 
-                <a class="text-left" href="tasks.html">
+                <a class="text-left" id="tasklink" href="tasks.html">
                 View Task Board</a> 
-                <a href="#" class="  d-sm-inline-block text-center py-2 px-2 mt-3 rounded text-white add-totasks"
+                <!-- <a href="#" class="  d-sm-inline-block text-center py-2 px-2 mt-3 rounded text-white add-totasks"
                     data-toggle="modal" data-target="#addtotask" style="float: right;background-color: #72736E;">
                     <i class="fas fa-plus-circle align-middle text-white"></i> 
                     <span>Add Task</span>
-                </a>
+                </a> -->
           </div>
               
               <!-- <div class="container-fluid">
@@ -524,7 +563,10 @@
 
 
 
-
+        <script>
+          let tasklink = document.getElementById('tasklink');
+          tasklink.href = `tasks.html?name=${project.name}&id=${project.id}`
+        </script>
         <script src="js/jquery-3.5.1.slim.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/scripts.js"></script>

@@ -49,33 +49,24 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        <!-- <a class="nav-link" href="maindashboard.html">
-                            <div class="sb-nav-link-icon font-weight-bold"><i class="fas fa-tachometer-alt"></i></div>
-                            Dashboard
-                        </a>
-                        <a class="nav-link" href="clients.html">
-                            <div class="sb-nav-link-icon font-weight-bold"><i class="fas fa-user-friends"></i></div>
-                            Clients
-                        </a>
-                        <a class="nav-link" href="project.html">
-                            <div class="sb-nav-link-icon font-weight-bold"><i class="fas fa-project-diagram"></i></div>
-                            Projects
-                        </a> -->
-                        <a class="nav-link" href="maindashboard.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
-                            Team Dashboard
-                        </a>
-                        <a class="nav-link" href="dashboardprojectlead.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                            Project Lead
-                        </a>
+                       
                         <a class="nav-link" href="operation.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                             Operational Director
                         </a>
+                        
+                        <a class="nav-link" href="dashboardprojectlead.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                            Project Lead
+                        </a>
+                        
                         <a class="nav-link" href="marketing.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                             Marketing Team
+                        </a>
+                        <a class="nav-link" href="maindashboard.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                            Team Dashboard
                         </a>
                         <a class="nav-link" href="clients.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-user-friends"></i></div>
@@ -97,15 +88,32 @@
 
         <div id="layoutSidenav_content">
             <div class="container-fluid">
+                <div class="dropdown no-arrow" style="float: right; margin-top: 40px;">
+                    Add members
+                    <a class="fas fa-user-plus" href="#" role="button"  id="dropdownMenuLink"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user-plus"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                        aria-labelledby="dropdownMenuLink">
+                        <div class="dropdown-header">Add new members</div>
+                        <a class="dropdown-item" href="#">  <input type="email" placeholder="e.g. @bent10"></a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"><button type="submit" class="btn send-email" class="far fa-clone"> Invite member by mail</button></a>
+                    </div>
+                </div>
                 <h1 class="mt-4">Dashboard</h1>
+                
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">                   
                 </div>
+                
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">You are welcome, Operational director</li>
                 </ol>
+                
                 <div class="row">
                     <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="card border-left-primary shadow h-100 py-2 bg-secondary mb-3">
+                        <div class="card border-left-primary shadow h-100 py-2 mb-3">
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
@@ -121,12 +129,12 @@
                         </div>
                     </div>
                     <div class="col-xl-3 col-md-6 mb-4 ">
-                        <div class="card border-left-success shadow h-100 py-2 bg-info mb-3 ">
+                        <div class="card border-left-success shadow h-100 py-2o mb-3 ">
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
-                                            Ongoing</div>
+                                              <a href="project.html">Ongoing</a></div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">64</div>
                                     </div>
                                     <div class="col-auto">
@@ -137,16 +145,16 @@
                         </div>
                     </div>
                     <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="card border-left-info shadow h-100 py-2 bg-success mb-3">
+                        <div class="card border-left-info shadow h-100 py-2  mb-3">
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
-                                            Completed
+                                           <a href="project.html"> Completed </a>
                                         </div>
                                         <div class="row no-gutters align-items-center">
                                             <div class="col-auto">
-                                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">80</div>
+                                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">40</div>
                                             </div>
                                             <div class="col">
                                                 <div class="progress progress-sm mr-2">
@@ -165,12 +173,12 @@
                         </div>
                     </div>
                     <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="card border-left-warning shadow h-100 py-2 bg-danger mb-3">
+                        <div class="card border-left-warning shadow h-100 py-2  mb-3">
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
-                                            Onhold</div>
+                                            Onhold<a href="project.html"> Completed </a></div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
                                     </div>
                                     <div class="col-auto">
@@ -193,11 +201,11 @@
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                         aria-labelledby="dropdownMenuLink">
-                                        <div class="dropdown-header">Dropdown Header:</div>
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <div class="dropdown-header">Budget:</div>
+                                        <a class="dropdown-item" href="#">Expenses</a>
+                                        <a class="dropdown-item" href="#">Margin</a>
+                                        <!-- <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Something else here</a> -->
                                     </div>
                                 </div>
                             </div>
@@ -207,7 +215,7 @@
                                 </div>
                                 <div class="mt-4 text-center small">
                                     <span class="mr-2">
-                                        <i class="fas fa-circle text-primary"></i> Estimated budget
+                                        <i class="fas fa-circle text-primary"></i> Budget
                                     </span>
                                     <span class="mr-2">
                                         <i class="fas fa-circle text-danger"></i> Expenses
@@ -223,186 +231,82 @@
 
                     <div class="col">
                         <div class="card shadow mb-4">
-                            <div class="card-body">
+                            <div class="container" style="border: 4px solid #ccc;  padding: 20px;">
                                 <div class="row">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">First</th>
-                                                <th scope="col">Last</th>
-                                                <th scope="col">Handle</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">2</th>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>@fat</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">3</th>
-                                                <td>Larry</td>
-                                                <td>the Bird</td>
-                                                <td>@twitter</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">3</th>
-                                                <td>Larry</td>
-                                                <td>the Bird</td>
-                                                <td>@twitter</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">3</th>
-                                                <td>Larry</td>
-                                                <td>the Bird</td>
-                                                <td>@twitter</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">3</th>
-                                                <td>Larry</td>
-                                                <td>the Bird</td>
-                                                <td>@twitter</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="panel panel-inverse" data-sortable-id="index-4" style="width: 100%;background-color: #72736E"; ">
-                                <div class="panel-toolbar">
-                                    <div class="btn-group m-r-5">
-                                        <a class="btn btn-white" href="javascript:;"><i class="fa fa-bold"></i></a>
-                                        <a class="btn btn-white active" href="javascript:;"><i class="fa fa-italic"></i></a>
-                                        <a class="btn btn-white" href="javascript:;"><i class="fa fa-underline"></i></a>
+                                    <div class="col">
+                                        <h6>Approvals</h6>
+                                        <small><span class="text-muted">Group </span><b>Support</b></small>
                                     </div>
-                                    <div class="btn-group" style="width: 100px;">
-                                        <a class="btn btn-white" href="javascript:;"><i class="fa fa-align-left"></i></a>
-                                        <a class="btn btn-white active" href="javascript:;"><i
-                                                class="fa fa-align-center"></i></a>
-                                        <a class="btn btn-white" href="javascript:;"><i class="fa fa-align-right"></i></a>
-                                        <a class="btn btn-white" href="javascript:;"><i class="fa fa-align-justify"></i></a>
+                                    <div class="col">
+                                        <a href="">
+                                            <p class="text-right">View details</p>
+                                        </a>
                                     </div>
                                 </div>
-                                <textarea class="form-control rounded-0 bg-light p-15" rows="5">Enter some comment.</textarea>
-                                <div class="panel-footer text-right">
-                                    <a href="javascript:;" class="btn btn-white btn-sm">Cancel</a>
-                                    <a href="javascript:;" class="btn btn-dark btn-sm m-l-5">Save</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                 <div class="row">
-                    <div class="col">
-                        <div class="card shadow mb-4">
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h6>Approvals</h6>
-                                            <small><span class="text-muted">Group </span><b>Support</b></small>
-                                        </div>
-                                        <div class="col">
-                                            <a href="">
-                                                <p class="text-right">View details</p>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    
-                                     <div class="row" style="border-bottom: 1px solid #cccccc; margin-top: 10px;">
-                                        <div class="col-md-11">
-                                            <div class="form-check form-check-inline">
-                                                
-                                                    <p class="text-left">Darko farms spraying projects</p>
-                                                </label>
-                                            </div>
+                                <br>
+                                
+                                 <div class="row" style="border-bottom: 1px solid #cccccc; margin-top: 10px;">
+                                    <div class="col-md-11">
+                                        <div class="form-check form-check-inline">
                                             
+                                                <p class="text-left">Darko farms spraying projects</p>
+                                            </label>
                                         </div>
-                                        <div class="col-md-1">
-                                            <div class="dropdown">
-                                                <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown"
-                                                  aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                  <div class="dropdown-arrow mr-n1"></div><a href="#" class="dropdown-item">Approve</a> 
-                                                    
-                                                </div>
-                                              </div>
-                                        </div>
+                                        
                                     </div>
-                                    <div class="row" style="border-bottom: 1px solid #cccccc;  margin-top: 10px;">
-                                        <div class="col-md-11">
-                                            <div class="form-check form-check-inline">
-                                                <label class="form-check-label" for="inlineCheckbox1">
-                                                    <p class="text-left">3D Modelling</p>
-                                                </label>
+                                    <div class="col-md-1">
+                                        <div class="dropdown">
+                                            <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown"
+                                              aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                              <div class="dropdown-arrow mr-n1"></div><a href="#" class="dropdown-item">Approve</a> 
+                                                
                                             </div>
-                                        </div>
-                                        <div class="col-md-1">
-                                            <div class="dropdown">
-                                                <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown"
-                                                  aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                  <div class="dropdown-arrow mr-n1"></div><a href="#" class="dropdown-item">Approve</a> 
-                                                 
-                                                </div>
-                                              </div>
-                                        </div>
+                                          </div>
                                     </div>
-                                    <div class="row" style="border-bottom: 1px solid #cccccc;  margin-top:10px;">
-                                        <div class="col-md-11">
-                                            <div class="form-check form-check-inline">
-                                                <label class="form-check-label" for="inlineCheckbox1">
-                                                    <p class="text-left">spraying insecticides</p>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-1">
-                                            <div class="dropdown">
-                                                <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown"
-                                                  aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                  <div class="dropdown-arrow mr-n1"></div><a href="#" class="dropdown-item">Approve</a> 
-                                                    
-                                                </div>
-                                              </div>
-                                        </div>
-                                    </div>
-                                    <div class="row" style="border-bottom: 1px solid #cccccc;  margin-top:10px;">
-                                        <div class="col-md-11">
-                                            <div class="form-check form-check-inline">
-                                                <label class="form-check-label" for="inlineCheckbox1">
-                                                    <p class="text-left">Land Surveying</p>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-1">
-                                            <div class="dropdown">
-                                                <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown"
-                                                  aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                  <div class="dropdown-arrow mr-n1"></div><a href="#" class="dropdown-item">Approve</a> 
-                                                    
-                                                </div>
-                                              </div>
-                                        </div>
-                                    </div> 
                                 </div>
+                                <div class="row" style="border-bottom: 1px solid #cccccc;  margin-top: 10px;">
+                                    <div class="col-md-11">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label" for="inlineCheckbox1">
+                                                <p class="text-left">3D Modelling</p>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="dropdown">
+                                            <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown"
+                                              aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                              <div class="dropdown-arrow mr-n1"></div><a href="#" class="dropdown-item">Approve</a> 
+                                             
+                                            </div>
+                                          </div>
+                                    </div>
+                                </div>
+                                <div class="row" style="border-bottom: 1px solid #cccccc;  margin-top:10px;">
+                                    <div class="col-md-11">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label" for="inlineCheckbox1">
+                                                <p class="text-left">spraying insecticides</p>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="dropdown">
+                                            <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown"
+                                              aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                              <div class="dropdown-arrow mr-n1"></div><a href="#" class="dropdown-item">Approve</a> 
+                                                
+                                            </div>
+                                          </div>
+                                    </div>
+                                </div>
+                             
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="card shadow mb-4">
-                            <div class="card-body">
+                      
+                            <div class="card-body" style="border: 4px solid #ccc; margin-top: 20px;">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col">
@@ -432,7 +336,7 @@
                                             value="option1">
                                     </div>
                                 </div>
-                                <div class="row" style="border-bottom: 1px solid #cccccc; margin-top: 10px;">
+                                <!-- <div class="row" style="border-bottom: 1px solid #cccccc; margin-top: 10px;">
                                     <div class="col-md-11">
                                         <div class="form-check form-check-inline">
                                             <label class="form-check-label" for="inlineCheckbox1">
@@ -444,7 +348,7 @@
                                         <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
                                             value="option1">
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="row">
                                     <div class="col-md-11" style="border-bottom: 1px solid #cccccc; margin-top: 10px;">
                                         <div class="form-check form-check-inline">
@@ -474,19 +378,14 @@
                             </div>
                         </div>
                     </div>
-                </div> 
-             </div>
-            
-
+                </div>
+                
+             
                 
              
   
        
-    </div>
-    </div>
-    </div>
-    </div>
-
+   
 
 
     <script src="js/jquery-3.5.1.slim.min.js"></script>

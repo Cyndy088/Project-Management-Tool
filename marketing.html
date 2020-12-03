@@ -16,19 +16,7 @@
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.js'></script>
     <link href="css/custom-styles.css" rel="stylesheet" />
 
-    <script>
-
-        document.addEventListener('DOMContentLoaded', function () {
-            var calendarEl = document.getElementById('calendar');
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth',
-                height: 400,
-
-            });
-            calendar.render();
-        });
-
-    </script>
+    
 </head>
 
 <body class="sb-nav-fixed">
@@ -76,30 +64,16 @@
                             <div class="sb-nav-link-icon font-weight-bold"><i class="fas fa-project-diagram"></i></div>
                             Projects
                         </a> -->
-                        <a class="nav-link" href="maindashboard.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
-                            Team Dashboard
-                        </a>
-                        <a class="nav-link" href="dashboardprojectlead.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                            Project Lead
-                        </a>
-                        <a class="nav-link" href="operation.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                            Operational Director
-                        </a>
+                        
                         <a class="nav-link" href="marketing.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
-                            Marketing Team
+                            Sales Team
                         </a>
                         <a class="nav-link" href="clients.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-user-friends"></i></div>
                             Clients
                         </a>
-                        <a class="nav-link" href="project.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-project-diagram"></i></div>
-                            Projects
-                        </a>
+                        
                         
                     </div>
                 </div>
@@ -125,7 +99,7 @@
                                             <i class="fas fa-user-friends stats-icon"></i>
                                         </div>
                                         <div>
-                                            <p class="text-center stats-value">128</p>
+                                            <p class="text-center stats-value cee">128</p>
                                         </div>
                                         <div>
                                             <p class="text-center"><a href="clients.html">Clients</a> </p>
@@ -138,10 +112,10 @@
                                             <i class="fas fa-clipboard-check stats-icon"></i>
                                         </div>
                                         <div>
-                                            <p class="text-center stats-value">32</p>
+                                            <p class="text-center stats-value  pee"></p>
                                         </div>
                                         <div>
-                                            <p class="text-center">Completed Tasks</p>
+                                            <p class="text-center ">New Orders</p>
                                         </div>
                                     </div>
                                 </div>
@@ -172,63 +146,110 @@
                                     </div>
                                 </div>
                             </div>
-                            <div style="width: 95%;">
-                                <div class="card mb-4">
+                            
+                        </div>
+                        <div class="col-xl-4">
+                            <div class="row">
+                                <div style="width: 100%; background-color: white;">
+                                    <!-- <div id="calendar"></div> -->
                                     <div class="card-header">
                                         <i class="fas fa-chart-area mr-1"></i>
-                                        Sales
+                                        Sales Analytics
                                     </div>
                                     <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-4">
-                            <div class="row">
-                                <div style="width: 90%; background-color: white;">
-                                    <div id="calendar"></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="panel panel-inverse" data-sortable-id="index-4" style="width: 90%; margin-top: 50px;">
-                                    <div class="panel-toolbar">
-                                        <div class="btn-group m-r-5">
-                                            <a class="btn btn-white" href="javascript:;"><i class="fa fa-bold"></i></a>
-                                            <a class="btn btn-white active" href="javascript:;"><i class="fa fa-italic"></i></a>
-                                            <a class="btn btn-white" href="javascript:;"><i class="fa fa-underline"></i></a>
-                                        </div>
-                                        <div class="btn-group" style="width: 100px;">
-                                            <a class="btn btn-white" href="javascript:;"><i class="fa fa-align-left"></i></a>
-                                            <a class="btn btn-white active" href="javascript:;"><i
-                                                    class="fa fa-align-center"></i></a>
-                                            <a class="btn btn-white" href="javascript:;"><i class="fa fa-align-right"></i></a>
-                                            <a class="btn btn-white" href="javascript:;"><i class="fa fa-align-justify"></i></a>
-                                        </div>
-                                    </div>
-                                    <textarea class="form-control rounded-0 bg-light p-15" rows="5">Enter some comment.</textarea>
-                                    <div class="panel-footer text-right">
-                                        <a href="javascript:;" class="btn btn-white btn-sm">Cancel</a>
-                                        <a href="javascript:;" class="btn btn-primary btn-sm m-l-5">Save</a>
-                                    </div>
-                                </div>
-                                
-                            </div>
+                          
                         </div>
                     </div>
 
                 </div>
             </main>
-            <br>
-            <br>
+            
             <div class="col">
                 <div class="card shadow mb-4">
                     <div class="card-body">
                         <div class="row">
                             
                             <h5 class="modal-title">
-                                <i class="fas fa-plus-circle" style="color: black;"></i> Recent Order List
+                                
+                                <div class="container-fluid" >
+                                    <a href="#" class=" add-projects"
+                                        data-toggle="modal" data-target="#addrecentorder" >
+                                        <i class="fas fa-plus-circle" style="color: black;"></i> Recent Order List
+                                    </a>
+                
+                                </div>
+                                <div class="modal fade" id="addrecentorder">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header" style="background-color: #72736E;">
+                                                <h5 class="modal-title">
+                                                    <i class="fas fa-plus-circle"></i> Add Recent Order
+                                                </h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <i class="fas fa-times"></i>
+                                                </button>
+                                            </div>
+                
+                                            <form class="add-projects" onsubmit="addRecentorder(event)">
+                                                <div class="modal-body">
+                                                    <div class="form-group">
+                                                        <label for="Invoice-number" class="col-form-label">Invoice Number</label>
+                                                        <input type="number" class="form-control" id="Invoice-number" name="invoiceNumber">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="Order-name" class="col-form-label">Client</label>
+                                                        <input type="text" class="form-control" id="Order-name" name="orderName">
+                                                    </div>
+                
+                                                    <div class="form-group">
+                                                        <label for="Order-type" class="col-form-label">Project Type</label>
+                                                        <select class="custom-select"  name="orderType"> 
+                                                            <option>Crop Monitoring</option>
+                                                            <option >Crop Spraying</option>
+                                                            <option >Mapping and Surveying</option>
+                                                            <option >3D Modeling</option>
+                                                            <option >Asset Inspection</option>
+                                                            <option >Drone Maintenance</option>
+                                                          </select>
+                        
+                
+                                                    </div>
+                                                    
+                                                      <div class="form-group">
+                                                        <label for="Order-amount" class="col-form-label">Amount</label>
+                                                        <input type="number" class="form-control" id="Order-amount" name="orderAmount">
+                
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="Order-date" class="col-form-label">Date</label>
+                                                        <input type="date" class="form-control" id="Order-date" name="orderDate">
+                
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="Order-status" class="col-form-label">Status</label>
+                                                        <select class="custom-select"  name="orderStatus"> 
+                                                            <option>Confirmed</option>
+                                                            <option >Cancelled</option>
+                                                           
+                                                          </select>
+                                                    </div>
+                
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="submit" id="special"  class="submit-button" class="btn font-weight-bold send-email"
+                                                        style="background-color: #72736E;">Add</button>
+                                                </div>
+                                            </form>
+                
+                
+                                        </div>
+                                    </div>
+                                </div>
                             </h5>
-                            <table class="table">
+                            <table class="table" id="allOrders">
                                 <thead>
                                     <tr>
                                         <th scope="col">Invoice No</th>
@@ -239,53 +260,8 @@
                                         <th scope="col">Status</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">#000195</th>
-                                        <td>H&M Construction Company</td>
-                                        <td>Surveying and Mapping</td>
-                                        <td>$4000</td>
-                                        <td>5th August 2020</td>
-                                        <td>Cancel</td>
-                                        <td><div class="dropdown">
-                                            <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown"
-                                              aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                              <div class="dropdown-arrow mr-n1"></div><a href="#" class="dropdown-item">Edit</a> <a
-                                                href="#" class="dropdown-item">Delete</a>
-                                            </div></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">#000195</th>
-                                        <td>H&M Construction Company</td>
-                                        <td>Surveying and Mapping</td>
-                                        <td>$4000</td>
-                                        <td>5th August 2020</td>
-                                        <td>confirm</td>
-                                        <td><div class="dropdown">
-                                            <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown"
-                                              aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                              <div class="dropdown-arrow mr-n1"></div><a href="#" class="dropdown-item">Edit</a> <a
-                                                href="#" class="dropdown-item">Delete</a>
-                                            </div></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">#000195</th>
-                                        <td>H&M Construction Company</td>
-                                        <td>Surveying and Mapping</td>
-                                        <td>$4000</td>
-                                        <td>5th August 2020</td>
-                                        <td>confirm</td>
-                                        <td><div class="dropdown">
-                                            <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown"
-                                              aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                              <div class="dropdown-arrow mr-n1"></div><a href="#" class="dropdown-item">Edit</a> <a
-                                                href="#" class="dropdown-item">Delete</a>
-                                            </div></td>
-                                    </tr>
-                                    
+                                <tbody id="allorders">
+                                   
                                 </tbody>
                             </table>
                         </div>
@@ -294,19 +270,7 @@
                 </div>
             </div>
             
-            <!-- <footer class="py-4 bg-light mt-auto">
-                <div class="container-fluid">
-                    <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2020</div>
-                        <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                        </div>
-                    </div>
-                </div>
-            </footer> -->
-        </div>
+  
     </div>
     <script src="js/jquery-3.5.1.slim.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
@@ -317,7 +281,119 @@
     <script src="js/jquery.dataTables.min.js"></script>
     <script src="js/data.Tables.bootstrap.min.js"></script>
     <script src="assets/demo/datatables-demo.js"></script>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+    <script>
+        var count = 0;
+$("button#special").on('click', function() {
+  count ++;
+  $(".pee").text(count);
+});
+
+$(".pee").text(count);
     </script>
+     <!-- The core Firebase JS SDK is always required and must be listed first -->
+     <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+
+     <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+     <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+ 
+     <script>
+         // Your web app's Firebase configuration
+         var firebaseConfig = {
+             apiKey: "AIzaSyAiyqidqSCOQDE090C2ZraA-R5WI9DK5GA",
+             authDomain: "hacinta-94edb.firebaseapp.com",
+             databaseURL: "https://hacinta-94edb.firebaseio.com",
+             projectId: "hacinta-94edb",
+             storageBucket: "hacinta-94edb.appspot.com",
+             messagingSenderId: "58100753918",
+             appId: "1:58100753918:web:d8a99f59676d2306b90caf"
+         };   
+         // Initialize Firebase
+         firebase.initializeApp(firebaseConfig);
+     </script>
+     <script>
+         var db = firebase.firestore();
+ 
+ 
+         function addRecentorder(event) {
+             event.preventDefault();
+             $('.submit-button').attr("disabled", true)
+            
+             db.collection('list-of-recent-order')
+                 .add({
+                    invoiceNumber: event.target.invoiceNumber.value,
+                     orderName: event.target.orderName.value,
+                     orderType: event.target.orderType.value,
+                     orderAmount: event.target.orderAmount.value,
+                     orderDate: event.target.orderDate.value,
+                     orderStatus: event.target.orderStatus.value,
+                     
+ 
+                 })
+                 .then(function (docRef) {
+                     console.log('Document written with ID: ', docRef.id);
+                     window.location.href = '/marketing.html';
+                     
+                 })
+                 .catch(function (error) {
+                     console.error('Error adding document: ', error);
+                 });
+         }
+ 
+         function getAllorder() {
+             var orderTable = document.getElementById('allorders');
+             db.collection("list-of-recent-order").get().then((querySnapshot) => {
+                orderTable.innerHTML = '';
+                 querySnapshot.forEach((doc) => {
+                     // console.log(`${doc.id} => ${doc.data().projectName}`);
+                     let data = doc.data();
+                     console.log(data);
+                     let newRow = `
+                     <tr>
+                                     <td><a href="projectview.html">${data.invoiceNumber}</a></td>
+                                     <td><a href="projectview.html">${data.orderName}</a></td>
+                                     <td>${data.orderType}</td>
+                                      <td>${data.orderAmount}</td>
+                                     <td>${data.orderDate}</td>
+                                     <td>&#8373;${data.orderStatus}</td>
+                                     <td class="align-middle text-right">
+                                     <div class="dropdown">
+                                     <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown"
+                                         aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
+                                     <div class="dropdown-menu dropdown-menu-right">
+                                         <div class="dropdown-arrow mr-n1"></div><a href="#" class="dropdown-item">Edit</a> <a
+                                         href="#" class="dropdown-item" id="DC">Delete</a>
+                                     </div>
+                                     </div>
+                                     </td>
+                                 </tr>
+                     `
+                     orderTable.innerHTML = orderTable.innerHTML + newRow
+                 });
+             });
+         }
+ 
+         getAllorder()
+
+         
+
+
+//          db.collection("list-of-recent-order").doc("").delete().then(function() {
+//     console.log("Document successfully deleted!");
+// }).catch(function(error) {
+//     console.error("Error removing document: ", error);
+
+// });
+
+
+ 
+     </script>
+     
+  
+  </script>
 </body>
 
 </html>

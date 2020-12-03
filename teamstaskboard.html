@@ -12,14 +12,6 @@
     <link href="css/dataTables.bootstrap4.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/edit.css">
     <script defer src="fontawesome-free-5.15.1-web/js/all.js"></script>
-    <script>
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const project = {
-            name: urlParams.get('name'),
-            id: urlParams.get('id')
-        }
-  </script>
     
 </head>
 
@@ -102,11 +94,7 @@
                 <div class="container-fluid">
 
                     <div>
-                        <h1 class="mt-4"> 
-                            <script type="text/javascript">
-                            document.write(project.name)
-                          </script> - Task Board
-                          </h1>
+                        <h1 class="mt-4">Task Board</h1>
                         <main>
                             <ol class="breadcrumb mb-4">
                                 <li class="breadcrumb-item active">You are welcome to the Task Board</li>
@@ -122,32 +110,38 @@
                                                 <i class="fas fa-times-circle"></i>
                                             </button>
                                         </div>
-                                        <form class="add-task" onsubmit="addTask(event)" >
+                                        <form class="add-task">
                                             <div class="modal-body">
                                                 <div class="form-group">
                                                     <label for="task-name" class="col-form-label"> Title</label>
-                                                    <input type="text" class="form-control" id="task-name" name="taskName">
+                                                    <input type="text" class="form-control" id="task-name">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="task-name" class="col-form-label">Add team lead</label>
-                                                    <select class="custom-select"  name="taskTeam"> 
-                                                        <option>Eric Osei</option>
-                                                        <option >Evenlyn Mensah</option>
-                                                        <option >John frimpong</option>
-                                                        <option >Happy Sefa</option>
-                                                        <option >George Prepah</option>
-                                                        <option >Henry Okoh</option>
-                                                    </select>
+                                                    <label for="task-name" class="col-form-label">Add Team</label>
+                                                    <br>
+                                                    <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                                        width: 30px;
+                                                        height: 30px;
+                                                        border-radius: 50%;">
+                                                    <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                                        width: 30px;
+                                                        height: 30px;
+                                                        border-radius: 50%;">
+                                                    <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
+                                                        width: 30px;
+                                                        height: 30px;
+                                                        border-radius: 50%;">
+                                                    <i class="fas fa-plus-circle"></i>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="task-date" class="col-form-label">Add date</label>
-                                                    <input type="date" class="form-control" id="task-date" name="taskDate">
+                                                    <label for="task-name" class="col-form-label">Add date</label>
+                                                    <input type="date" class="form-control" id="task-name">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="task-description"
                                                         class="col-form-label">Description</label>
                                                     <textarea class="form-control" rows="3="
-                                                        id="task-description" name="taskDescription"></textarea>
+                                                        id="task-description"></textarea>
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
@@ -157,7 +151,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="modal fade" id="edittask">
+                            <div class="modal fade" id="edittask">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
                                         <div class="modal-header" style="background-color: #72736E;">
@@ -168,7 +162,7 @@
                                                 <i class="fas fa-times-circle"></i>
                                             </button>
                                         </div>
-                                        <form class="edit-task" onsubmit="editProject(event)">
+                                        <form class="edit-task">
                                             <div class="modal-body">
                                                 <div class="form-group">
                                                     <label for="task-name" class="col-form-label"> Title</label>
@@ -209,7 +203,7 @@
                                         </form>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
                           <div class="row row-eq-height task-list-row">
                                 <div class="col-12 col-md-6 col-lg mt-3 task-list-item">
                                     <div class="card bg-primary-light" >
@@ -230,8 +224,8 @@
                                             </div>
                                         </div>
                                         <div class="card-body">
-                                            <div class="task-list" id="addAlltasks">
-                                                <!-- <div class="card my-2 task-card">
+                                            <div class="task-list">
+                                                <div class="card my-2 task-card">
                                                     <div class="card-content">
                                                         <div class="card-body p-4 body-color">
                                                             <h6 class="mb-3 font-w-600">Remove Houtzdale Location</h6>
@@ -257,8 +251,8 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div> -->
-                                                <!-- <div class="card my-2 task-card">
+                                                </div>
+                                                <div class="card my-2 task-card">
                                                     <div class="card-content">
                                                         <div class="card-body p-4 body-color">
                                                             <h6 class="mb-3 font-w-600 h6">Limit API to logged in users
@@ -282,7 +276,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div> -->
+                                                </div>
                                             </div>
 
                                             <a href="#" style="background-color: #72736E;"
@@ -315,7 +309,7 @@
                                             </div>
                                         </div>
                                         <div class="card-body">
-                                            <div class="task-list" id="addAlltasks">
+                                            <div class="task-list">
                                                 <div class="card my-2 task-card">
                                                     <div class="card-content">
                                                         <div class="card-body p-4 body-color">
@@ -415,7 +409,7 @@
                                             </div>
                                         </div>
                                         <div class="card-body">
-                                            <div class="task-list"id="addAlltasks">
+                                            <div class="task-list">
                                                 <div class="card my-2 task-card">
                                                     <div class="card-content">
                                                         <div class="card-body p-4 body-color">
@@ -512,102 +506,6 @@
                 <script src="js/bootstrap.bundle.min.js"></script>
                 <script src="js/scripts.js"></script>
                 <script src="js/edit.js"></script>
-
-                
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
-
-    <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyAiyqidqSCOQDE090C2ZraA-R5WI9DK5GA",
-            authDomain: "hacinta-94edb.firebaseapp.com",
-            databaseURL: "https://hacinta-94edb.firebaseio.com",
-            projectId: "hacinta-94edb",
-            storageBucket: "hacinta-94edb.appspot.com",
-            messagingSenderId: "58100753918",
-            appId: "1:58100753918:web:d8a99f59676d2306b90caf"
-        };   
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-    </script>
-    <script>
-        var db = firebase.firestore();
-
-
-     
-
-        function addTask(event) {
-          event.preventDefault();
-          db.collection('projects.id')
-              .add({
-                  taskName: event.target.taskName.value,
-                  taskTeam: event.target.taskTeam.value,
-                  taskDate: event.target.taskDate.value,
-                  taskDescription: event.target.taskDescription.value,
-                 
-
-
-              })
-              .then(function (docRef) {
-                  console.log('Document written with ID: ', docRef.id);
-                  window.location.href = '/tasks.html'
-                 
-              })
-              .catch(function (error) {
-                  console.error('Error adding document: ', error);
-              });
-      }
-
-      function getaddTotasks() {
-          var addtotasksTable = document.getElementById('addAlltasks');
-          db.collection('projects.id').get().then((querySnapshot) => {
-              addtotasksTable.innerHTML = '';
-              querySnapshot.forEach((doc) => {
-                  // console.log(`${doc.id} => ${doc.data().projectName}`);
-                  let data = doc.data();
-                  console.log(data);
-                  let newRow = `
-
-
-                  <div class="card my-2 task-card">
-                                                    <div class="card-content">
-                                                        <div class="card-body p-4 body-color">
-                                                            <h6 class="mb-3 font-w-600">${data.taskName}</h6>
-                                                            <div class="task-content mb-3">${data.taskTeam}</div>
-                                                            <p class="font-w-500 tx-s-12"><i
-                                                                    class="fas fa-calendar"></i> <span
-                                                                    class="task-date">${data.taskDate}</span></p>
-                                                                    <p class="font-w-500 tx-s-12">
-                                                                        <span class="task-team">${data.taskDescription}</span></p> 
-                                                            <div class="d-flex">
-                                                                <div class="my-auto line-h-1 h5">
-                                                                    <a class="text-dark edit-task" href="#"
-                                                                        data-toggle="modal" data-target="#edittask"><i
-                                                                            class="fas fa-edit"></i></a>
-                                                                    <a class="text-danger delete-task" href="#"><i
-                                                                            class="fas fa-trash"></i></a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-     
-                                                
-                                  
-                  `
-                  addtotasksTable.innerHTML = addtotasksTable.innerHTML + newRow
-              });
-          });
-      }
-
-      getaddTotasks()
-
-    </script>
 
 
 </body>

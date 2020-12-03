@@ -47,18 +47,7 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        <!-- <a class="nav-link" href="operation.html">
-                            <div class="sb-nav-link-icon font-weight-bold"><i class="fas fa-tachometer-alt"></i></div>
-                            Dashboard
-                        </a>
-                        <a class="nav-link" href="clients.html">
-                            <div class="sb-nav-link-icon font-weight-bold"><i class="fas fa-user-friends"></i></div>
-                            Clients
-                        </a>
-                        <a class="nav-link" href="project.html">
-                            <div class="sb-nav-link-icon font-weight-bold"><i class="fas fa-project-diagram"></i></div>
-                            Projects
-                        </a> -->
+                        
                         <a class="nav-link" href="maindashboard.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                             Team Dashboard
@@ -132,19 +121,7 @@
                                             <option >George Prepah</option>
                                             <option >Henry Okoh</option>
                                           </select>
-                                        <!-- <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                                width: 30px;
-                                                height: 30px;
-                                                border-radius: 50%;">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                                width: 30px;
-                                                height: 30px;
-                                                border-radius: 50%;">
-                                        <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                                width: 30px;
-                                                height: 30px;
-                                                border-radius: 50%;">
-                                        <i class="fas fa-plus-circle"></i> -->
+                                        
 
                                     </div>
                                     <div class="form-group">
@@ -173,10 +150,18 @@
                                         <input type="number" class="form-control" id="project-budget"
                                             name="projectBudget">
                                     </div>
+                                    <div class="form-group">
+                                        <select class="custom-select"  name="projectStatus"> 
+                                          <option>On going</option>
+                                          <option >Completed</option>
+                                          <option >On hold</option>
+                                        </select>
+                                        
+                                      </div>
 
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="submit" class="btn font-weight-bold send-email"
+                                    <button id="submit-button" type="submit" class="btn font-weight-bold send-email"
                                         style="background-color: #72736E;">Save</button>
                                 </div>
                             </form>
@@ -197,8 +182,7 @@
                                     <th>Start Date</th>
                                     <th>Due Date</th>
                                     <th>Budget</th>
-                                    <th></th>
-                                    <!-- <th>Risk Indicator</th> -->
+                                    <th>Status</th>
                                 </tr>
                             </thead>
 
@@ -250,6 +234,7 @@
 
         function addProject(event) {
             event.preventDefault();
+            $('#submit-button').attr("disabled", true)
             db.collection('projects')
                 .add({
                     projectName: event.target.projectName.value,
@@ -258,11 +243,12 @@
                     projectStartdate: event.target.projectStartdate.value,
                     projectDuedate: event.target.projectDuedate.value,
                     projectBudget: event.target.projectBudget.value,
-
+                    projectStatus:event.target.projectStatus.value,
+                    
                 })
                 .then(function (docRef) {
                     console.log('Document written with ID: ', docRef.id);
-                    window.location.href = '/project.html'
+                    window.location.href = 'project.html'
                 })
                 .catch(function (error) {
                     console.error('Error adding document: ', error);
@@ -271,34 +257,162 @@
 
         function getAllProjects() {
             var projectsTable = document.getElementById('allprojects');
-            db.collection("projects").get().then((querySnapshot) => {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const param = urlParams.get('category');
+            let firestoreRef = db.collection("projects");
+            if(param){
+                firestoreRef = firestoreRef.where('projectType','==',param);
+            }
+            firestoreRef.onSnapshot((querySnapshot) => {
                 projectsTable.innerHTML = '';
+                let num = 0;
                 querySnapshot.forEach((doc) => {
                     // console.log(`${doc.id} => ${doc.data().projectName}`);
                     let data = doc.data();
                     console.log(data);
                     let newRow = `
                     <tr>
-                                    <td><a href="projectview.html">${data.projectName}</a></td>
-                                    <td><a href="projectview.html">${data.projectTeamlead}</a></td>
+                                    <td><a href="projectview.html?name=${data.projectName}&id=${doc.id}">${data.projectName}</a></td>
+                                    <td><a href="teamprojectview.html">${data.projectTeamlead}</a></td>
                                     <td>${data.projectType}</td>
                                      <td>${data.projectStartdate}</td>
                                     <td>${data.projectDuedate}</td>
                                     <td>&#8373;${data.projectBudget}</td>
-                                    <td class="align-middle text-right">
+                                    <td>
+                                        ${data.projectStatus}  
+                                    </td>
+                                    <td >
                                     <div class="dropdown">
                                     <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
                                     <div class="dropdown-menu dropdown-menu-right">
-                                        <div class="dropdown-arrow mr-n1"></div><a href="#" class="dropdown-item">Edit</a> <a
-                                        href="#" class="dropdown-item">Delete</a>
+                                        <div class="dropdown-arrow mr-n1"></div>
+                                        <a href="#" data-toggle="modal" data-target="#editproject${num}" class="dropdown-item">Edit</a>
+                                        <a class="dropdown-item" onclick="deleteProject('${doc.id}')">Delete</a>
                                     </div>
+                                    </div>
+
+                                    <div class="modal fade" id="editproject${num++}">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header" style="background-color: #72736E;">
+                                                    <h5 class="modal-title">
+                                                        <i class="fas fa-plus-circle"></i> Edit Project
+                                                    </h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <i class="fas fa-times"></i>
+                                                    </button>
+                                                </div>
+
+                                                <form class="add-projects" onsubmit="editProject(event, '${doc.id}')">
+                                                    <div class="modal-body">
+                                                        <div class="form-group">
+                                                            <label for="Project-name" class="col-form-label"> Add Project name</label>
+                                                            <input type="text" value="${data.projectName}" class="form-control" name="projectName">
+                                                        </div>
+
+
+                                                        <div class="form-group">
+                                                            <label for="task-name" class="col-form-label">Add team lead</label>
+                                                            <select class="custom-select"  name="projectTeamlead">
+                                                            <option>${data.projectTeamlead}</option>
+                                                                <option>Eric Osei</option>
+                                                                <option >Evenlyn Mensah</option>
+                                                                <option >John frimpong</option>
+                                                                <option >Happy Sefa</option>
+                                                                <option >George Prepah</option>
+                                                                <option >Henry Okoh</option>
+                                                            </select>
+                                                            
+
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <select class="custom-select"  name="projectType"> 
+                                                            <option>${data.projectType}</option>
+                                                            <option>Crop Monitoring</option>
+                                                            <option >Crop Spraying</option>
+                                                            <option >Mapping and Surveying</option>
+                                                            <option >3D Modeling</option>
+                                                            <option >Asset Inspection</option>
+                                                            <option >Drone Maintenance</option>
+                                                            </select>
+                                                            
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="project-name" class="col-form-label">Add Start date</label>
+                                                            <input type="date" value="${data.projectStartdate}" class="form-control" id="project-name" name="projectStartdate">
+
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="project-name" class="col-form-label">Add due date</label>
+                                                            <input type="date" value="${data.projectDuedate}" class="form-control" id="project-name" name="projectDuedate">
+
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="project-budget" class="col-form-label">Add Budget</label>
+                                                            <input type="number"  value="${data.projectBudget}" class="form-control" id="project-budget"
+                                                                name="projectBudget">
+                                                        </div>
+                                                    <div class="form-group">
+                                                        <select class="custom-select" value="${data.projectStatus}"  name="projectStatus"> 
+                                                        <option>On going</option>
+                                                        <option >Completed</option>
+                                                        <option >On hold</option>
+                                                        </select>
+                                                        
+                                                    </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button  type="submit" class="btn font-weight-bold send-email"
+                                                            style="background-color: #72736E;">Update</button>
+                                                    </div>
+                                                </form>
+
+
+                                            </div>
+                                        </div>
                                     </div>
                                     </td>
+                                    
+                                    
                                 </tr>
                     `
                     projectsTable.innerHTML = projectsTable.innerHTML + newRow
                 });
+            });
+        }
+
+        
+        function editProject(event,id) {
+            console.log('hh');
+            event.preventDefault();
+            $('#submit-button').attr("disabled", true)
+            db.collection('projects').doc(id)
+                .update({
+                    projectName: event.target.projectName.value,
+                    projectTeamlead: event.target.projectTeamlead.value,
+                    projectType: event.target.projectType.value,
+                    projectStartdate: event.target.projectStartdate.value,
+                    projectDuedate: event.target.projectDuedate.value,
+                    projectBudget: event.target.projectBudget.value,
+                    projectStatus:event.target.projectStatus.value,
+                    
+                })
+                .then(function (docRef) {
+                    window.location.href = 'project.html'
+                })
+                .catch(function (error) {
+                    console.error('Error adding document: ', error);
+                });
+        }
+
+
+        function deleteProject(id) {
+            db.collection("projects").doc(id).delete().then(function () {
+                console.log("Document successfully deleted!");
+            }).catch(function (error) {
+                console.error("Error removing document: ", error);
             });
         }
 
