@@ -209,7 +209,7 @@
                                         </form>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>  -->
                           <div class="row row-eq-height task-list-row">
                                 <div class="col-12 col-md-6 col-lg mt-3 task-list-item">
                                     <div class="card bg-primary-light" >
@@ -461,8 +461,12 @@
                                                 </a>
 
                                                 <ul class="dropdown-menu dropdown-menu-right border py-0">
-                                                    <li><a class="dropdown-item edit" href="#" data-toggle="modal"
-                                                            data-target="#edittask"><i class="fas fa-edit"></i>
+                                                    <li><a class="dropdown-item edit"
+                                                         href="#"
+                                                          data-toggle="modal"
+                                                            data-target="#edittask">
+                                                            
+                                                            <i class="fas fa-edit"></i>
                                                             Rename</a></li>
                                                     <li><a class="dropdown-item delete" href="#"><i
                                                                 class="fas fa-trash"></i> Delete</a></li>
@@ -549,13 +553,11 @@
                   taskTeam: event.target.taskTeam.value,
                   taskDate: event.target.taskDate.value,
                   taskDescription: event.target.taskDescription.value,
-                 
-
 
               })
               .then(function (docRef) {
                   console.log('Document written with ID: ', docRef.id);
-                  window.location.href = '/tasks.html'
+                  window.location.href = 'tasks.html'
                  
               })
               .catch(function (error) {
@@ -565,12 +567,14 @@
 
       function getaddTotasks() {
           var addtotasksTable = document.getElementById('addAlltasks');
-          db.collection('projects.id').get().then((querySnapshot) => {
-              addtotasksTable.innerHTML = '';
-              querySnapshot.forEach((doc) => {
-                  // console.log(`${doc.id} => ${doc.data().projectName}`);
-                  let data = doc.data();
-                  console.log(data);
+        let firestoreRef = db.collection('projects.id');    
+            firestoreRef.onSnapshot((querySnapshot) => {
+                addtotasksTable.innerHTML = '';
+                let num = 0;
+                querySnapshot.forEach((doc) => {
+                    // console.log(`${doc.id} => ${doc.data().projectName}`);
+                    let data = doc.data();
+                    console.log(data);
                   let newRow = `
 
 
@@ -578,7 +582,7 @@
                                                     <div class="card-content">
                                                         <div class="card-body p-4 body-color">
                                                             <h6 class="mb-3 font-w-600">${data.taskName}</h6>
-                                                            <div class="task-content mb-3">${data.taskTeam}</div>
+                                                             <div class="task-content mb-3">${data.taskTeam}</div>
                                                             <p class="font-w-500 tx-s-12"><i
                                                                     class="fas fa-calendar"></i> <span
                                                                     class="task-date">${data.taskDate}</span></p>
@@ -586,13 +590,59 @@
                                                                         <span class="task-team">${data.taskDescription}</span></p> 
                                                             <div class="d-flex">
                                                                 <div class="my-auto line-h-1 h5">
-                                                                    <a class="text-dark edit-task" href="#"
-                                                                        data-toggle="modal" data-target="#edittask"><i
+                                                                    <a class="text-dark edit-one-task" href="#"
+                                                                        data-toggle="modal" data-target="#editeachtask"${num}"><i
                                                                             class="fas fa-edit"></i></a>
-                                                                    <a class="text-danger delete-task" href="#"><i
+                                                                    <a class="text-danger delete-task" onclick="deleteTask('${doc.id}')" href="#"><i
                                                                             class="fas fa-trash"></i></a>
                                                                 </div>
                                                             </div>
+                                                            <div class="modal fade" id="editeachtask${num++}">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header" style="background-color: #72736E">
+                                            <h5 class="modal-title">
+                                                <i class="fas fa-plus-circle" style="color: black;"></i> Edit Task
+                                            </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <i class="fas fa-times-circle"></i>
+                                            </button>
+                                        </div>
+                                        <form class="add-task" onsubmit="editallTasks(event, '${doc.id}')" >
+                                            <div class="modal-body">
+                                                <div class="form-group">
+                                                    <label for="task-name" class="col-form-label"> Title</label>
+                                                    <input type="text" value="${data.taskName}" class="form-control" id="task-name" name="taskName">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="task-name" class="col-form-label">Add team lead</label>
+                                                    <select class="custom-select"  name="taskTeam"> 
+                                                        <option>${data.taskTeam}</option>
+                                                        <option >Evenlyn Mensah</option>
+                                                        <option >John frimpong</option>
+                                                        <option >Happy Sefa</option>
+                                                        <option >George Prepah</option>
+                                                        <option >Henry Okoh</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="task-date" class="col-form-label">Add date</label>
+                                                    <input type="date" value="${data.taskDate}" class="form-control" id="task-date" name="taskDate">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="task-description"
+                                                        class="col-form-label">Description</label>
+                                                    <textarea class="form-control" rows="3="
+                                                        id="task-description" value="${data.taskDescription}" name="taskDescription"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn send-email font-weight-bold" style="background-color: #72736E;">Update</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -600,15 +650,48 @@
                                                 
                                   
                   `
-                  addtotasksTable.innerHTML = addtotasksTable.innerHTML + newRow
-              });
-          });
-      }
 
-      getaddTotasks()
+                  addtotasksTable.innerHTML = addtotasksTable.innerHTML + newRow
+                });
+            });
+        }
+
+            
+        
+        function editallTasks(event,id) {
+            console.log('hh');
+            event.preventDefault();
+            $('#submit-button').attr("disabled", true)
+            db.collection('projects.id').doc(id)
+                .update({
+                    taskName: event.target.taskName.value,
+                  taskTeam: event.target.taskTeam.value,
+                  taskDate: event.target.taskDate.value,
+                  taskDescription: event.target.taskDescription.value,
+                })
+                .then(function (docRef) {
+                    window.location.href = 'tasks.html'
+                })
+                .catch(function (error) {
+                    console.error('Error adding document: ', error);
+                });
+        }
+        
+
+        function deleteTask(id) {
+            db.collection('projects.id').doc(id).delete().then(function () {
+                console.log("Document successfully deleted!");
+                
+            }).catch(function (error) {
+                console.error("Error removing document: ", error);
+            });
+        }
+        
+    
+        getaddTotasks()
 
     </script>
-
+    
 
 </body>
 
