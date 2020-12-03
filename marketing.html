@@ -231,9 +231,9 @@
                                                     <div class="form-group">
                                                         <label for="Order-status" class="col-form-label">Status</label>
                                                         <select class="custom-select"  name="orderStatus"> 
-                                                            <option>Confirmed</option>
+                                                            <option>  Confirmed</option>
                                                             <option >Cancelled</option>
-                                                           
+                                                            <option >On Hold</option>
                                                           </select>
                                                     </div>
                 
@@ -284,15 +284,7 @@
    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     
-    <script>
-        var count = 0;
-$("button#special").on('click', function() {
-  count ++;
-  $(".pee").text(count);
-});
-
-$(".pee").text(count);
-    </script>
+   
      <!-- The core Firebase JS SDK is always required and must be listed first -->
      <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
 
@@ -345,48 +337,155 @@ $(".pee").text(count);
  
          function getAllorder() {
              var orderTable = document.getElementById('allorders');
-             db.collection("list-of-recent-order").get().then((querySnapshot) => {
+             let firestoreRef = db.collection("list-of-recent-order");
+            
+            
+                 
+            firestoreRef.onSnapshot((querySnapshot) => {
                 orderTable.innerHTML = '';
-                 querySnapshot.forEach((doc) => {
-                     // console.log(`${doc.id} => ${doc.data().projectName}`);
-                     let data = doc.data();
-                     console.log(data);
+                let num = 0;
+                querySnapshot.forEach((doc) => {
+                    // console.log(`${doc.id} => ${doc.data().projectName}`);
+                    let data = doc.data();
+                    console.log(data);
                      let newRow = `
                      <tr>
-                                     <td><a href="projectview.html">${data.invoiceNumber}</a></td>
-                                     <td><a href="projectview.html">${data.orderName}</a></td>
+                                     <td>#${data.invoiceNumber}</td>
+                                     <td>${data.orderName}</td>
                                      <td>${data.orderType}</td>
                                       <td>${data.orderAmount}</td>
                                      <td>${data.orderDate}</td>
-                                     <td>&#8373;${data.orderStatus}</td>
-                                     <td class="align-middle text-right">
+                                     <td>${data.orderStatus}</td>
+                                     <td ">
                                      <div class="dropdown">
                                      <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown"
                                          aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
                                      <div class="dropdown-menu dropdown-menu-right">
-                                         <div class="dropdown-arrow mr-n1"></div><a href="#" class="dropdown-item">Edit</a> <a
-                                         href="#" class="dropdown-item" id="DC">Delete</a>
+                                         <div class="dropdown-arrow mr-n1"></div> <a href="#" data-toggle="modal" data-target="#editrecentorders${num}" class="dropdown-item">Edit</a>
+                                        <a class="dropdown-item" onclick="deleteOrder('${doc.id}')">Delete</a>
                                      </div>
                                      </div>
+                                     <div class="modal fade" id="editrecentorders${num++}">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header" style="background-color: #72736E;">
+                                                <h5 class="modal-title">
+                                                    <i class="fas fa-plus-circle"></i> Edit Recent Order
+                                                </h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <i class="fas fa-times"></i>
+                                                </button>
+                                            </div>
+                
+                                            <form class="add-projects" onsubmit="editRecentorder(event, '${doc.id}')">
+                                                <div class="modal-body">
+                                                    <div class="form-group">
+                                                        <label for="Invoice-number" class="col-form-label">Invoice Number</label>
+                                                        <input type="number" value="${data.invoiceNumber}" class="form-control" id="Invoice-number" name="invoiceNumber">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="Order-name" class="col-form-label">Client</label>
+                                                        <input type="text" value="${data.orderName}" class="form-control" id="Order-name" name="orderName">
+                                                    </div>
+                
+                                                    <div class="form-group">
+                                                        <label for="Order-type" class="col-form-label">Project Type</label>
+                                                        <select class="custom-select"  name="orderType"> 
+                                                            <option>${data.orderType}</option>
+                                                            <option>Crop Monitoring</option>
+                                                            <option >Crop Spraying</option>
+                                                            <option >Mapping and Surveying</option>
+                                                            <option >3D Modeling</option>
+                                                            <option >Asset Inspection</option>
+                                                            <option >Drone Maintenance</option>
+                                                          </select>
+                        
+                
+                                                    </div>
+                                                    
+                                                      <div class="form-group">
+                                                        <label for="Order-amount" class="col-form-label">Amount</label>
+                                                        <input type="number" value="${data.orderAmount}" class="form-control" id="Order-amount" name="orderAmount">
+                
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="Order-date" class="col-form-label">Date</label>
+                                                        <input type="date"  value="${data.orderDate}" class="form-control" id="Order-date" name="orderDate">
+                
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="Order-status" class="col-form-label">Status</label>
+                                                        <select class="custom-select"  name="orderStatus"> 
+                                                            <option>${data.orderStatus}</option>
+                                                            <option >Cancelled</option>
+                                                            <option >On Hold</option>
+                                                           
+                                                          </select>
+                                                    </div>
+                
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="submit" id="special"  class="submit-button" class="btn font-weight-bold send-email"
+                                                        style="background-color: #72736E;">Update</button>
+                                                </div>
+                                            </form>
+                
+                
+                                        </div>
+                                    </div>
+                                </div>
                                      </td>
                                  </tr>
                      `
                      orderTable.innerHTML = orderTable.innerHTML + newRow
-                 });
-             });
-         }
- 
-         getAllorder()
+                });
+            });
+        }
+
+            
+        
+        function editRecentorder(event,id) {
+            console.log('hh');
+            event.preventDefault();
+            $('#submit-button').attr("disabled", true)
+            db.collection('list-of-recent-order').doc(id)
+                .update({
+                    invoiceNumber: event.target.invoiceNumber.value,
+                     orderName: event.target.orderName.value,
+                     orderType: event.target.orderType.value,
+                     orderAmount: event.target.orderAmount.value,
+                     orderDate: event.target.orderDate.value,
+                     orderStatus: event.target.orderStatus.value,
+                })
+                .then(function (docRef) {
+                    window.location.href = 'marketing.html'
+                })
+                .catch(function (error) {
+                    console.error('Error adding document: ', error);
+                });
+        }
+        
+
+        function deleteOrder(id) {
+            db.collection("list-of-recent-order").doc(id).delete().then(function () {
+                console.log("Document successfully deleted!");
+            }).catch(function (error) {
+                console.error("Error removing document: ", error);
+            });
+        }
+        
+    
+        getAllorder()
+
+    </script>
+        
+
+        
 
          
 
 
-//          db.collection("list-of-recent-order").doc("").delete().then(function() {
-//     console.log("Document successfully deleted!");
-// }).catch(function(error) {
-//     console.error("Error removing document: ", error);
 
-// });
 
 
  

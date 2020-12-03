@@ -95,12 +95,12 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid">
-                    <a href="#" class="  d-sm-inline-block text-center py-2 px-2 mt-3 rounded text-white add-projects"
-                        data-toggle="modal" data-target="#addprojects" style="float: right;background-color: #72736E;">
+                    <a href="#" class="  d-sm-inline-block text-center py-2 px-2 mt-3 rounded text-white add-clients"
+                        data-toggle="modal" data-target="#addclients" style="float: right;background-color: #72736E;">
                         <i class="fas fa-plus-circle align-middle text-white"></i> <span>Add Clients</span>
                     </a>
                 </div>
-                <div class="modal fade" id="addprojects">
+                <div class="modal fade" id="addclients">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header" style="background-color: #72736E;">
@@ -143,7 +143,7 @@
 
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="submit" class="btn font-weight-bold send-email"
+                                    <button type="submit" id="submit-button" class="btn font-weight-bold send-email"
                                         style="background-color: #72736E;" id="touch"> Save</button>
                                 </div>
                             </form>
@@ -189,15 +189,7 @@
     <script src="assets/demo/datatables-demo.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     
-    <script>
-        var count = 0;
-$("button#touch").on('click', function() {
-  count ++;
-  $(".cee").text(count);
-});
-
-$(".cee").text(count);
-    </script>
+   
 
 </script>
 
@@ -227,6 +219,7 @@ $(".cee").text(count);
 
 
         function addClient(event) {
+            $('#submit-button').attr("disabled", true)
             event.preventDefault();
             db.collection('clients')
                 .add({
@@ -248,8 +241,13 @@ $(".cee").text(count);
 
         function getAllClients() {
             var clientsTable = document.getElementById('allclients');
-            db.collection("clients").get().then((querySnapshot) => {
+            let firestoreRef = db.collection("clients");
+            
+            
+                 
+            firestoreRef.onSnapshot((querySnapshot) => {
                 clientsTable.innerHTML = '';
+                let num = 0;
                 querySnapshot.forEach((doc) => {
                     // console.log(`${doc.id} => ${doc.data().projectName}`);
                     let data = doc.data();
@@ -260,28 +258,117 @@ $(".cee").text(count);
                                     <td>${data.clientEmail}</td>
                                     <td>${data.clientRequest}</td>
                                     <td><i class="fas fa-paperclip"></i></td>
-                                     <td>${data.clientdate}</td>
-                                     <td><button type="submit" class="btn btn-primary send-email" style="border-radius: 20px;">send email</button></td>
-                                     <td class="align-middle text-right">
+                                     <td>${data.clientDate}</td>
+                                     <td><button type="submit" class="btn btn-secondary send-email" >send email</button></td>
+                                     <td >
                                         <div class="dropdown">
-                                        <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <div class="dropdown-arrow mr-n1"></div><a href="#" class="dropdown-item">Edit</a> <a
-                                            href="#" class="dropdown-item">Delete</a>
+                                    <button type="button" class="btn btn-sm btn-icon btn-secondary" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-h"></i></button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <div class="dropdown-arrow mr-n1"></div>
+                                        <a href="#" data-toggle="modal" data-target="#editclients${num}" class="dropdown-item">Edit</a>
+                                        <a class="dropdown-item" onclick="deleteClient('${doc.id}')">Delete</a>
+                                    </div>
+                                    </div>
+
+                                        <div class="modal fade" id="editclients${num++}">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-header" style="background-color: #72736E;">
+                                                        <h5 class="modal-title">
+                                                            <i class="fas fa-plus-circle"></i> Edit Client details
+                                                        </h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <i class="fas fa-times"></i>
+                                                        </button>
+                                                    </div>
+                                                    <form class="add-clients" onsubmit="editClients(event, '${doc.id}')">
+                                                        <div class="modal-body">
+                                                            <div class="form-group">
+                                                                <label for="client-name" class="col-form-label">Name</label>
+                                                                <input type="text" class="form-control" value="${data.clientName}" id="client-name" name="clientName">
+                                                            </div>
+
+
+                                                            <div class="form-group">
+                                                                <label for="client-email" class="col-form-label">Add email</label>
+                                                                <input type="text" class="form-control"  value="${data.clientEmail}" id="client-email" name="clientEmail">
+
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="client-request" class="col-form-label">Add request</label>
+                                                                <textarea class="form-control" rows="2" id="client-request"
+                                                                value="${data.clientRequest}"    name="clientRequest"></textarea>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="client-invoice" class="col-form-label">Add Invoice</label>
+                                                                <input type="file" class="form-control" id="client-invoice">
+
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="client-date" class="col-form-label">Add date</label>
+                                                                <input type="date" value="${data.clientDate}" class="form-control" id="client-date" name="clientDate">
+
+                                                            </div>
+
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="submit" id="submit-button" class="btn font-weight-bold send-email"
+                                                                style="background-color: #72736E;" id="touch"> Update</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
                                         </div>
-                                        </div>
-                                        </td>
-                                     </tr>
-                    `
+                                                    </td>
+                                                </tr>
+                                `
                     clientsTable.innerHTML = clientsTable.innerHTML + newRow
                 });
             });
         }
 
+            
+        
+        function editClients(event,id) {
+            console.log('hh');
+            event.preventDefault();
+            $('#submit-button').attr("disabled", true)
+            db.collection('clients').doc(id)
+                .update({
+                    clientName: event.target.clientName.value,
+                    clientEmail: event.target.clientEmail.value,
+                    clientRequest: event.target.clientRequest.value,
+                    clientDate: event.target.clientDate.value,
+                    
+                })
+                .then(function (docRef) {
+                    window.location.href = 'clients.html'
+                })
+                .catch(function (error) {
+                    console.error('Error adding document: ', error);
+                });
+        }
+        
+
+        function deleteClient(id) {
+            db.collection("clients").doc(id).delete().then(function () {
+                console.log("Document successfully deleted!");
+            }).catch(function (error) {
+                console.error("Error removing document: ", error);
+            });
+        }
+        
+    
         getAllClients()
 
     </script>
+        
+
+   
+            
+    
 </body>
 
-</html>
+</html> 
