@@ -12,7 +12,9 @@
     <link href="css/dataTables.bootstrap4.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/edit.css">
     <script defer src="fontawesome-free-5.15.1-web/js/all.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css"
+        integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw=="
+        crossorigin="anonymous" />
     <script>
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
@@ -20,8 +22,8 @@
             name: urlParams.get('name'),
             id: urlParams.get('id')
         }
-  </script>
-    
+    </script>
+
 </head>
 
 <body class="sb-nav-fixed">
@@ -46,7 +48,7 @@
                 English</a>
             <div class="dropdown-menu" aria-labelledby="dropdown09">
                 <a class="dropdown-item" href="#fr"><span class="flag-icon flag-icon-fr"> </span> French</a>
-                
+
             </div>
         </div>
         <ul class="navbar-nav ml-auto ml-md-0">
@@ -68,14 +70,14 @@
                 <div class="sb-sidenav-menu">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                           
-                           
-                            
+
+
+
                             <a class="nav-link" href="project.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-project-diagram"></i></div>
                                 Projects
                             </a>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -90,11 +92,11 @@
                 <div class="container-fluid">
 
                     <div>
-                        <h1 class="mt-4"> 
+                        <h1 class="mt-4">
                             <script type="text/javascript">
-                            document.write(project.name)
-                          </script> - Task Board
-                          </h1>
+                                document.write(project.name)
+                            </script> - Task Board
+                        </h1>
                         <main>
                             <ol class="breadcrumb mb-4">
                                 <li class="breadcrumb-item active">You are welcome to the Task Board</li>
@@ -110,32 +112,34 @@
                                                 <i class="fas fa-times-circle"></i>
                                             </button>
                                         </div>
-                                        <form class="add-task" onsubmit="addTask(event)" >
+                                        <form class="add-task" onsubmit="addTask(event)">
                                             <div class="modal-body">
                                                 <div class="form-group">
                                                     <label for="task-name" class="col-form-label"> Title</label>
-                                                    <input type="text" class="form-control" id="task-name" name="taskName">
+                                                    <input type="text" class="form-control" id="task-name"
+                                                        name="taskName">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="task-name" class="col-form-label">Add team lead</label>
-                                                    <select class="custom-select"  name="taskTeam"> 
+                                                    <select class="custom-select" name="taskTeam">
                                                         <option>Eric Osei</option>
-                                                        <option >Evenlyn Mensah</option>
-                                                        <option >John frimpong</option>
-                                                        <option >Happy Sefa</option>
-                                                        <option >George Prepah</option>
-                                                        <option >Henry Okoh</option>
+                                                        <option>Evenlyn Mensah</option>
+                                                        <option>John frimpong</option>
+                                                        <option>Happy Sefa</option>
+                                                        <option>George Prepah</option>
+                                                        <option>Henry Okoh</option>
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="task-date" class="col-form-label">Add date</label>
-                                                    <input type="date" class="form-control" id="task-date" name="taskDate">
+                                                    <input type="date" class="form-control" id="task-date"
+                                                        name="taskDate">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="task-description"
                                                         class="col-form-label">Description</label>
-                                                    <textarea class="form-control" rows="3="
-                                                        id="task-description" name="taskDescription"></textarea>
+                                                    <textarea class="form-control" rows="3=" id="task-description"
+                                                        name="taskDescription"></textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="task-date" class="col-form-label">Status</label>
@@ -148,16 +152,18 @@
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="submit" class="btn send-email font-weight-bold" style="background-color: #72736E;">Save</button>
+                                                <button type="submit" class="btn send-email font-weight-bold"
+                                                    style="background-color: #72736E;">Save</button>
                                             </div>
                                         </form>
                                     </div>
                                 </div>
                             </div>
-                          <div class="row row-eq-height task-list-row">
+                            <div class="row row-eq-height task-list-row">
                                 <div class="col-12 col-md-6 col-lg mt-3 task-list-item">
-                                    <div class="card bg-primary-light" >
-                                        <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #72736E">
+                                    <div class="card bg-primary-light">
+                                        <div class="card-header d-flex justify-content-between align-items-center"
+                                            style="background-color: #72736E">
                                             <h6 class="card-title font-weight-bold">Todo</h6>
                                         </div>
                                         <div class="card-body">
@@ -167,7 +173,8 @@
                                             <a href="#" style="background-color: #72736E;"
                                                 class=" w-100 d-block text-center py-2 px-2 mt-3 rounded text-white add-task"
                                                 data-toggle="modal" data-target="#addtask">
-                                                <i class="fas fa-plus-circle align-middle " style="color: black;"></i> <span>Add
+                                                <i class="fas fa-plus-circle align-middle " style="color: black;"></i>
+                                                <span>Add
                                                     Task</span>
                                             </a>
 
@@ -176,7 +183,8 @@
                                 </div>
                                 <div class="col-12 col-md-6 col-lg mt-3 task-list-item">
                                     <div class="card bg-primary-light">
-                                        <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #72736E">
+                                        <div class="card-header d-flex justify-content-between align-items-center"
+                                            style="background-color: #72736E">
                                             <h6 class="card-title font-weight-bold">In progress</h6>
                                         </div>
                                         <div class="card-body">
@@ -185,7 +193,8 @@
                                             <a href="#" style="background-color: #72736E"
                                                 class=" w-100 d-block text-center py-2 px-2 mt-3 rounded text-white add-task"
                                                 data-toggle="modal" data-target="#addtask">
-                                                <i  style="color: black;" class="fas fa-plus-circle align-middle " ></i> <span>Add
+                                                <i style="color: black;" class="fas fa-plus-circle align-middle "></i>
+                                                <span>Add
                                                     Task</span>
                                             </a>
                                         </div>
@@ -193,16 +202,18 @@
                                 </div>
                                 <div class="col-12 col-md-6 col-lg mt-3 task-list-item">
                                     <div class="card bg-primary-light">
-                                        <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #72736E">
-                                            <h6 class="card-title font-weight-bold" >Under Review</h6>
+                                        <div class="card-header d-flex justify-content-between align-items-center"
+                                            style="background-color: #72736E">
+                                            <h6 class="card-title font-weight-bold">Under Review</h6>
                                         </div>
                                         <div class="card-body">
-                                            <div class="task-list"id="underReviewTask">
+                                            <div class="task-list" id="underReviewTask">
                                             </div>
                                             <a href="#" style="background-color:#72736E"
                                                 class=" w-100 d-block text-center py-2 px-2 mt-3 rounded text-white add-task"
                                                 data-toggle="modal" data-target="#addtask">
-                                                <i class=" fas fa-plus-circle align-middle font-weight-bold " style="color: black;"></i> <span>Add
+                                                <i class=" fas fa-plus-circle align-middle font-weight-bold "
+                                                    style="color: black;"></i> <span>Add
                                                     Task</span>
                                             </a>
                                         </div>
@@ -210,17 +221,19 @@
                                 </div>
                                 <div class="col-12 col-md-6 col-lg mt-3 task-list-item">
                                     <div class="card bg-primary-light">
-                                        <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #72736E">
-                                            <h6 class="card-title font-weight-bold" >Completed</h6>
+                                        <div class="card-header d-flex justify-content-between align-items-center"
+                                            style="background-color: #72736E">
+                                            <h6 class="card-title font-weight-bold">Completed</h6>
                                         </div>
                                         <div class="card-body">
                                             <div class="task-list" id="completedTask">
-                                                
+
                                             </div>
                                             <a href="#" style="background-color:#72736E"
                                                 class=" w-100 d-block text-center py-2 px-2 mt-3 rounded text-white add-task"
                                                 data-toggle="modal" data-target="#addtask">
-                                                <i class=" fas fa-plus-circle align-middle font-weight-bold " style="color: black;"></i> <span>Add
+                                                <i class=" fas fa-plus-circle align-middle font-weight-bold "
+                                                    style="color: black;"></i> <span>Add
                                                     Task</span>
                                             </a>
                                         </div>
@@ -233,7 +246,8 @@
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; SKT AeroShutter 2020  <img src="images/logo-300x67.png" width="50px"  alt=""> </div>
+                            <div class="text-muted">Copyright &copy; SKT AeroShutter 2020 <img
+                                    src="images/logo-300x67.png" width="50px" alt=""> </div>
                             <div>
                                 <a href="#">Privacy Policy</a>
                                 &middot;
@@ -242,86 +256,86 @@
                         </div>
                     </div>
                 </footer>
-                
+
                 <script src="js/jquery-3.5.1.slim.min.js"></script>
                 <script src="js/bootstrap.bundle.min.js"></script>
                 <script src="js/scripts.js"></script>
                 <script src="js/edit.js"></script>
 
-                
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
+                <!-- The core Firebase JS SDK is always required and must be listed first -->
+                <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+
+                <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
 
-    <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyAiyqidqSCOQDE090C2ZraA-R5WI9DK5GA",
-            authDomain: "hacinta-94edb.firebaseapp.com",
-            databaseURL: "https://hacinta-94edb.firebaseio.com",
-            projectId: "hacinta-94edb",
-            storageBucket: "hacinta-94edb.appspot.com",
-            messagingSenderId: "58100753918",
-            appId: "1:58100753918:web:d8a99f59676d2306b90caf"
-        };   
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-    </script>
-    <script>
-        var db = firebase.firestore();
+                <script>
+                    // Your web app's Firebase configuration
+                    var firebaseConfig = {
+                        apiKey: "AIzaSyAiyqidqSCOQDE090C2ZraA-R5WI9DK5GA",
+                        authDomain: "hacinta-94edb.firebaseapp.com",
+                        databaseURL: "https://hacinta-94edb.firebaseio.com",
+                        projectId: "hacinta-94edb",
+                        storageBucket: "hacinta-94edb.appspot.com",
+                        messagingSenderId: "58100753918",
+                        appId: "1:58100753918:web:d8a99f59676d2306b90caf"
+                    };
+                    // Initialize Firebase
+                    firebase.initializeApp(firebaseConfig);
+                </script>
+                <script>
+                    var db = firebase.firestore();
 
 
-     
 
-        function addTask(event) {
-          event.preventDefault();
-          db.collection(project.id)
-              .add({
-                  taskName: event.target.taskName.value,
-                  taskTeam: event.target.taskTeam.value,
-                  taskDate: event.target.taskDate.value,
-                  taskDescription: event.target.taskDescription.value,
-                  taskStatus: event.target.taskStatus.value,
 
-              })
-              .then(function (docRef) {
-                  console.log('Document written with ID: ', docRef.id);
-                  window.location.href = window.location.href
-                 
-              })
-              .catch(function (error) {
-                  console.error('Error adding document: ', error);
-              });
-      }
+                    function addTask(event) {
+                        event.preventDefault();
+                        db.collection(project.id)
+                            .add({
+                                taskName: event.target.taskName.value,
+                                taskTeam: event.target.taskTeam.value,
+                                taskDate: event.target.taskDate.value,
+                                taskDescription: event.target.taskDescription.value,
+                                taskStatus: event.target.taskStatus.value,
 
-      function getAllTasks() {
-          var todoTask = document.getElementById('todoTask');
-          var inProgressTask = document.getElementById('inProgressTask');
-          var underReviewTask = document.getElementById('underReviewTask');
-          var completedTask = document.getElementById('completedTask');
-        let firestoreRef = db.collection(project.id);    
-            firestoreRef.onSnapshot((querySnapshot) => {
-                todoTask.innerHTML = '';
-                inProgressTask.innerHTML = '';
-                underReviewTask.innerHTML = '';
-                completedTask.innerHTML = '';
-                let num = 0;
-                querySnapshot.forEach((doc) => {
-                    // console.log(`${doc.id} => ${doc.data().projectName}`);
-                    let data = doc.data();
-                    console.log(data);
-                    let sectionToAddTo = todoTask;
-                    if(data.taskStatus=='progress'){
-                        sectionToAddTo = inProgressTask;
-                    }else if(data.taskStatus=='review'){
-                        sectionToAddTo = underReviewTask;
-                    }else if(data.taskStatus=='completed'){
-                        sectionToAddTo = completedTask;
+                            })
+                            .then(function (docRef) {
+                                console.log('Document written with ID: ', docRef.id);
+                                window.location.href = window.location.href
+
+                            })
+                            .catch(function (error) {
+                                console.error('Error adding document: ', error);
+                            });
                     }
-                  let newRow = `
+
+                    function getAllTasks() {
+                        var todoTask = document.getElementById('todoTask');
+                        var inProgressTask = document.getElementById('inProgressTask');
+                        var underReviewTask = document.getElementById('underReviewTask');
+                        var completedTask = document.getElementById('completedTask');
+                        let firestoreRef = db.collection(project.id);
+                        firestoreRef.onSnapshot((querySnapshot) => {
+                            todoTask.innerHTML = '';
+                            inProgressTask.innerHTML = '';
+                            underReviewTask.innerHTML = '';
+                            completedTask.innerHTML = '';
+                            let num = 0;
+                            querySnapshot.forEach((doc) => {
+                                // console.log(`${doc.id} => ${doc.data().projectName}`);
+                                let data = doc.data();
+                                console.log(data);
+                                let sectionToAddTo = todoTask;
+                                if (data.taskStatus == 'progress') {
+                                    sectionToAddTo = inProgressTask;
+                                } else if (data.taskStatus == 'review') {
+                                    sectionToAddTo = underReviewTask;
+                                } else if (data.taskStatus == 'completed') {
+                                    sectionToAddTo = completedTask;
+                                }
+                                let newRow = `
 
 
                   <div class="card my-2 task-card">
@@ -407,48 +421,48 @@
                                   
                   `
 
-                  sectionToAddTo.innerHTML = sectionToAddTo.innerHTML + newRow
-                });
-            });
-        }
+                                sectionToAddTo.innerHTML = sectionToAddTo.innerHTML + newRow
+                            });
+                        });
+                    }
 
-            
-        
-        function editallTasks(event,id) {
-            event.preventDefault();
-            $('#submit-button').attr("disabled", true)
-            db.collection(project.id).doc(id)
-                .update({
-                    taskName: event.target.taskName.value,
-                  taskTeam: event.target.taskTeam.value,
-                  taskDate: event.target.taskDate.value,
-                  taskDescription: event.target.taskDescription.value,
-                  taskStatus: event.target.taskStatus.value,
-                  
-                })
-                .then(function (docRef) {
-                    window.location.href =  window.location.href
-                })
-                .catch(function (error) {
-                    console.error('Error adding document: ', error);
-                });
-        }
-        
 
-        function deleteTask(id) {
-            db.collection(project.id).doc(id).delete().then(function () {
-                console.log("Document successfully deleted!");
-                
-            }).catch(function (error) {
-                console.error("Error removing document: ", error);
-            });
-        }
-        
-    
-        getAllTasks()
 
-    </script>
-    
+                    function editallTasks(event, id) {
+                        event.preventDefault();
+                        $('#submit-button').attr("disabled", true)
+                        db.collection(project.id).doc(id)
+                            .update({
+                                taskName: event.target.taskName.value,
+                                taskTeam: event.target.taskTeam.value,
+                                taskDate: event.target.taskDate.value,
+                                taskDescription: event.target.taskDescription.value,
+                                taskStatus: event.target.taskStatus.value,
+
+                            })
+                            .then(function (docRef) {
+                                window.location.href = window.location.href
+                            })
+                            .catch(function (error) {
+                                console.error('Error adding document: ', error);
+                            });
+                    }
+
+
+                    function deleteTask(id) {
+                        db.collection(project.id).doc(id).delete().then(function () {
+                            console.log("Document successfully deleted!");
+
+                        }).catch(function (error) {
+                            console.error("Error removing document: ", error);
+                        });
+                    }
+
+
+                    getAllTasks()
+
+                </script>
+
 
 </body>
 

@@ -11,7 +11,9 @@
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script defer src="fontawesome-free-5.15.1-web/js/all.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css"
+        integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw=="
+        crossorigin="anonymous" />
 </head>
 
 <body class="sb-nav-fixed">
@@ -36,10 +38,10 @@
                 English</a>
             <div class="dropdown-menu" aria-labelledby="dropdown09">
                 <a class="dropdown-item" href="#fr"><span class="flag-icon flag-icon-fr"> </span> French</a>
-                
+
             </div>
         </div>
-        
+
         <ul class="navbar-nav ml-auto ml-md-0">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown"
@@ -62,7 +64,7 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-project-diagram"></i></div>
                             Projects
                         </a>
-                       
+
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
@@ -74,7 +76,7 @@
         <div id="layoutSidenav_content">
 
             <main>
-                <div class="container-fluid" >
+                <div class="container-fluid">
                     <a href="#" class="  d-sm-inline-block text-center py-2 px-2 mt-3 rounded text-white add-projects"
                         data-toggle="modal" data-target="#addprojects" style="float: right;background-color: #72736E;">
                         <i class="fas fa-plus-circle align-middle text-white"></i> <span>Add Projects</span>
@@ -103,31 +105,32 @@
 
                                     <div class="form-group">
                                         <label for="task-name" class="col-form-label">Add team lead</label>
-                                        <select class="custom-select"  name="projectTeamlead"> 
+                                        <select class="custom-select" name="projectTeamlead">
                                             <option>Eric Osei</option>
-                                            <option >Evenlyn Mensah</option>
-                                            <option >John frimpong</option>
-                                            <option >Happy Sefa</option>
-                                            <option >George Prepah</option>
-                                            <option >Henry Okoh</option>
-                                          </select>
-                                        
+                                            <option>Evenlyn Mensah</option>
+                                            <option>John frimpong</option>
+                                            <option>Happy Sefa</option>
+                                            <option>George Prepah</option>
+                                            <option>Henry Okoh</option>
+                                        </select>
+
 
                                     </div>
                                     <div class="form-group">
-                                        <select class="custom-select"  name="projectType"> 
-                                          <option>Crop Monitoring</option>
-                                          <option >Crop Spraying</option>
-                                          <option >Mapping and Surveying</option>
-                                          <option >3D Modeling</option>
-                                          <option >Asset Inspection</option>
-                                          <option >Drone Maintenance</option>
+                                        <select class="custom-select" name="projectType">
+                                            <option>Crop Monitoring</option>
+                                            <option>Crop Spraying</option>
+                                            <option>Mapping and Surveying</option>
+                                            <option>3D Modeling</option>
+                                            <option>Asset Inspection</option>
+                                            <option>Drone Maintenance</option>
                                         </select>
-                                        
-                                      </div>
-                                      <div class="form-group">
+
+                                    </div>
+                                    <div class="form-group">
                                         <label for="project-name" class="col-form-label">Add Start date</label>
-                                        <input type="date" class="form-control" id="project-name" name="projectStartdate">
+                                        <input type="date" class="form-control" id="project-name"
+                                            name="projectStartdate">
 
                                     </div>
                                     <div class="form-group">
@@ -141,13 +144,13 @@
                                             name="projectBudget">
                                     </div>
                                     <div class="form-group">
-                                        <select class="custom-select"  name="projectStatus"> 
-                                          <option>On going</option>
-                                          <option >Completed</option>
-                                          <option >On hold</option>
+                                        <select class="custom-select" name="projectStatus">
+                                            <option>On going</option>
+                                            <option>Completed</option>
+                                            <option>On hold</option>
                                         </select>
-                                        
-                                      </div>
+
+                                    </div>
 
                                 </div>
                                 <div class="modal-footer">
@@ -177,8 +180,8 @@
                             </thead>
 
                             <tbody id="allprojects">
-                                
-                               
+
+
                             </tbody>
                         </table>
                     </div>
@@ -189,11 +192,12 @@
 
     </div>
     </div>
-    
+
     <footer class="py-4 bg-light mt-auto">
         <div class="container-fluid">
             <div class="d-flex align-items-center justify-content-between small">
-                <div class="text-muted">Copyright &copy; SKT AeroShutter 2020  <img src="images/logo-300x67.png" width="50px"  alt=""> </div>
+                <div class="text-muted">Copyright &copy; SKT AeroShutter 2020 <img src="images/logo-300x67.png"
+                        width="50px" alt=""> </div>
                 <div>
                     <a href="#">Privacy Policy</a>
                     &middot;
@@ -201,7 +205,7 @@
                 </div>
             </div>
         </div>
-      </footer>
+    </footer>
 
     <script src="js/jquery-3.5.1.slim.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
@@ -228,7 +232,7 @@
             storageBucket: "hacinta-94edb.appspot.com",
             messagingSenderId: "58100753918",
             appId: "1:58100753918:web:d8a99f59676d2306b90caf"
-        };   
+        };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
     </script>
@@ -247,8 +251,8 @@
                     projectStartdate: event.target.projectStartdate.value,
                     projectDuedate: event.target.projectDuedate.value,
                     projectBudget: event.target.projectBudget.value,
-                    projectStatus:event.target.projectStatus.value,
-                    
+                    projectStatus: event.target.projectStatus.value,
+
                 })
                 .then(function (docRef) {
                     console.log('Document written with ID: ', docRef.id);
@@ -265,8 +269,8 @@
             const urlParams = new URLSearchParams(queryString);
             const param = urlParams.get('category');
             let firestoreRef = db.collection("projects");
-            if(param){
-                firestoreRef = firestoreRef.where('projectType','==',param);
+            if (param) {
+                firestoreRef = firestoreRef.where('projectType', '==', param);
             }
             firestoreRef.onSnapshot((querySnapshot) => {
                 projectsTable.innerHTML = '';
@@ -387,8 +391,8 @@
             });
         }
 
-        
-        function editProject(event,id) {
+
+        function editProject(event, id) {
             console.log('hh');
             event.preventDefault();
             $('#submit-button').attr("disabled", true)
@@ -400,8 +404,8 @@
                     projectStartdate: event.target.projectStartdate.value,
                     projectDuedate: event.target.projectDuedate.value,
                     projectBudget: event.target.projectBudget.value,
-                    projectStatus:event.target.projectStatus.value,
-                    
+                    projectStatus: event.target.projectStatus.value,
+
                 })
                 .then(function (docRef) {
                     window.location.href = 'project.html'
