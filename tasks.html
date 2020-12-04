@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Tasks- SB Admin</title>
+    <title>Tasks- SKT Admin</title>
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/dataTables.bootstrap4.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/edit.css">
@@ -69,19 +69,8 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                            
-                            <a class="nav-link" href="maindashboard.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
-                                Team Dashboard
-                            </a>
-                            <a class="nav-link" href="dashboardprojectlead.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                                Project Lead
-                            </a>
-                            <a class="nav-link" href="operation.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                                Operational Director
-                            </a>
-                            </a>
+                           
+                            
                             <a class="nav-link" href="project.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-project-diagram"></i></div>
                                 Projects
@@ -148,6 +137,15 @@
                                                     <textarea class="form-control" rows="3="
                                                         id="task-description" name="taskDescription"></textarea>
                                                 </div>
+                                                <div class="form-group">
+                                                    <label for="task-date" class="col-form-label">Status</label>
+                                                    <select class="form-control" name="taskStatus" id="">
+                                                        <option value="todo">Todo</option>
+                                                        <option value="progress">In-progress</option>
+                                                        <option value="review">Under Review</option>
+                                                        <option value="completed">Completed</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="submit" class="btn send-email font-weight-bold" style="background-color: #72736E;">Save</button>
@@ -156,132 +154,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="modal fade" id="edittask">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header" style="background-color: #72736E;">
-                                            <h5 class="modal-title">
-                                                <i class="fas fa-plus-square"></i> Edit Task
-                                            </h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <i class="fas fa-times-circle"></i>
-                                            </button>
-                                        </div>
-                                        <form class="edit-task" onsubmit="editProject(event)">
-                                            <div class="modal-body">
-                                                <div class="form-group">
-                                                    <label for="task-name" class="col-form-label"> Title</label>
-                                                    <input type="text" class="form-control" id="task-name">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="task-name" class="col-form-label">Add Team</label>
-                                                    <br>
-                                                    <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                                        width: 30px;
-                                                        height: 30px;
-                                                        border-radius: 50%;">
-                                                    <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                                        width: 30px;
-                                                        height: 30px;
-                                                        border-radius: 50%;">
-                                                    <img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                                        width: 30px;
-                                                        height: 30px;
-                                                        border-radius: 50%;">
-                                                    <i class="fas fa-plus-circle"></i>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="task-name" class="col-form-label">Add date</label>
-                                                    <input type="date" class="form-control" id="task-name">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="task-description"
-                                                        class="col-form-label">Description</label>
-                                                    <textarea class="form-control" rows="3="
-                                                        id="task-description"></textarea>
-                                                </div>
-                                                
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="submit" class="btn send-email font-weight-bold" style="background-color: #72736E">Save</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>  -->
                           <div class="row row-eq-height task-list-row">
                                 <div class="col-12 col-md-6 col-lg mt-3 task-list-item">
                                     <div class="card bg-primary-light" >
                                         <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #72736E">
-                                            <h6 class="card-title font-weight-bold">On going</h6>
-                                            <div class="dropdown">
-                                                <a href="#" id="dropdownMenuButton" data-toggle="dropdown"
-                                                    aria-haspopup="true" aria-expanded="false">
-                                                    <i class="fas fa-arrow-up" style="color: black;"></i>
-                                                </a>
-
-                                                <ul class="dropdown-menu dropdown-menu-right border py-0">
-                                                    <li><a class="dropdown-item edit" href="#"><i
-                                                                class="fas fa-edit"></i> Rename</a></li>
-                                                    <li><a class="dropdown-item delete" href="#"><i
-                                                                class="fas fa-trash"></i> Delete</a></li>
-                                                </ul>
-                                            </div>
+                                            <h6 class="card-title font-weight-bold">Todo</h6>
                                         </div>
                                         <div class="card-body">
-                                            <div class="task-list" id="addAlltasks">
-                                                <!-- <div class="card my-2 task-card">
-                                                    <div class="card-content">
-                                                        <div class="card-body p-4 body-color">
-                                                            <h6 class="mb-3 font-w-600">Remove Houtzdale Location</h6>
-                                                            <div class="task-content mb-3">Lorem ipsum dolor sit amet,
-                                                                consectetur adipisicing elit, sed do eiusmod tempor
-                                                                incididunt ut labore et dolore magna aliqua.</div>
-                                                            <p class="font-w-500 tx-s-12"><i
-                                                                    class="fas fa-calendar"></i> <span
-                                                                    class="task-date">June 15th, 2020</span></p>
-                                                                    <p class="font-w-500 tx-s-12">
-                                                                        <span class="task-team"><img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                                                            width: 30px;
-                                                                            height: 30px;
-                                                                            border-radius: 50%;"></span><i class="fas fa-user-plus"></i></p> 
-                                                            <div class="d-flex">
-                                                                <div class="my-auto line-h-1 h5">
-                                                                    <a class="text-dark edit-task" href="#"
-                                                                        data-toggle="modal" data-target="#edittask"><i
-                                                                            class="fas fa-edit"></i></a>
-                                                                    <a class="text-danger delete-task" href="#"><i
-                                                                            class="fas fa-trash"></i></a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> -->
-                                                <!-- <div class="card my-2 task-card">
-                                                    <div class="card-content">
-                                                        <div class="card-body p-4 body-color">
-                                                            <h6 class="mb-3 font-w-600 h6">Limit API to logged in users
-                                                            </h6>
-                                                            <p class="font-w-500 tx-s-12"><i
-                                                                    class="fas fa-calendar"></i> <span
-                                                                    class="task-date">May 4th, 2020</span></p>
-                                                                    <p class="font-w-500 tx-s-12">
-                                                                        <span class="task-team"><img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                                                            width: 30px;
-                                                                            height: 30px;
-                                                                            border-radius: 50%;"></span><i class="fas fa-user-plus"></i></p> 
-                                                            <div class="d-flex">                                          
-                                                                <div class="my-auto line-h-1 h5">
-                                                                    <a class="text-dark edit-task" href="#"
-                                                                        data-toggle="modal" data-target="#edittask"><i
-                                                                            class="fas fa-edit"></i></a>
-                                                                    <a class="text-danger delete-task" href="#"><i
-                                                                            class="fas fa-trash"></i></a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> -->
+                                            <div class="task-list" id="todoTask">
                                             </div>
 
                                             <a href="#" style="background-color: #72736E;"
@@ -298,92 +178,9 @@
                                     <div class="card bg-primary-light">
                                         <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #72736E">
                                             <h6 class="card-title font-weight-bold">In progress</h6>
-                                            <div class="dropdown">
-                                                <a href="#" id="dropdownMenuButton1" data-toggle="dropdown"
-                                                    aria-haspopup="true" aria-expanded="false">
-                                                    <i class="fas fa-arrow-down" style="color: black;"></i>
-                                                </a>
-
-                                                <ul class="dropdown-menu dropdown-menu-right border py-0">
-                                                    <li><a class="dropdown-item edit" href="#" data-toggle="modal"
-                                                            data-target="#edittask"><i class="fas fa-edit"></i>
-                                                            Rename</a></li>
-                                                    <li><a class="dropdown-item delete" href="#"><i
-                                                                class="fas fa-trash"></i> Delete</a></li>
-                                                </ul>
-                                            </div>
                                         </div>
                                         <div class="card-body">
-                                            <div class="task-list" id="addAlltasks">
-                                                <div class="card my-2 task-card">
-                                                    <div class="card-content">
-                                                        <div class="card-body p-4 body-color">
-                                                            <h6 class="mb-3 font-w-600">Video not Wokring</h6>
-                                                            <p class="font-w-500 tx-s-12"><i class="fas-calendar"></i>
-                                                                <span class="task-date">May 15th, 2020</span></p>
-                                                                <p class="font-w-500 tx-s-12">
-                                                                    <span class="task-team"><img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                                                        width: 30px;
-                                                                        height: 30px;
-                                                                        border-radius: 50%;"></span><i class="fas fa-user-plus"></i></p>                                                  
-                                                            <div class="d-flex">
-                                                                <div class="my-auto line-h-1 h5">
-                                                                    <a class="text-dark edit-task" href="#"
-                                                                        data-toggle="modal" data-target="#edittask"><i
-                                                                            class="fas fa-edit"></i></a>
-                                                                    <a class="text-danger delete-task" href="#"><i
-                                                                            class="fas fa-trash"></i></a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="card my-2 task-card">
-                                                    <div class="card-content">
-                                                        <div class="card-body p-4 body-color">
-                                                            <h6 class="mb-3 font-w-600 h6">Page Performance Issues</h6>
-                                                            <p class="font-w-500 tx-s-12"><i class="icon-calendar"></i>
-                                                                <span class="task-date">May 4th, 2020</span></p>
-                                                                <p class="font-w-500 tx-s-12">
-                                                                    <span class="task-team"><img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                                                        width: 30px;
-                                                                        height: 30px;
-                                                                        border-radius: 50%;"></span><i class="fas fa-user-plus"></i></p> 
-                                                            <div class="d-flex">
-                                                                <div class="my-auto line-h-1 h5">
-                                                                    <a class="text-dark edit-task" href="#"
-                                                                        data-toggle="modal" data-target="#edittask"><i
-                                                                            class="fas fa-edit"></i></a>
-                                                                    <a class="text-danger delete-task" href="#"><i
-                                                                            class="fas fa-trash"></i></a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="card my-2 task-card">
-                                                    <div class="card-content">
-                                                        <div class="card-body p-4 body-color">
-                                                            <h6 class="mb-3 font-w-600 h6">Post-Launch SEO Audit</h6>
-                                                            <p class="font-w-500 tx-s-12"><i class="fas fa-calendar"></i>
-                                                                <span class="task-date">April 4th, 2020</span></p>
-                                                                <p class="font-w-500 tx-s-12">
-                                                                    <span class="task-team"><img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                                                        width: 30px;
-                                                                        height: 30px;
-                                                                        border-radius: 50%;"></span><i class="fas fa-user-plus"></i></p> 
-                                                            <div class="d-flex">
-                                                                <div class="my-auto line-h-1 h5">
-                                                                    <a class="text-dark edit-task" href="#"
-                                                                        data-toggle="modal" data-target="#edittask"><i
-                                                                            class="fas fa-edit"></i></a>
-                                                                    <a class="text-danger delete-task" href="#"><i
-                                                                            class="fas fa-trash"></i></a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            <div class="task-list" id="inProgressTask">
                                             </div>
                                             <a href="#" style="background-color: #72736E"
                                                 class=" w-100 d-block text-center py-2 px-2 mt-3 rounded text-white add-task"
@@ -397,48 +194,10 @@
                                 <div class="col-12 col-md-6 col-lg mt-3 task-list-item">
                                     <div class="card bg-primary-light">
                                         <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #72736E">
-                                            <h6 class="card-title font-weight-bold" >Completed</h6>
-                                            <div class="dropdown">
-                                                <a href="#" id="dropdownMenuButton2" data-toggle="dropdown"
-                                                    aria-haspopup="true" aria-expanded="false">
-                                                    <i class="fas fa-check" style="color: black;"></i>
-                                                </a>
-
-                                                <ul class="dropdown-menu dropdown-menu-right border py-0">
-                                                    <li><a class="dropdown-item edit" href="#" data-toggle="modal"
-                                                            data-target="#edittask"><i class="fas fa-edit"></i>
-                                                            Rename</a></li>
-                                                    <li><a class="dropdown-item delete" href="#"><i
-                                                                class="fas fa-trash"></i> Delete</a></li>
-                                                </ul>
-                                            </div>
+                                            <h6 class="card-title font-weight-bold" >Under Review</h6>
                                         </div>
                                         <div class="card-body">
-                                            <div class="task-list"id="addAlltasks">
-                                                <div class="card my-2 task-card">
-                                                    <div class="card-content">
-                                                        <div class="card-body p-4 body-color">
-                                                            <h6 class="mb-3 font-w-600 h6">Limit API to logged in users
-                                                            </h6>
-                                                            <p class="font-w-500 tx-s-12"><i class="fas fa-calendar"></i>
-                                                                <span class="task-date">May 4th, 2020</span></p>
-                                                                <p class="font-w-500 tx-s-12">
-                                                                    <span class="task-team"><img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                                                        width: 30px;
-                                                                        height: 30px;
-                                                                        border-radius: 50%;"></span><i class="fas fa-user-plus"></i></p> 
-                                                            <div class="d-flex">
-                                                                <div class="my-auto line-h-1 h5">
-                                                                    <a class="text-dark edit-task" href="#"
-                                                                        data-toggle="modal" data-target="#edittask"><i
-                                                                            class="fas fa-edit"></i></a>
-                                                                    <a class="text-danger delete-task" href="#"><i
-                                                                            class="fas fa-trash"></i></a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            <div class="task-list"id="underReviewTask">
                                             </div>
                                             <a href="#" style="background-color:#72736E"
                                                 class=" w-100 d-block text-center py-2 px-2 mt-3 rounded text-white add-task"
@@ -453,51 +212,10 @@
                                     <div class="card bg-primary-light">
                                         <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #72736E">
                                             <h6 class="card-title font-weight-bold" >Completed</h6>
-                                            <div class="dropdown">
-                                                <a href="#" id="dropdownMenuButton2" data-toggle="dropdown"
-                                                    aria-haspopup="true" aria-expanded="false">
-                                                    <i class="fas fa-check" style="color: black;"></i>
-                                                </a>
-
-                                                <ul class="dropdown-menu dropdown-menu-right border py-0">
-                                                    <li><a class="dropdown-item edit"
-                                                         href="#"
-                                                          data-toggle="modal"
-                                                            data-target="#edittask">
-                                                            
-                                                            <i class="fas fa-edit"></i>
-                                                            Rename</a></li>
-                                                    <li><a class="dropdown-item delete" href="#"><i
-                                                                class="fas fa-trash"></i> Delete</a></li>
-                                                </ul>
-                                            </div>
                                         </div>
                                         <div class="card-body">
-                                            <div class="task-list">
-                                                <div class="card my-2 task-card">
-                                                    <div class="card-content">
-                                                        <div class="card-body p-4 body-color">
-                                                            <h6 class="mb-3 font-w-600 h6">Limit API to logged in users
-                                                            </h6>
-                                                            <p class="font-w-500 tx-s-12"><i class="fas fa-calendar"></i>
-                                                                <span class="task-date">May 4th, 2020</span></p>
-                                                                <p class="font-w-500 tx-s-12">
-                                                                    <span class="task-team"><img src="images/avatar.png" alt="Avatar" class="avatar" style=" vertical-align: middle;
-                                                                        width: 30px;
-                                                                        height: 30px;
-                                                                        border-radius: 50%;"></span><i class="fas fa-user-plus"></i></p> 
-                                                            <div class="d-flex">
-                                                                <div class="my-auto line-h-1 h5">
-                                                                    <a class="text-dark edit-task" href="#"
-                                                                        data-toggle="modal" data-target="#edittask"><i
-                                                                            class="fas fa-edit"></i></a>
-                                                                    <a class="text-danger delete-task" href="#"><i
-                                                                            class="fas fa-trash"></i></a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            <div class="task-list" id="completedTask">
+                                                
                                             </div>
                                             <a href="#" style="background-color:#72736E"
                                                 class=" w-100 d-block text-center py-2 px-2 mt-3 rounded text-white add-task"
@@ -560,17 +278,18 @@
 
         function addTask(event) {
           event.preventDefault();
-          db.collection('projects.id')
+          db.collection(project.id)
               .add({
                   taskName: event.target.taskName.value,
                   taskTeam: event.target.taskTeam.value,
                   taskDate: event.target.taskDate.value,
                   taskDescription: event.target.taskDescription.value,
+                  taskStatus: event.target.taskStatus.value,
 
               })
               .then(function (docRef) {
                   console.log('Document written with ID: ', docRef.id);
-                  window.location.href = 'tasks.html'
+                  window.location.href = window.location.href
                  
               })
               .catch(function (error) {
@@ -578,16 +297,30 @@
               });
       }
 
-      function getaddTotasks() {
-          var addtotasksTable = document.getElementById('addAlltasks');
-        let firestoreRef = db.collection('projects.id');    
+      function getAllTasks() {
+          var todoTask = document.getElementById('todoTask');
+          var inProgressTask = document.getElementById('inProgressTask');
+          var underReviewTask = document.getElementById('underReviewTask');
+          var completedTask = document.getElementById('completedTask');
+        let firestoreRef = db.collection(project.id);    
             firestoreRef.onSnapshot((querySnapshot) => {
-                addtotasksTable.innerHTML = '';
+                todoTask.innerHTML = '';
+                inProgressTask.innerHTML = '';
+                underReviewTask.innerHTML = '';
+                completedTask.innerHTML = '';
                 let num = 0;
                 querySnapshot.forEach((doc) => {
                     // console.log(`${doc.id} => ${doc.data().projectName}`);
                     let data = doc.data();
                     console.log(data);
+                    let sectionToAddTo = todoTask;
+                    if(data.taskStatus=='progress'){
+                        sectionToAddTo = inProgressTask;
+                    }else if(data.taskStatus=='review'){
+                        sectionToAddTo = underReviewTask;
+                    }else if(data.taskStatus=='completed'){
+                        sectionToAddTo = completedTask;
+                    }
                   let newRow = `
 
 
@@ -604,7 +337,7 @@
                                                             <div class="d-flex">
                                                                 <div class="my-auto line-h-1 h5">
                                                                     <a class="text-dark edit-one-task" href="#"
-                                                                        data-toggle="modal" data-target="#editeachtask"${num}"><i
+                                                                        data-toggle="modal" data-target="#editeachtask${num}"><i
                                                                             class="fas fa-edit"></i></a>
                                                                     <a class="text-danger delete-task" onclick="deleteTask('${doc.id}')" href="#"><i
                                                                             class="fas fa-trash"></i></a>
@@ -648,6 +381,16 @@
                                                     <textarea class="form-control" rows="3="
                                                         id="task-description" value="${data.taskDescription}" name="taskDescription"></textarea>
                                                 </div>
+                                                <div class="form-group">
+                                                    <label for="task-date" class="col-form-label">Status</label>
+                                                    <select class="form-control" name="taskStatus" id="">
+                                                        <option value="${data.taskStatus}">${data.taskStatus}</option>
+                                                        <option value="todo">Todo</option>
+                                                        <option value="progress">In-progress</option>
+                                                        <option value="review">Under Review</option>
+                                                        <option value="completed">Completed</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="submit" class="btn send-email font-weight-bold" style="background-color: #72736E;">Update</button>
@@ -664,7 +407,7 @@
                                   
                   `
 
-                  addtotasksTable.innerHTML = addtotasksTable.innerHTML + newRow
+                  sectionToAddTo.innerHTML = sectionToAddTo.innerHTML + newRow
                 });
             });
         }
@@ -672,18 +415,19 @@
             
         
         function editallTasks(event,id) {
-            console.log('hh');
             event.preventDefault();
             $('#submit-button').attr("disabled", true)
-            db.collection('projects.id').doc(id)
+            db.collection(project.id).doc(id)
                 .update({
                     taskName: event.target.taskName.value,
                   taskTeam: event.target.taskTeam.value,
                   taskDate: event.target.taskDate.value,
                   taskDescription: event.target.taskDescription.value,
+                  taskStatus: event.target.taskStatus.value,
+                  
                 })
                 .then(function (docRef) {
-                    window.location.href = 'tasks.html'
+                    window.location.href =  window.location.href
                 })
                 .catch(function (error) {
                     console.error('Error adding document: ', error);
@@ -692,7 +436,7 @@
         
 
         function deleteTask(id) {
-            db.collection('projects.id').doc(id).delete().then(function () {
+            db.collection(project.id).doc(id).delete().then(function () {
                 console.log("Document successfully deleted!");
                 
             }).catch(function (error) {
@@ -701,7 +445,7 @@
         }
         
     
-        getaddTotasks()
+        getAllTasks()
 
     </script>
     
